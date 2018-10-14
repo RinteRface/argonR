@@ -4,10 +4,13 @@
 \alias{argonImage}
 \title{Create a Boostrap 4 image container}
 \usage{
-argonImage(src = NULL, floating = FALSE, card_mode = FALSE)
+argonImage(src = NULL, url = NULL, floating = FALSE,
+  card_mode = FALSE)
 }
 \arguments{
 \item{src}{Image source or path.}
+
+\item{url}{Only with card_mode on. Optional external link.}
 
 \item{floating}{Whether to apply a floating effect. FALSE by default.}
 

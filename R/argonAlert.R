@@ -26,7 +26,7 @@ argonAlert <- function(..., icon = NULL, status = "default", closable = TRUE) {
     if (!is.null(icon)) {
       htmltools::tags$span(
         class = "alert-inner--icon",
-        htmltools::tags$i(class = "ni ni-", icon)
+        argonIcon(icon)
       )
     },
     htmltools::tags$span(
@@ -39,7 +39,7 @@ argonAlert <- function(..., icon = NULL, status = "default", closable = TRUE) {
         type = "button",
         `data-dismiss` = "alert",
         `aria-label` = "close",
-        htmltools::tags$span(`aria-hidden` = "true", "&times;")
+        htmltools::tags$span(`aria-hidden` = "true", "x")
       ) 
     }
   )
