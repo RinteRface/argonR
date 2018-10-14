@@ -19,7 +19,7 @@ argonBadge <- function(text = NULL, src = NULL, pill = FALSE, status = "default"
   
   badgeCl <- "badge"
   if (pill) badgeCl <- paste0(badgeCl, " badge-pill")
-  if (status) badgeCl <- paste0(badgeCl, " badge-", status)
+  if (!is.null(status)) badgeCl <- paste0(badgeCl, " badge-", status)
   
   if (!is.null(src)) {
     htmltools::a(href = src, class = badgeCl, text)

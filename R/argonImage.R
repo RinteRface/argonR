@@ -26,6 +26,7 @@ argonImage <- function(src = NULL, url = NULL, floating = FALSE, card_mode = FAL
       class = cardCl,
       htmltools::tags$a(
         href = url,
+        target = "_blank",
         htmltools::img(
           class = "card-img",
           src = src 

@@ -40,11 +40,10 @@ argonProgress <- function(value, text = "Task completed", status = "primary") {
   progressTag <- htmltools::tagAppendChildren(
     progressTag,
     progressLabel,
-    progressPercent,
-    progressBar
+    progressPercent
   )
   
-  htmltools::tagAppendChild(progressWrapper, progressTag)
+  htmltools::tagAppendChildren(progressWrapper, progressTag, progressBar)
   
   
 }

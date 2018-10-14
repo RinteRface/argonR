@@ -27,7 +27,7 @@ argonSection <- function(..., size = NULL, status = "default", gradient = FALSE,
   }
   
   htmltools::tags$section(
-    class = "sectionCl",
+    class = sectionCl,
     htmltools::tags$div(
       class = "container",
       ...
