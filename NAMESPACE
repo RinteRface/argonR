@@ -2,3 +2,4 @@
 
 export(argonCard)
 export(argonImage)
+export(argonSection)
