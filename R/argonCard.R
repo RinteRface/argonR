@@ -6,6 +6,7 @@
 #' @param title Card title.
 #' @param src  Card external link.
 #' @param hover_lift Whether to apply a lift effect on hover. FALSE by default.
+#' Not compatible with floating.
 #' @param shadow Whether to apply a shadow effect. FALSE by default.
 #' @param shadow_size Card shadow size. Only if shadow is TRUE. NULL by default.
 #' @param hover_shadow Only if shadow is TRUE. Whether to enlarge the shadow on hover. FALSE by default.
@@ -14,8 +15,8 @@
 #' @param status Card status. 
 #' @param background_color Card background color. NULL by default.
 #' @param gradient Whether to apply a gradient effect on the card background. FALSE by default.
-#' @param perspective Card perspective effect. "left" or "right".
 #' @param floating Whether to animate the card by a vertical floating movement. FALSE by default.
+#' Not compatible with hover_lift.
 #' 
 #' @examples 
 #' if (interactive()) {
@@ -29,14 +30,13 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
                       shadow = FALSE, shadow_size = NULL, hover_shadow = FALSE, 
                       border_level = 0, icon = NULL, 
                       status = "primary", background_color = NULL, gradient = FALSE,
-                      perspective = c("right", "left"), floating = FALSE) {
-  
-  perspective <- match.arg(perspective)
+                      floating = FALSE) {
   
   cardCl <- "card"
-  # perspective and floating effects needs to be applied before shadow
-  if (!is.null(perspective)) cardCl <- paste0(cardCl, " transform-perspective-", perspective)
-  if (floating) cardCl <- paste0(cardCl, " floating")
+  # floating effect needs to be applied before shadow
+  if (floating) {
+    if (!hover_lift) cardCl <- paste0(cardCl, " floating")
+  }
   if (shadow) {
     if (!is.null(shadow_size)) {
       cardCl <- paste0(cardCl, " shadow-", shadow_size)
@@ -44,7 +44,9 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
       cardCl <- paste0(cardCl, " shadow")
     }
   } 
-  if (hover_lift) cardCl <- paste0(cardCl, " card-lift--hover")
+  if (hover_lift) {
+    if(!floating) cardCl <- paste0(cardCl, " card-lift--hover")
+  }
   if (shadow) {
     if (hover_shadow) cardCl <- paste0(cardCl, " shadow-lg--hover")
   }

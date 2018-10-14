@@ -7,8 +7,7 @@
 argonCard(..., title = NULL, src = NULL, hover_lift = FALSE,
   shadow = FALSE, shadow_size = NULL, hover_shadow = FALSE,
   border_level = 0, icon = NULL, status = "primary",
-  background_color = NULL, gradient = FALSE, perspective = c("right",
-  "left"), floating = FALSE)
+  background_color = NULL, gradient = FALSE, floating = FALSE)
 }
 \arguments{
 \item{...}{Body content.}
@@ -17,7 +16,8 @@ argonCard(..., title = NULL, src = NULL, hover_lift = FALSE,
 
 \item{src}{Card external link.}
 
-\item{hover_lift}{Whether to apply a lift effect on hover. FALSE by default.}
+\item{hover_lift}{Whether to apply a lift effect on hover. FALSE by default.
+Not compatible with floating.}
 
 \item{shadow}{Whether to apply a shadow effect. FALSE by default.}
 
@@ -35,9 +35,8 @@ argonCard(..., title = NULL, src = NULL, hover_lift = FALSE,
 
 \item{gradient}{Whether to apply a gradient effect on the card background. FALSE by default.}
 
-\item{perspective}{Card perspective effect. "left" or "right".}
-
-\item{floating}{Whether to animate the card by a vertical floating movement. FALSE by default.}
+\item{floating}{Whether to animate the card by a vertical floating movement. FALSE by default.
+Not compatible with hover_lift.}
 }
 \description{
 Build an argon card
