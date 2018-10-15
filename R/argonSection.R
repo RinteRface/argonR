@@ -7,6 +7,7 @@
 #' @param status Section status.
 #' @param gradient Section gradient effect. FALSE by default.
 #' @param separator Section bottom separator. FALSE by default.
+#' @param separator_color Separator color. "secondary" by default.
 #' 
 #' @examples 
 #' if (interactive()) {
@@ -16,7 +17,8 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-argonSection <- function(..., size = NULL, status = "default", gradient = FALSE, separator = FALSE) {
+argonSection <- function(..., size = NULL, status = "default", gradient = FALSE, 
+                         separator = FALSE, separator_color = "secondary") {
   
   sectionCl <- "section"
   if (!is.null(size)) sectionCl <- paste0(sectionCl, " section-", size)
@@ -38,7 +40,7 @@ argonSection <- function(..., size = NULL, status = "default", gradient = FALSE,
         htmltools::HTML(
           paste0(
             '<svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+          <polygon class="fill-', separator_color, '" points="2560 0 2560 100 0 100"></polygon>
             </svg>
             '
           )

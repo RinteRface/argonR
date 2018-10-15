@@ -22,7 +22,7 @@
 argonProfile <- function(..., title = NULL, subtitle = NULL, src = NULL, url = NULL,
                          url_1 = NULL, url_2 = NULL, stats) {
   htmltools::tags$div(
-    class = "card card-profile shadow mt--300",
+    class = "card card-profile shadow",
     htmltools::tags$div(
       class = "px-4",
       # header
