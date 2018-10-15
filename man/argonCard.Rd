@@ -7,7 +7,8 @@
 argonCard(..., title = NULL, src = NULL, hover_lift = FALSE,
   shadow = FALSE, shadow_size = NULL, hover_shadow = FALSE,
   border_level = 0, icon = NULL, status = "primary",
-  background_color = NULL, gradient = FALSE, floating = FALSE)
+  background_color = NULL, gradient = FALSE, floating = FALSE,
+  width = 6)
 }
 \arguments{
 \item{...}{Body content.}
@@ -37,6 +38,8 @@ Not compatible with floating.}
 
 \item{floating}{Whether to animate the card by a vertical floating movement. FALSE by default.
 Not compatible with hover_lift.}
+
+\item{width}{Card width. Between 1 and 12.}
 }
 \description{
 Build an argon card

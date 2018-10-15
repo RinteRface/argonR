@@ -24,7 +24,7 @@ argonProgress <- function(value, text = "Task completed", status = "primary") {
     class = "progress-label",
     htmltools::tags$span(text)
   )
-  progressPercent <- htmltools::tags$div(class = "progress-percentage", paste0(value, "%"))
+  progressPercent <- htmltools::tags$div(class = "progress-percentage", htmltools::span(paste0(value, "%")))
   progressBar <- htmltools::tags$div(
     class = "progress",
     htmltools::tags$div(
@@ -33,7 +33,7 @@ argonProgress <- function(value, text = "Task completed", status = "primary") {
       `aria-valuenow` = value,
       `aria-valuemin` = "0",
       `aria-valuemax` = "100",
-      style= "width: 60%;"
+      style= paste0("width: ", value, "%;")
     )
   )
   

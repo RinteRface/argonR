@@ -2,6 +2,7 @@
 #'
 #' Build an argon column
 #'
+#' @param ... Any UI element.
 #' @param width Optional. Column width between 1 and 12.
 #' 
 #' @examples 
@@ -12,6 +13,6 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-argonColumn <- function(width = NULL) {
-  htmltools::tags$div(class = if(!is.null(width)) paste0("col-sm-", width) else "col-sm")
+argonColumn <- function(..., width = NULL) {
+  htmltools::tags$div(class = if(!is.null(width)) paste0("col-sm-", width) else "col-sm", ...)
 }

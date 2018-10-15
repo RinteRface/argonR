@@ -8,6 +8,7 @@
 #' @param horizontal Whether to display tabs horizontally. TRUE by default.
 #' @param circle Whether to display circled design. FALSE by default.
 #' @param size Tabs size. "sm" by default. "md", "lg".
+#' @param width Tabs width. Between 1 and 12.
 #' 
 #' @examples 
 #' if (interactive()) {
@@ -18,7 +19,7 @@
 #'
 #' @export
 argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle = FALSE,
-                      size = "sm") {
+                      size = "sm", width = 6) {
   
   tabCl <- "nav nav-pills nav-fill flex-column"
   if (horizontal) {
@@ -87,7 +88,7 @@ argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle
     tabContent
   }
   
-  htmltools::tagList(tabMenu, tabWrapper)
+  argonColumn(width = width, tabMenu, tabWrapper)
   
 }
 

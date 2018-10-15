@@ -5,7 +5,7 @@
 \title{Create a Boostrap 4 tabs}
 \usage{
 argonTabSet(..., id, card_wrapper = FALSE, horizontal = TRUE,
-  circle = FALSE, size = "sm")
+  circle = FALSE, size = "sm", width = 6)
 }
 \arguments{
 \item{...}{Slot for \link{argonTab}.}
@@ -19,6 +19,8 @@ argonTabSet(..., id, card_wrapper = FALSE, horizontal = TRUE,
 \item{circle}{Whether to display circled design. FALSE by default.}
 
 \item{size}{Tabs size. "sm" by default. "md", "lg".}
+
+\item{width}{Tabs width. Between 1 and 12.}
 }
 \description{
 Build an argon tabs

@@ -4,9 +4,11 @@
 \alias{argonColumn}
 \title{Create a Boostrap 4 column}
 \usage{
-argonColumn(width = NULL)
+argonColumn(..., width = NULL)
 }
 \arguments{
+\item{...}{Any UI element.}
+
 \item{width}{Optional. Column width between 1 and 12.}
 }
 \description{

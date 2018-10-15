@@ -17,6 +17,7 @@
 #' @param gradient Whether to apply a gradient effect on the card background. FALSE by default.
 #' @param floating Whether to animate the card by a vertical floating movement. FALSE by default.
 #' Not compatible with hover_lift.
+#' @param width Card width. Between 1 and 12.
 #' 
 #' @examples 
 #' if (interactive()) {
@@ -30,7 +31,7 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
                       shadow = FALSE, shadow_size = NULL, hover_shadow = FALSE, 
                       border_level = 0, icon = NULL, 
                       status = "primary", background_color = NULL, gradient = FALSE,
-                      floating = FALSE) {
+                      floating = FALSE, width = 6) {
   
   cardCl <- "card"
   # floating effect needs to be applied before shadow
@@ -58,18 +59,20 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
   }
   
   
-  iconCl <- "icon rounded-circle mb-4"
-  if (!is.null(icon)) iconCl <- paste0(iconCl, " icon-", icon)
+  iconCl <- "icon icon-shape rounded-circle mb-4"
   if (!is.null(status)) iconCl <- paste0(iconCl, " icon-shape-", status)
   
   
   
-  htmltools::tags$div(
+  cardTag <- htmltools::tags$div(
     class = cardCl,
     htmltools::tags$div(
       class = "card-body py-5",
       # icon
-      htmltools::tags$div(class = iconCl),
+      htmltools::tags$div(
+        class = iconCl,
+        argonIcon(name = icon, color = status)
+      ),
       # title
       htmltools::tags$h6(class = paste0("text-", status, " text-uppercase"), title),
       # content
@@ -83,4 +86,7 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
       )
     )
   )
+  
+  argonColumn(width = width, cardTag)
+  
 }
