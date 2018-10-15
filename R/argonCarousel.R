@@ -20,10 +20,8 @@ argonCarousel <- function(..., id, width = 6) {
   len <- length(carouselItems)
   found_active <- FALSE
   
-  # nav
-  carouselNav <- htmltools::tags$ol(
-    class = "carousel-indicators",
-    lapply(X = 1:len, FUN = function(i) {
+  # nav and navitems
+  carouselNavItems <- lapply(X = 1:len, FUN = function(i) {
       
       currentItem <- carouselItems[[i]]
       currentItemCl <- currentItem$attribs$class
@@ -42,7 +40,8 @@ argonCarousel <- function(..., id, width = 6) {
         class = if (active) "active" else NA
       )
     })
-  ) 
+  
+  carouselNav <- htmltools::tags$ol(class = "carousel-indicators", carouselNavItems)
   
   # main content
   carouselContent <- htmltools::tags$div(class = "carousel-inner", ...)
