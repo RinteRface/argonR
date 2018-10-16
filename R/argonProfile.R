@@ -44,8 +44,8 @@ argonProfile <- function(..., title = NULL, subtitle = NULL, src = NULL, url = N
           class = "col-lg-4 order-lg-3 text-lg-right align-self-lg-center",
           htmltools::tags$div(
             class = "card-profile-actions py-4 mt-lg-0",
-            htmltools::a(href = url_1, class = "btn btn-sm btn-info mr-4", "Link 1"),
-            htmltools::a(href = url_2, class = "btn btn-sm btn-default float-right", "Link 2")
+            htmltools::a(href = url_1, target = "_blank", class = "btn btn-sm btn-info mr-4", "Link 1"),
+            htmltools::a(href = url_2, target = "_blank", class = "btn btn-sm btn-default float-right", "Link 2")
           )
         ),
         # stat items
@@ -67,7 +67,7 @@ argonProfile <- function(..., title = NULL, subtitle = NULL, src = NULL, url = N
           htmltools::tags$div(
             class = "col-lg-9",
             htmltools::p(...),
-            htmltools::a(href = url, "More")
+            htmltools::a(href = url, target = "_blank", "More")
           )
         )
       )

@@ -58,7 +58,7 @@ argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle
         htmltools::tags$li(
           class = "nav-item",
           htmltools::a(
-            class = if (active) "nav-link mb-sm-3 mb-md-0 active" else "nav-link mb-sm-3 mb-md-0",
+            class = if (active) "nav-link mb-sm-3 mb-md-3 active" else "nav-link mb-sm-3 mb-md-3",
             id = current_item_label,
             `data-toggle` = "tab",
             href = paste0("#", current_item_name), 

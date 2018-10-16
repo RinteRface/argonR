@@ -33,7 +33,8 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
                       status = "primary", background_color = NULL, gradient = FALSE,
                       floating = FALSE, width = 6) {
   
-  cardCl <- "card"
+  # set vertical space between card to 3 (cf BS4 spacing rules)
+  cardCl <- "card my-3"
   # floating effect needs to be applied before shadow
   if (floating) {
     if (!hover_lift) cardCl <- paste0(cardCl, " floating")
@@ -66,24 +67,41 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
   
   cardTag <- htmltools::tags$div(
     class = cardCl,
-    htmltools::tags$div(
-      class = "card-body py-5",
-      # icon
+    # header
+    if (!is.null(title)) {
       htmltools::tags$div(
-        class = iconCl,
-        argonIcon(name = icon, color = status)
-      ),
-      # title
-      htmltools::tags$h6(class = paste0("text-", status, " text-uppercase"), title),
-      # content
-      htmltools::tags$p(class = "description mt-3", ...),
-      # external button
-      htmltools::a(
-        class = paste0("btn btn-", status, " mt-4"), 
-        href = src, 
-        target = "_blank", 
-        "More"
+        class = "card-header",
+        htmltools::tags$div(
+          class = "row align-items-center",
+          # icon
+          if(!is.null(icon)) {
+            argonIconWrapper(
+              iconTag = argonIcon(name = icon, color = status),
+              circle = TRUE,
+              size = "sm",
+              shadow = TRUE,
+              status = status,
+              hover_shadow = FALSE
+            )
+          },
+          # title
+          htmltools::tags$h6(class = paste0("text-", status, " text-uppercase my-0 mx-1"), title)
+        )
       )
+    },
+    htmltools::tags$div(
+      class = "card-body",
+      # content
+      htmltools::tags$p(class = "description", ...),
+      # external button
+      if (!is.null(src)) {
+        htmltools::a(
+          class = paste0("btn btn-", status, " mt-4"), 
+          href = src, 
+          target = "_blank", 
+          "More"
+        )
+      }
     )
   )
   

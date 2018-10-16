@@ -19,3 +19,32 @@
 argonPersp <- function(..., side) {
   htmltools::tags$div(class = paste0("transform-perspective-", side), ...)
 }
+
+
+
+
+# #' Create a Boostrap 4 blur effect
+# #'
+# #' Build an argon blur effect
+# #'
+# #' @param ... Tag to be treated by the blur effect.
+# #' 
+# #' @examples 
+# #' if (interactive()) {
+# #'  library(argonR)
+# #'
+# #' }
+# #' 
+# #' @author David Granjon, \email{dgranjon@@ymail.com}
+# #'
+# #' @export
+# argonBlur <- function(...) {
+#   htmltools::tags$div(
+#     class = "blur--hover",
+#     htmltools::tags$div(
+#       class = "blur-item mt-5 on-screen",
+#       `data-toggle` = "on-screen",
+#       ...
+#     )
+#   )
+# }
