@@ -23,10 +23,12 @@ argonSection(..., size = NULL, status = "default", gradient = FALSE,
 \description{
 Build an argon section container
 }
+\note{
+Do not use with the argonDash package. Only for argonR.
+}
 \examples{
 if (interactive()) {
 }
-
 
 }
 \author{

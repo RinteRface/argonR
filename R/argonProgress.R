@@ -20,10 +20,12 @@ argonProgress <- function(value, text = "Task completed", status = "primary") {
   
   progressWrapper <- htmltools::tags$div(class = "progress-wrapper")
   progressTag <- htmltools::tags$div(class = "progress-info")
-  progressLabel <- htmltools::tags$div(
-    class = "progress-label",
-    htmltools::tags$span(text)
-  )
+  progressLabel <- if (!is.null(text)) {
+    htmltools::tags$div(
+      class = "progress-label",
+      htmltools::tags$span(text)
+    )
+  }
   progressPercent <- htmltools::tags$div(class = "progress-percentage", htmltools::span(paste0(value, "%")))
   progressBar <- htmltools::tags$div(
     class = "progress",

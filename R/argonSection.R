@@ -13,6 +13,7 @@
 #' if (interactive()) {
 #' }
 #' 
+#' @note Do not use with the argonDash package. Only for argonR.
 #' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
