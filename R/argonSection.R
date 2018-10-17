@@ -8,6 +8,7 @@
 #' @param gradient Section gradient effect. FALSE by default.
 #' @param separator Section bottom separator. FALSE by default.
 #' @param separator_color Separator color. "secondary" by default.
+#' @param shape Whether to include shape in the background. FALSE by default.
 #' 
 #' @examples 
 #' if (interactive()) {
@@ -19,20 +20,39 @@
 #'
 #' @export
 argonSection <- function(..., size = NULL, status = "default", gradient = FALSE, 
-                         separator = FALSE, separator_color = "secondary") {
+                         separator = FALSE, separator_color = "secondary", shape = FALSE) {
   
   sectionCl <- "section"
   if (!is.null(size)) sectionCl <- paste0(sectionCl, " section-", size)
   if (gradient) {
     if (!is.null(status)) sectionCl <- paste0(sectionCl, " bg-gradient-", status)
   } else {
-    sectionCl <- paste0(sectionCl, " bg-", status)
+    sectionCl <- sectionCl <- paste0(sectionCl, " bg-", status)
   }
+  if (shape) sectionCl <- paste0(sectionCl, " section-shaped pb-250")
   
   htmltools::tags$section(
     class = sectionCl,
+    if (shape) {
+      htmltools::HTML(
+        paste0(
+          '<div class="shape shape-style-1 shape-default">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          </div>
+          '
+        )
+      )
+    }, 
     htmltools::tags$div(
-      class = "container",
+      class = if (shape) "container py-lg-md d-flex" else "container",
       ...
     ),
     if (separator) {

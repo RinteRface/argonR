@@ -5,7 +5,7 @@
 \title{Create a Boostrap 4 section container}
 \usage{
 argonSection(..., size = NULL, status = "default", gradient = FALSE,
-  separator = FALSE, separator_color = "secondary")
+  separator = FALSE, separator_color = "secondary", shape = FALSE)
 }
 \arguments{
 \item{...}{Any UI element.}
@@ -19,6 +19,8 @@ argonSection(..., size = NULL, status = "default", gradient = FALSE,
 \item{separator}{Section bottom separator. FALSE by default.}
 
 \item{separator_color}{Separator color. "secondary" by default.}
+
+\item{shape}{Whether to include shape in the background. FALSE by default.}
 }
 \description{
 Build an argon section container

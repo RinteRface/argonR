@@ -138,7 +138,7 @@ argonNavItem <- function(name = NULL, src = NULL, icon = NULL, tooltip = NULL) {
       `data-toggle` = "tooltip",
       title = "",
       `data-original-title` = tooltip,
-      argonIcon(icon),
+      htmltools::tags$i(class = paste0("fa fa-", icon)),
       htmltools::tags$span(class = "nav-link-inner--text d-lg-none", name)
     )
   )
