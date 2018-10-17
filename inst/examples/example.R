@@ -95,5 +95,11 @@ argonPage(
     )
   ),
   # main content
-  
+  argonSection(
+    size = "lg",
+    status = "primary",
+    gradient = TRUE,
+    separator = TRUE,
+    shape = TRUE
+  )
 )
