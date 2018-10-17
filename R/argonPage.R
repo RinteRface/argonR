@@ -29,9 +29,9 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
           name = "viewport",
           content = "width=device-width, initial-scale=1, shrink-to-fit=no"
         ),
-        htmltools::tags$meta(name = "description", content = "description"),
-        htmltools::tags$meta(name = "author", content = "author"),
-        htmltools::tags$title("title"),
+        htmltools::tags$meta(name = "description", content = description),
+        htmltools::tags$meta(name = "author", content = author),
+        htmltools::tags$title(title),
         
         # web dependencies CSS
         htmltools::tags$link(href = "inst/assets/img/brand/favicon.png", rel = "icon", type = "image/png"),
@@ -70,6 +70,7 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
 #' Create an HTML version of the argonPage
 #'
 #' @param filename HTML filename for instance, index.html.
+#' @param path Where to store the saved file. By default, getwd().
 #' @param argonPage Slot for \link{argonPage}.
 #'
 #' @examples
@@ -80,13 +81,13 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-argonPageTemplate <- function(filename = "index.html", argonPage) {
+argonPageTemplate <- function(filename = "index.html", path = getwd(), argonPage) {
   # add DOCTYPE html before the page
   argonPage <- paste0("<!DOCTYPE html>", as.character(argonPage), collapse = "\n")
-  file.create(paste0(filename, ".html"))
+  file.create(paste0(path, "/", filename, ".html"))
   utils::write.table(
     argonPage,
-    file = paste0(filename, ".html"),
+    file = paste0(path, "/", filename, ".html"),
     quote = FALSE,
     col.names = FALSE,
     row.names = FALSE

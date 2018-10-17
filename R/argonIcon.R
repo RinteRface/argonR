@@ -32,6 +32,7 @@ argonIcon <- function(name, color = NULL) {
 #' @param circle Wrapper's shape. TRUE by default. 
 #' @param size Wrapper size. "sm", "md" or "lg".
 #' @param status Wrapper color. 
+#' @param gradient_color icon gradient background color.
 #' @param shadow Whether to apply a shadow effet. TRUE by default.
 #' @param hover_shadow Only if shadow is TRUE. Whether to enlarge the shadow on hover. FALSE by default.
 #' 
@@ -44,10 +45,14 @@ argonIcon <- function(name, color = NULL) {
 #'
 #' @export
 argonIconWrapper <- function(iconTag, circle = TRUE, size = NULL, status = "default", 
-                             shadow = TRUE, hover_shadow = FALSE) {
+                             gradient_color = NULL, shadow = TRUE, hover_shadow = FALSE) {
   
   wrapperCl <- "icon icon-shape"
   if (circle) wrapperCl <- paste0(wrapperCl, " rounded-circle")
+  if (!is.null(gradient_color)) {
+    wrapperCl <- paste0(wrapperCl, " bg-gradient-", gradient_color)
+    status <- NULL
+  }
   if (!is.null(status)) wrapperCl <- paste0(wrapperCl, " icon-shape-", status)
   if (!is.null(size)) wrapperCl <- paste0(wrapperCl, " icon-", size)
   if (shadow) {

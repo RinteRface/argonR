@@ -4,10 +4,12 @@
 \alias{argonPageTemplate}
 \title{Create an HTML version of the argonPage}
 \usage{
-argonPageTemplate(filename = "index.html", argonPage)
+argonPageTemplate(filename = "index.html", path = getwd(), argonPage)
 }
 \arguments{
 \item{filename}{HTML filename for instance, index.html.}
+
+\item{path}{Where to store the saved file. By default, getwd().}
 
 \item{argonPage}{Slot for \link{argonPage}.}
 }

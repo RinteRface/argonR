@@ -5,7 +5,8 @@
 \title{Create a Nucleo icon wrapper}
 \usage{
 argonIconWrapper(iconTag, circle = TRUE, size = NULL,
-  status = "default", shadow = TRUE, hover_shadow = FALSE)
+  status = "default", gradient_color = NULL, shadow = TRUE,
+  hover_shadow = FALSE)
 }
 \arguments{
 \item{iconTag}{Slot for \link{argonIcon}}
@@ -15,6 +16,8 @@ argonIconWrapper(iconTag, circle = TRUE, size = NULL,
 \item{size}{Wrapper size. "sm", "md" or "lg".}
 
 \item{status}{Wrapper color.}
+
+\item{gradient_color}{icon gradient background color.}
 
 \item{shadow}{Whether to apply a shadow effet. TRUE by default.}
 

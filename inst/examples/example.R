@@ -1,10 +1,10 @@
-argonPage(
+example <- argonPage(
   title = "Argon Static Template",
   author =  "Divad Nojnarg",
   description = "Static Template",
   navbar = argonNavbar(
     id = "main-navbar",
-    src = "#",
+    src = "https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png",
     # left menu
     argonNavMenu(
       argonDropdown(
@@ -13,9 +13,9 @@ argonPage(
         argonDropdownItem(
           name = "Getting Started",
           description = "Learn how to use Argon compiling Scss, change brand colors and more.",
-          src = "",
+          src = "test.html",
           icon = "spaceship",
-          status = "danger"
+          status = "primary"
         ),
         argonDropdownItem(
           name = "Foundation",
@@ -45,7 +45,7 @@ argonPage(
       argonNavItem(
         name = "instagram",
         src = "https://www.instagram.com",
-        icon = "facebook-square",
+        icon = "instagram",
         tooltip = "Follow us on Instagram"
       ),
       argonNavItem(
@@ -63,43 +63,126 @@ argonPage(
     )
   ),
   footer = argonFooter(
-    has_card = TRUE,
-    argonRow(
-      argonColumn(
-        width = 6,
-        argonPersp(
-          side = "right",
-          argonImage(
-            url = "https://www.google.com",
-            src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/promo-1.png",
-            floating = TRUE,
-            card_mode = TRUE,
-            hover_lift = FALSE
-          )
-        )
-      ),
-      argonColumn(
-        width = 6,
-        argonCarousel(
-          id = "carousel1",
-          argonCarouselItem(
-            src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-1-1200x1000.jpg",
-            active = TRUE
+    has_card = FALSE,
+    argonContainer(
+      size = "lg",
+      argonRow(
+        argonColumn(
+          width = 6,
+          argonIconWrapper(
+            iconTag = argonIcon("atom"),
+            size = "lg",
+            status = "success",
+            shadow = TRUE,
+            hover_shadow = TRUE
           ),
-          argonCarouselItem(
-            src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-2-1200x1000.jpg",
-            active = FALSE
+          argonH1(
+            display = 3,
+            "Insert anything in the footer"
+          ),
+          argonLead(
+            "The Arctic Ocean freezes every winter and much of 
+            the sea-ice then thaws every summer, and that process 
+            will continue whatever"
           )
-        ) %>% argonPersp(side = "left")
+        ),
+        argonColumn(
+          width = 6,
+          argonCarousel(
+            id = "carousel1",
+            argonCarouselItem(
+              src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-1-1200x1000.jpg",
+              active = TRUE
+            ),
+            argonCarouselItem(
+              src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-2-1200x1000.jpg",
+              active = FALSE
+            )
+          ) %>% argonPersp(side = "right")
+        )
       )
     )
-  ),
+  ) %>% argonMargin(orientation = "t", value = 20),
   # main content
   argonSection(
     size = "lg",
-    status = "primary",
+    status = "default",
     gradient = TRUE,
     separator = TRUE,
-    shape = TRUE
-  )
+    separator_color = "white",
+    shape = TRUE,
+    argonColumn(
+      argonRow(
+        argonColumn(
+          width = 6,
+          argonH1(
+            display = 3, 
+            "A beautiful Design System", 
+            htmltools::span("completed with examples")
+          ) %>% argonTextColor(color = "white"),
+          argonLead(
+            "The design system comes with four pre-built 
+             pages to help you get started faster. You 
+             can change the text and images and you are good to go."
+          ) %>% argonTextColor(color = "white")
+        )
+      )
+    ) %>% argonPadding(orientation = "x", value = 0)
+  ),
+  argonSection(
+    size = "lg",
+    status = NULL,
+    gradient = FALSE,
+    separator = FALSE,
+    separator_color = NULL,
+    shape = FALSE,
+    argonRow(
+      argonColumn(
+        width = 4,
+        argonCard(
+          status = "primary",
+          width = 12,
+          title = "Card 1",
+          hover_lift = TRUE,
+          shadow = TRUE,
+          icon = "check-bold",
+          src = "#",
+          "Argon is a great free UI package based on Bootstrap 4 
+          that includes the most important components and features"
+        )
+      ),
+      argonColumn(
+        width = 4,
+        argonCard(
+          status = "success",
+          width = 12,
+          title = "Card 2",
+          hover_lift = TRUE,
+          shadow = TRUE,
+          icon = "istanbul",
+          src = "#",
+          "Argon is a great free UI package based on Bootstrap 4 
+          that includes the most important components and features"
+        )
+      ),
+      argonColumn(
+        width = 4,
+        argonCard(
+          status = "warning",
+          width = 12,
+          title = "Card 3",
+          hover_lift = TRUE,
+          shadow = TRUE,
+          icon = "planet",
+          src = "#",
+          "Argon is a great free UI package based on Bootstrap 4 
+          that includes the most important components and features"
+        )
+      )
+    )
+  ) %>% argonMargin(orientation = "t", value = -200)
+  %>% argonPadding(orientation = "t", value = 0)
 )
+
+
+argonPageTemplate(filename = "example", path = "/Users/macdavidgranjon/Desktop/", example)

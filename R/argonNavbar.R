@@ -213,7 +213,8 @@ argonDropdownItem <- function(name = NULL, description = NULL, src = NULL,
     # icon if any
     if (!is.null(icon)) {
       argonIconWrapper(
-        iconTag = icon,
+        iconTag = argonIcon(icon, color = "white"),
+        gradient_color = status,
         circle = TRUE,
         size = NULL,
         status = status,
@@ -223,7 +224,7 @@ argonDropdownItem <- function(name = NULL, description = NULL, src = NULL,
     },
     htmltools::tags$div(
       class = "media-body ml-3",
-      htmltools::tags$h6(class = "heading text-primary mb-md-1", name),
+      htmltools::tags$h6(class = paste0("heading text-", status, " mb-md-1"), name),
       htmltools::tags$p(class = "description d-none d-md-inline-block mb-0", description)
     )
   )

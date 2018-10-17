@@ -120,7 +120,7 @@ argonQuote <- function(..., footer = NULL, source = NULL, align = "center") {
 #'
 #' @export
 argonTextColor <- function(tag, color) {
-  tag$attribs$class <- paste0("text-", color)
+  tag$attribs$class <- paste0(tag$attribs$class, " text-", color)
   return(tag)
 }
 
@@ -147,7 +147,7 @@ argonTextColor <- function(tag, color) {
 #'
 #' @export
 argonMargin <- function(tag, orientation, value) {
-  tag$attribs$class <- paste0("m", orientation, "-", value)
+  tag$attribs$class <- paste0(tag$attribs$class, " m", orientation, "-", value)
   return(tag)
 }
 
@@ -173,6 +173,32 @@ argonMargin <- function(tag, orientation, value) {
 #'
 #' @export
 argonPadding <- function(tag, orientation, value) {
-  paddingCl <- paste0("p", orientation, "-", value)
-  htmltools::tags$div(class = paddingCl, tag)
+  tag$attribs$class <- paste0(tag$attribs$class, " p", orientation, "-", value)
+  return(tag)
+}
+
+
+
+#' Create a boostrap 4 container 
+#'
+#'
+#' @param ... Tag to be embedded.
+#' @param size Container size. NULL or "lg".
+#' 
+#' @examples 
+#' if (interactive()) {
+#'  library(argonR)
+#' 
+#' }
+#' 
+#' @note Disabled on small screens (not a bug)
+#' 
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+argonContainer <- function(..., size = NULL) {
+  
+  containerCl <- "container"
+  if (!is.null(size)) containerCl <- paste0(containerCl, " container-", size)
+  htmltools::tags$div(class = containerCl, ...)
 }

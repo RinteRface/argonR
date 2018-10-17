@@ -22,32 +22,37 @@
 argonSection <- function(..., size = NULL, status = "default", gradient = FALSE, 
                          separator = FALSE, separator_color = "secondary", shape = FALSE) {
   
+  if (shape) {
+    if (status != "default" || status != "primary") status <- "default"
+  } 
+  
   sectionCl <- "section"
   if (!is.null(size)) sectionCl <- paste0(sectionCl, " section-", size)
   if (gradient) {
-    if (!is.null(status)) sectionCl <- paste0(sectionCl, " bg-gradient-", status)
+    if (!is.null(status) && !shape) sectionCl <- paste0(sectionCl, " bg-gradient-", status)
   } else {
-    sectionCl <- sectionCl <- paste0(sectionCl, " bg-", status)
+    if (!shape && !is.null(status)) sectionCl <- sectionCl <- paste0(sectionCl, " bg-", status)
   }
   if (shape) sectionCl <- paste0(sectionCl, " section-shaped pb-250")
   
   htmltools::tags$section(
     class = sectionCl,
     if (shape) {
-      htmltools::HTML(
-        paste0(
-          '<div class="shape shape-style-1 shape-default">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          </div>
-          '
+      htmltools::tags$div(
+        class = paste0("shape shape-style-1 shape-", status),
+        htmltools::HTML(
+          paste0(
+            '<span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            '
+          )
         )
       )
     }, 
