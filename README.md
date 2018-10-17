@@ -14,6 +14,9 @@ See [here](https://github.com/RinteRface/argonDash) for more details.
 Below is an example of a very basic HTML page:
 
 ```r
+library(argonR)
+library(htmltools)
+library(magrittr)
 example <- argonPage(
   title = "Argon Static Template",
   author =  "Divad Nojnarg",
