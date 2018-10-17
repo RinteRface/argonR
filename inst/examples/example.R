@@ -1,3 +1,6 @@
+# This examples show how to create a simple static html page using aronR
+
+
 example <- argonPage(
   title = "Argon Static Template",
   author =  "Divad Nojnarg",
