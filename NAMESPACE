@@ -2,6 +2,7 @@
 
 export(argonAlert)
 export(argonBadge)
+export(argonButton)
 export(argonCard)
 export(argonCarousel)
 export(argonCarouselItem)

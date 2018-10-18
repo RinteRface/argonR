@@ -22,7 +22,7 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
   
   htmltools::tags$html(
     # head: need to use takeHeads from htmltools to extract all head elements
-    htmltools:::takeHeads(
+    takeHeads(
       htmltools::tags$head(
         htmltools::tags$meta(charset = "utf-8"),
         htmltools::tags$meta(
