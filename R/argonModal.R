@@ -19,7 +19,7 @@
 argonModal <- function(..., id, title = NULL, status = NULL, gradient = FALSE) {
   
   modalCl <- "modal-dialog modal-dialog-centered"
-  if (status) modalCl <- paste0(modalCl, " modal-", status)
+  if (!is.null(status)) modalCl <- paste0(modalCl, " modal-", status)
     
   contentCl <- "modal-content"
   if (gradient) {

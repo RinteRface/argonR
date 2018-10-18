@@ -202,3 +202,15 @@ argonContainer <- function(..., size = NULL) {
   if (!is.null(size)) containerCl <- paste0(containerCl, " container-", size)
   htmltools::tags$div(class = containerCl, ...)
 }
+
+
+
+
+argonTooltip <- function(tag, position, title = NULL) {
+  len_attr <- length(tag$attribs)
+  #tag$attribs[[len_attr + 1]] <- '`data-toggle` = "tooltip"'
+  #tag$attribs[[len_attr + 2]] <- paste0('`data-placement` = ', position)
+  #tag$attribs[[len_attr + 3]] <- paste0('title = ', title)
+  #tag
+  len_attr
+}
