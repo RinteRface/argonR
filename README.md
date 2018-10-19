@@ -14,13 +14,31 @@ See [here](https://github.com/RinteRface/argonDash) for more details.
 Below is an example of a very basic HTML page:
 
 ```r
+# This examples show how to create a simple static html page using aronR
 library(argonR)
 library(htmltools)
 library(magrittr)
+
+tabText1 <- "Raw denim you probably haven't heard of them jean shorts Austin. 
+            Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache 
+cliche tempor, williamsburg carles vegan helvetica. Reprehenderit 
+butcher retro keffiyeh dreamcatcher synth. Raw denim you probably 
+haven't heard of them jean shorts Austin. Nesciunt tofu stumptown 
+aliqua, retro synth master cleanse"
+
+tabText2 <- "Cosby sweater eu banh mi, qui irure terry richardson ex squid. 
+Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan 
+american apparel, butcher voluptate nisi qui."
+
+tabText3 <- "Raw denim you probably haven't heard of them jean shorts Austin. 
+Nesciunt tofu stumptown aliqua, retro synth master cleanse. 
+Mustache cliche tempor, williamsburg carles vegan helvetica. 
+Reprehenderit butcher retro keffiyeh dreamcatcher synth"
+
 example <- argonPage(
-  title = "Argon Static Template",
+  title = "ArgonR Static Template",
   author =  "Divad Nojnarg",
-  description = "Static Template",
+  description = "HTML Static Template",
   navbar = argonNavbar(
     id = "main-navbar",
     src = "https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png",
@@ -31,21 +49,21 @@ example <- argonPage(
         size = "lg",
         argonDropdownItem(
           name = "Getting Started",
-          description = "Learn how to use Argon compiling Scss, change brand colors and more.",
+          description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
           src = "test.html",
           icon = "spaceship",
           status = "primary"
         ),
         argonDropdownItem(
           name = "Foundation",
-          description = "Learn more about colors, typography, icons and the grid system we used for Argon.",
+          description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
           src = "",
           icon = "palette",
           status = "warning"
         ),
         argonDropdownItem(
           name = "Components",
-          description = "Browse our 50 beautiful handcrafted components offered in the Free version.",
+          description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
           src = "",
           icon = "ui-04",
           status = "success"
@@ -83,6 +101,8 @@ example <- argonPage(
   ),
   footer = argonFooter(
     has_card = FALSE,
+    #status = "info",
+    #gradient = TRUE,
     argonContainer(
       size = "lg",
       argonRow(
@@ -108,7 +128,7 @@ example <- argonPage(
         argonColumn(
           width = 6,
           argonCarousel(
-            id = "carousel1",
+            id = "carousel2",
             argonCarouselItem(
               src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-1-1200x1000.jpg",
               active = TRUE
@@ -136,14 +156,21 @@ example <- argonPage(
           width = 6,
           argonH1(
             display = 3, 
-            "A beautiful Design System", 
+            "ArgonR, HTML static template for R", 
             htmltools::span("completed with examples")
           ) %>% argonTextColor(color = "white"),
           argonLead(
-            "The design system comes with four pre-built 
-             pages to help you get started faster. You 
-             can change the text and images and you are good to go."
+            "Argon is a great free UI package based on Bootstrap 
+            4 that includes the most important components and features"
           ) %>% argonTextColor(color = "white")
+        ),
+        argonColumn(
+          width = 6,
+          argonImage(
+            src = "inst/images/imac.svg",
+            floating = TRUE
+          ) %>% argonPersp(side = "right")
+          %>% argonBlur()
         )
       )
     ) %>% argonPadding(orientation = "x", value = 0)
@@ -167,7 +194,7 @@ example <- argonPage(
           icon = "check-bold",
           src = "#",
           "Argon is a great free UI package based on Bootstrap 4 
-          that includes the most important components and features"
+          that includes the most important components and features."
         )
       ),
       argonColumn(
@@ -198,13 +225,291 @@ example <- argonPage(
           that includes the most important components and features"
         )
       )
+    ),
+    
+    # badges
+    argonH1(display = 3, "ArgonR elements") %>% argonPadding(orientation = "t", value = 5),
+    argonLead("Badges") %>% argonMuted(),
+    argonRow(
+      argonColumn(
+        width = 3,
+        argonBadge(
+          text = "My badge",
+          src = "https://www.google.com",
+          pill = TRUE,
+          status = "danger"
+        )
+      ),
+      argonColumn(
+        width = 3,
+        argonBadge(
+          text = "My badge",
+          src = "https://www.google.com",
+          pill = TRUE,
+          status = "primary"
+        )
+      ),
+      argonColumn(
+        width = 3,
+        argonBadge(
+          text = "My badge",
+          pill = TRUE,
+          status = "warning"
+        )
+      ),
+      argonColumn(
+        width = 3,
+        argonBadge(
+          text = "My badge",
+          src = "https://www.google.com",
+          pill = FALSE,
+          status = "success"
+        )
+      )
+    ),
+    
+    # progress
+    argonLead("Progress") %>% argonMuted(),
+    argonRow(
+      argonColumn(
+        width = 4,
+        argonProgress(value = 10, status = "danger", text = "Custom Text")
+      ),
+      argonColumn(
+        width = 4,
+        argonProgress(value = 40, status = "info", text = NULL)
+      ),
+      argonColumn(
+        width = 4,
+        argonProgress(value = 90, status = "warning", text = argonIcon("atom"))
+      )
+    ),
+    
+    # alerts
+    argonLead("Alerts") %>% argonMuted(),
+    argonRow(
+      argonColumn(
+        width = 4,
+        argonAlert(
+          icon = "basket",
+          status = "danger",
+          "This is an alert",
+          closable = TRUE
+        )
+      ),
+      argonColumn(
+        width = 4,
+        argonAlert(
+          icon = "ui-02",
+          status = "success",
+          "This is an alert",
+          closable = TRUE
+        )
+      ),
+      argonColumn(
+        width = 4,
+        argonAlert(
+          icon = "ui-03",
+          status = "info",
+          "This is an alert",
+          closable = TRUE
+        )
+      )
+    ),
+    
+    # tabs
+    argonLead("Tabs") %>% argonMuted(),
+    argonRow(
+      argonTabSet(
+        id = "tab-1",
+        card_wrapper = TRUE,
+        horizontal = TRUE,
+        circle = FALSE,
+        size = "sm",
+        width = 6,
+        argonTab(
+          tabName = "Tab 1",
+          active = FALSE,
+          tabText1
+        ),
+        argonTab(
+          tabName = "Tab 2",
+          active = TRUE,
+          tabText2
+        ),
+        argonTab(
+          tabName = "Tab 3",
+          active = FALSE,
+          tabText3
+        )
+      ),
+      argonTabSet(
+        id = "tab-2",
+        card_wrapper = TRUE,
+        horizontal = FALSE,
+        circle = TRUE,
+        size = "sm",
+        argonTab(
+          tabName = "Tab 4",
+          active = FALSE,
+          tabText1
+        ),
+        argonTab(
+          tabName = "Tab 5",
+          active = TRUE,
+          tabText2
+        ),
+        argonTab(
+          tabName = "Tab 6",
+          active = FALSE,
+          tabText3
+        )
+      )
     )
   ) %>% argonMargin(orientation = "t", value = -200)
-  %>% argonPadding(orientation = "t", value = 0)
+  %>% argonPadding(orientation = "t", value = 0),
+  argonSection(
+    size = "lg",
+    status = "warning",
+    gradient = TRUE,
+    separator = TRUE,
+    separator_color = "white",
+    shape = FALSE,
+    argonContainer(
+      size = "lg",
+      argonRow(
+        argonColumn(
+          width = 6,
+          argonH1(
+            display = 3, 
+            "Load modals", 
+            htmltools::span("by clicking on buttons")
+          ) %>% argonTextColor(color = "white"),
+          argonButton(
+            name = "Click me!",
+            status = "danger",
+            icon = "atom",
+            size = "lg",
+            toggle_modal = TRUE,
+            modal_id = "modal1"
+          )
+        ),
+        argonColumn(
+          width = 6,
+          argonModal(
+            id = "modal1",
+            title = "This is a modal",
+            status = "danger",
+            gradient = TRUE,
+            "YOU SHOULD READ THIS!",
+            br(),
+            "A small river named Duden flows by their place and supplies it with the necessary regelialia."
+          ),
+          argonImage(
+            floating = TRUE,
+            src = "https://demos.creative-tim.com/argon-design-system/assets/img/ill/ill-2.svg",
+            hover_lift = TRUE
+          ) %>% argonTooltip(position = "right", title = "I am a nice floating image") 
+          %>% argonBlur(text = "Hi There!", text_color = "white")
+        )
+      ) %>% argonPadding(orientation = "y", value = 5),
+      argonPagination(
+        size = "lg",
+        align = "center",
+        argonPaginationItem(
+          name = 1,
+          src = "test.html"
+        ),
+        argonPaginationItem(
+          name = 2,
+          src = "https://www.google.com"
+        )
+      )
+    )
+  ),
+  argonSection(
+    size = "lg",
+    status = "white",
+    argonRow(
+      argonIconWrapper(
+        iconTag = argonIcon("atom"),
+        size = "lg",
+        status = "danger",
+        shadow = TRUE,
+        hover_shadow = TRUE
+      ),
+      argonH1(display = 3, "ArgonR social") %>% argonPadding(orientation = "l", value = 5)
+    ),
+    argonRow(
+      argonColumn(
+        width = 3,
+        argonUser(
+          title = "Ryan Tompson",
+          subtitle = "Web Developer",
+          src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-1-800x800.jpg"
+        ) %>% argonBlur(text = "Ryan Tompson", text_color = "default")
+      ),
+      argonColumn(
+        width = 3,
+        argonUser(
+          title = "Romina Hadid",
+          subtitle = "Marketing Strategist",
+          src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-2-800x800.jpg"
+        ) %>% argonBlur(text = "Romina Hadid", text_color = "default")
+      ),
+      argonColumn(
+        width = 3,
+        argonUser(
+          title = "Alexander Smith",
+          subtitle = "UI/UX Designer",
+          src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-3-800x800.jpg"
+        ) %>% argonBlur(text = "Alexander Smith", text_color = "default")
+      ),
+      argonColumn(
+        width = 3,
+        argonUser(
+          title = "John Doe",
+          subtitle = "Founder and CEO",
+          src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-4-800x800.jpg"
+        ) %>% argonBlur(text = "John Doe", text_color = "default")
+      )
+    )#,
+    # br(), br(),
+    # argonContainer(
+    #   argonProfile(
+    #     title = "John",
+    #     subtitle = "Japan, Kagoshima",
+    #     src = "https://image.flaticon.com/icons/svg/1006/1006540.svg",
+    #     url = "https://www.google.com",
+    #     url_1 = "https://www.google.com",
+    #     url_2 = "https://www.google.com",
+    #     stats = argonProfileStats(
+    #       argonProfileStat(
+    #         value = 22,
+    #         description = "Friends"
+    #       ),
+    #       argonProfileStat(
+    #         value = 10,
+    #         description = "Photos"
+    #       ),
+    #       argonProfileStat(
+    #         value = 89,
+    #         description = "Comments"
+    #       )
+    #     ),
+    #     "An artist of considerable range, Ryan — 
+    #     the name taken by Melbourne-raised, 
+    #     Brooklyn-based Nick Murphy — writes, 
+    #     performs and records all of his own music, 
+    #     giving it a warm, intimate feel with a solid 
+    #     groove structure. An artist of considerable 
+    #     range."
+    #   )
+    # )
+  )
 )
 
-
-argonPageTemplate(filename = "example", path = getwd(), example)
+argonPageTemplate(filename = "example", path = "/Users/macdavidgranjon/Desktop/", example)
 ```
 
 While the first part is responsible for creating the page skeleton, 

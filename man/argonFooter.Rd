@@ -4,12 +4,16 @@
 \alias{argonFooter}
 \title{Create a Boostrap 4 argon footer}
 \usage{
-argonFooter(..., has_card = FALSE)
+argonFooter(..., has_card = FALSE, status = NULL, gradient = FALSE)
 }
 \arguments{
 \item{...}{Footer content.}
 
 \item{has_card}{Enable card rendering in the footer. FALSE by default.}
+
+\item{status}{Footer status color.}
+
+\item{gradient}{Whether to apply a gradient. FALSE by default.}
 }
 \description{
 Build an argon footer
