@@ -4,9 +4,9 @@ library(htmltools)
 library(magrittr)
 
 example <- argonPage(
-  title = "Argon Static Template",
+  title = "ArgonR Static Template",
   author =  "Divad Nojnarg",
-  description = "Static Template",
+  description = "HTML Static Template",
   navbar = argonNavbar(
     id = "main-navbar",
     src = "https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png",
@@ -122,7 +122,7 @@ example <- argonPage(
           width = 6,
           argonH1(
             display = 3, 
-            "A beautiful Design System", 
+            "ArgonR, HTML static template for R", 
             htmltools::span("completed with examples")
           ) %>% argonTextColor(color = "white"),
           argonLead(
@@ -153,7 +153,7 @@ example <- argonPage(
           icon = "check-bold",
           src = "#",
           "Argon is a great free UI package based on Bootstrap 4 
-          that includes the most important components and features"
+          that includes the most important components and features."
         )
       ),
       argonColumn(
@@ -211,7 +211,7 @@ example <- argonPage(
             size = "lg",
             toggle_modal = TRUE,
             modal_id = "modal1"
-          ) 
+          )
         ),
         argonColumn(
           width = 6,
@@ -228,7 +228,8 @@ example <- argonPage(
             floating = TRUE,
             src = "https://demos.creative-tim.com/argon-design-system/assets/img/ill/ill-2.svg",
             hover_lift = TRUE
-          ) %>% argonTooltip(position = "right", title = "I am a nice floating image")
+          ) %>% argonTooltip(position = "right", title = "I am a nice floating image") 
+          %>% argonBlur(text = "Hi There!", text_color = "white")
         )
       ) %>% argonPadding(orientation = "y", value = 5),
       argonPagination(

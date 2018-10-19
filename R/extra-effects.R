@@ -23,28 +23,33 @@ argonPersp <- function(..., side) {
 
 
 
-# #' Create a Boostrap 4 blur effect
-# #'
-# #' Build an argon blur effect
-# #'
-# #' @param ... Tag to be treated by the blur effect.
-# #' 
-# #' @examples 
-# #' if (interactive()) {
-# #'  library(argonR)
-# #'
-# #' }
-# #' 
-# #' @author David Granjon, \email{dgranjon@@ymail.com}
-# #'
-# #' @export
-# argonBlur <- function(...) {
-#   htmltools::tags$div(
-#     class = "blur--hover",
-#     htmltools::tags$div(
-#       class = "blur-item mt-5 on-screen",
-#       `data-toggle` = "on-screen",
-#       ...
-#     )
-#   )
-# }
+#' Create a Boostrap 4 blur effect
+#'
+#' Build an argon blur effect
+#'
+#' @param ... Tag to be treated by the blur effect.
+#' @param text Text that appears on hover.
+#' @param text_color Text color.
+#' 
+#' @examples 
+#' if (interactive()) {
+#'  library(argonR)
+#'
+#' }
+#' 
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#' 
+#' @note Not compatible with argonDash
+#'
+#' @export
+argonBlur <- function(..., text = NULL, text_color = NULL) {
+  htmltools::tags$div(
+    class = "blur--hover",
+    htmltools::tags$div(
+      class = "blur-item mt-5 on-screen",
+      `data-toggle` = "on-screen",
+      ...
+    ),
+    htmltools::tags$span(class = paste0("blur-hidden h2 text-", text_color), text)
+  )
+}
