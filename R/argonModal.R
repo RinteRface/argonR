@@ -47,8 +47,8 @@ argonModal <- function(..., id, title = NULL, status = NULL, gradient = FALSE) {
       class="btn btn-secondary", 
       `data-dismiss` = "modal", 
       "Close"
-    ),
-    argonButton(name = "Ok", status = "primary")
+    )#,
+    #argonButton(name = "Ok", status = "primary")
   )
   
   # content

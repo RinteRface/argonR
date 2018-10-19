@@ -14,9 +14,6 @@ argonContainer(..., size = NULL)
 \description{
 Create a boostrap 4 container
 }
-\note{
-Disabled on small screens (not a bug)
-}
 \examples{
 if (interactive()) {
  library(argonR)

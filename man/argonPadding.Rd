@@ -16,9 +16,6 @@ argonPadding(tag, orientation, value)
 \description{
 Change tag padding
 }
-\note{
-Disabled on small screens (not a bug)
-}
 \examples{
 if (interactive()) {
  library(argonR)

@@ -16,9 +16,6 @@ argonMargin(tag, orientation, value)
 \description{
 Change tag margins
 }
-\note{
-Disabled on small screens (not a bug)
-}
 \examples{
 if (interactive()) {
  library(argonR)

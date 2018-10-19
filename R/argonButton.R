@@ -34,7 +34,7 @@ argonButton <- function(name = NULL, status = "default", icon = NULL,
     type = "button",
     disabled = if (disabled) NA else NULL,
     `data-toggle` = if (toggle_modal) "modal" else NULL,
-    `data-target` = if (toggle_modal) modal_id else NULL,
+    `data-target` = if (toggle_modal) paste0("#", modal_id) else NULL,
     if (!is.null(icon)) {
       if (!is.null(name)) {
         htmltools::tagList(

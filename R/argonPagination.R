@@ -9,6 +9,8 @@
 #' if(interactive()){
 #'  library(argonR)
 #' }
+#' 
+#' @note align will not work if you embed the argonPagination in an argonRow.
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
@@ -27,8 +29,7 @@ argonPagination <- function(..., size = NULL, align = NULL) {
       )
     }
     htmltools::tags$li(
-      class="page-item",
-      active = if (i == 1) NA else NULL,
+      class = if (i == 1) "page-item active" else "page-item",
       items[[i]]
     )
   })
@@ -61,7 +62,7 @@ argonPagination <- function(..., size = NULL, align = NULL) {
   
   htmltools::tags$nav(
     `aria-label` = "Page navigation example",
-    htmltools::tags$div(
+    htmltools::tags$ul(
       class = paginationCl,
       prevBttn,
       paginationItems,

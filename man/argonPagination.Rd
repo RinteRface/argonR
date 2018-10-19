@@ -16,6 +16,9 @@ argonPagination(..., size = NULL, align = NULL)
 \description{
 Build an argon pagination container
 }
+\note{
+align will not work if you embed the argonPagination in an argonRow.
+}
 \examples{
 if(interactive()){
  library(argonR)

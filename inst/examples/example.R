@@ -1,5 +1,7 @@
 # This examples show how to create a simple static html page using aronR
-
+library(argonR)
+library(htmltools)
+library(magrittr)
 
 example <- argonPage(
   title = "Argon Static Template",
@@ -184,7 +186,65 @@ example <- argonPage(
       )
     )
   ) %>% argonMargin(orientation = "t", value = -200)
-  %>% argonPadding(orientation = "t", value = 0)
+  %>% argonPadding(orientation = "t", value = 0),
+  argonSection(
+    size = "lg",
+    status = "warning",
+    gradient = TRUE,
+    separator = TRUE,
+    separator_color = "secondary",
+    shape = FALSE,
+    argonContainer(
+      size = "lg",
+      argonRow(
+        argonColumn(
+          width = 6,
+          argonH1(
+            display = 3, 
+            "Load modals", 
+            htmltools::span("by clicking on buttons")
+          ) %>% argonTextColor(color = "white"),
+          argonButton(
+            name = "Click me!",
+            status = "danger",
+            icon = "atom",
+            size = "lg",
+            toggle_modal = TRUE,
+            modal_id = "modal1"
+          ) 
+        ),
+        argonColumn(
+          width = 6,
+          argonModal(
+            id = "modal1",
+            title = "This is a modal",
+            status = "danger",
+            gradient = TRUE,
+            "YOU SHOULD READ THIS!",
+            br(),
+            "A small river named Duden flows by their place and supplies it with the necessary regelialia."
+          ),
+          argonImage(
+            floating = TRUE,
+            src = "https://demos.creative-tim.com/argon-design-system/assets/img/ill/ill-2.svg",
+            hover_lift = TRUE
+          ) %>% argonTooltip(position = "right", title = "I am a nice floating image")
+        )
+      ) %>% argonPadding(orientation = "y", value = 5),
+      argonPagination(
+        size = "lg",
+        align = "center",
+        argonPaginationItem(
+          name = 1,
+          src = "test.html"
+        ),
+        argonPaginationItem(
+          name = 2,
+          src = "https://www.google.com"
+        )
+      )
+    )
+  )
 )
 
 

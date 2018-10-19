@@ -141,8 +141,6 @@ argonTextColor <- function(tag, color) {
 #'  argonMargin(tag = h1("test"), orientation = "x", value = 7)
 #' }
 #' 
-#' @note Disabled on small screens (not a bug)
-#' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
@@ -167,8 +165,6 @@ argonMargin <- function(tag, orientation, value) {
 #'  argonPadding(tag = h1("test"), orientation = "x", value = 2)
 #' }
 #' 
-#' @note Disabled on small screens (not a bug)
-#' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
@@ -191,8 +187,6 @@ argonPadding <- function(tag, orientation, value) {
 #' 
 #' }
 #' 
-#' @note Disabled on small screens (not a bug)
-#' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
@@ -205,12 +199,54 @@ argonContainer <- function(..., size = NULL) {
 
 
 
-
+#' Create a boostrap 4 tooltip 
+#'
+#' @param tag Tag to be documented.
+#' @param position Where to display the toolptip: "top", "right", "bottom" or "left".
+#' @param title Tooltip title.
+#' 
+#' @examples 
+#' if (interactive()) {
+#'  library(argonR)
+#' 
+#' }
+#' 
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
 argonTooltip <- function(tag, position, title = NULL) {
-  len_attr <- length(tag$attribs)
-  #tag$attribs[[len_attr + 1]] <- '`data-toggle` = "tooltip"'
-  #tag$attribs[[len_attr + 2]] <- paste0('`data-placement` = ', position)
-  #tag$attribs[[len_attr + 3]] <- paste0('title = ', title)
-  #tag
-  len_attr
+  # add tooltip attributes to the tag
+  tag$attribs[["data-toggle"]] <- "tooltip"
+  tag$attribs[["data-placement"]] <- position
+  tag$attribs[["title"]] <- title
+  return(tag)
 }
+
+
+
+# #' Create a boostrap 4 code container 
+# #'
+# #' @param ... Any code
+# #' @param language Code language.
+# #' 
+# #' @examples 
+# #' if (interactive()) {
+# #'  library(argonR)
+# #' 
+# #' }
+# #' 
+# #' @author David Granjon, \email{dgranjon@@ymail.com}
+# #'
+# #' @export
+# argonCode <- function(..., language = NULL) {
+#   htmltools::tags$div(
+#     class = "highlight",
+#     #htmltools::tags$pre(
+#       htmltools::tags$code(
+#         class = paste0("language-", language),
+#         `data-lang` = language,
+#         ...
+#       )
+#     #)
+#   )
+# }# 
