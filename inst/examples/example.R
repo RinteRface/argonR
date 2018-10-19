@@ -179,7 +179,7 @@ example <- argonPage(
           src = "#",
           "Argon is a great free UI package based on Bootstrap 4 
           that includes the most important components and features."
-        )
+        ) %>% argonTooltip(position = "left", title = "I am a nice card")
       ),
       argonColumn(
         width = 4,
@@ -193,7 +193,7 @@ example <- argonPage(
           src = "#",
           "Argon is a great free UI package based on Bootstrap 4 
           that includes the most important components and features"
-        )
+        ) %>% argonTooltip(position = "top", title = "I am a nice card")
       ),
       argonColumn(
         width = 4,
@@ -207,7 +207,7 @@ example <- argonPage(
           src = "#",
           "Argon is a great free UI package based on Bootstrap 4 
           that includes the most important components and features"
-        )
+        ) %>% argonTooltip(position = "bottom", title = "I am a nice card")
       )
     ),
     
