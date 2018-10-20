@@ -1,5 +1,7 @@
 # argonR
 > R interface to argon HTML design
+[![Travis build status](https://travis-ci.org/RinteRface/argonR.svg?branch=master)](https://travis-ci.org/RinteRface/argonR)
+
 
 ## I am still WIP
 Use it carefully since it is work in progress
