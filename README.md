@@ -6,13 +6,23 @@
 
 > R interface to argon HTML design
 
-## I am still WIP
-Use it carefully since it is work in progress
-
 ## ArgonR philosophy
 ArgonR primarily aims at building static webpages, without the need of shiny or server part. However,
 it can be also used within shiny packages such as argonDash, a bootstrap4 shiny dashboard.
 See [here](https://github.com/RinteRface/argonDash) for more details.
+
+## Installation
+
+```r
+devtools::install.packages("RinteRface/argonR")
+```
+
+## Demo
+
+See a demonstration [here](http://130.60.24.205/example.html):
+
+<br>
+<a href="http://130.60.24.205/example.html" target="_blank"><img src="man/figures/argonRDemo.png"></a>
 
 ## Getting Started
 
@@ -535,4 +545,4 @@ shiny-server (usually /srv/shiny-server). Enter the web server adress in the web
 Coming soon...
 
 ## Aknowledgements
-Many thanks to CreativeTim for creating argon HTML.
+* Many thanks to CreativeTim for creating argon HTML.
