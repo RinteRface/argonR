@@ -56,7 +56,7 @@ argonNavbar <- function(..., src = NULL, id) {
             `data-toggle` = "collapse", 
             `data-target` = paste0("#", id), 
             `aria-controls` = id, 
-            `aria-expanded` = "true", 
+            `aria-expanded` = "false", 
             `aria-label`="Toggle navigation",
             htmltools::tags$span(),
             htmltools::tags$span()

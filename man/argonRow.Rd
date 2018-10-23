@@ -4,10 +4,12 @@
 \alias{argonRow}
 \title{Create a Boostrap 4 row}
 \usage{
-argonRow(...)
+argonRow(..., center = FALSE)
 }
 \arguments{
 \item{...}{Any UI element.}
+
+\item{center}{Whether to center row elements or not. FALSE by default.}
 }
 \description{
 Build an argon row
