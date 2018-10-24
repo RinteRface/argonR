@@ -14,7 +14,7 @@ See [here](https://github.com/RinteRface/argonDash) for more details.
 ## Installation
 
 ```r
-devtools::install.packages("RinteRface/argonR")
+devtools::install_github("RinteRface/argonR")
 ```
 
 ## Demo
