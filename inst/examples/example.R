@@ -112,6 +112,7 @@ example <- argonPage(
         argonColumn(
           width = 6,
           argonCarousel(
+            width = 12,
             id = "carousel2",
             argonCarouselItem(
               src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-1-1200x1000.jpg",
