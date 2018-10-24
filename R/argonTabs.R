@@ -41,9 +41,12 @@ argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle
       role = "tablist",
       lapply(X = 1:len_items, FUN = function(i) {
         current_item <- tabItems[[i]]
-        current_item_cl <- current_item$attribs$class
-        current_item_name <- current_item$attribs$id
-        current_item_label <- paste0(current_item_name, "-tab")
+        current_item_name <- current_item[[1]]
+        current_item_tag <- current_item[[2]]
+        
+        current_item_cl <- current_item_tag$attribs$class
+        current_item_id <- current_item_tag$attribs$id
+        current_item_label <- paste0(current_item_id, "-tab")
 
         # make sure that if the user set 2 tabs active at the same time, 
         # only the first one is selected
@@ -61,9 +64,9 @@ argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle
             class = if (active) "nav-link mb-sm-3 mb-md-3 active" else "nav-link mb-sm-3 mb-md-3",
             id = current_item_label,
             `data-toggle` = "tab",
-            href = paste0("#", current_item_name), 
+            href = paste0("#", current_item_id), 
             role = "tab",
-            `aria-controls` = current_item_name,
+            `aria-controls` = current_item_id,
             `aria-selected` = "true",
             current_item_name
           )
@@ -76,7 +79,7 @@ argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle
   tabContent <- htmltools::tags$div(
     class = "tab-content",
     id = id,
-    ...
+    lapply(X = 1:len_items, FUN = function(i) tabItems[[i]][[2]])
   )
   
   tabWrapper <- if (card_wrapper) {
@@ -116,12 +119,14 @@ argonTab <- function(..., tabName, active = FALSE) {
   # handle tab names with space
   id <- gsub(x = id, pattern = " ", replacement = "")
   
-  htmltools::tags$div(
+  tabTag <- htmltools::tags$div(
     class = tabCl,
     role = "tabpanel",
     id = id,
     `aria-labelledby` = paste0(id, "-tab"),
     ...
   )
+  
+  return(list(tabName, tabTag))
   
 }
