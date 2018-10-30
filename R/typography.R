@@ -103,7 +103,7 @@ argonQuote <- function(..., footer = NULL, source = NULL, align = "center") {
 #' A custom color fo your text
 #' 
 #' @param tag Any tag containing text.
-#' @param color Text color.
+#' @param color Text color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' 
 #' @examples
 #' if (interactive()) {

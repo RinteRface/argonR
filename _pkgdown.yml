@@ -67,6 +67,8 @@ reference:
   contents:
   - '`argonBlur`'
   - '`argonPersp`'
+  - '`argonCascade`'
+  - '`argonCascadeItem`'
   
 template:
   params:

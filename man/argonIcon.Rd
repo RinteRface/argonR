@@ -9,7 +9,7 @@ argonIcon(name, color = NULL)
 \arguments{
 \item{name}{icon name.}
 
-\item{color}{icon color.}
+\item{color}{icon color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 }
 \description{
 Build an argon Nucleo icon

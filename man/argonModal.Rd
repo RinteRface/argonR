@@ -13,7 +13,7 @@ argonModal(..., id, title = NULL, status = NULL, gradient = FALSE)
 
 \item{title}{Modal title.}
 
-\item{status}{Modal color.}
+\item{status}{Modal color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 
 \item{gradient}{Modal background gradient. FALSE by default. Does not work if status is NULL.}
 }

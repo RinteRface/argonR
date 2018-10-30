@@ -11,7 +11,7 @@ argonAlert(..., icon = NULL, status = "default", closable = TRUE)
 
 \item{icon}{Alert icon.}
 
-\item{status}{Alert status.}
+\item{status}{Alert status. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html}.}
 
 \item{closable}{Whether to make the alert closable or not. TRUE by default.}
 }

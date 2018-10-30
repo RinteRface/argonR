@@ -16,7 +16,7 @@ argonDropdownItem(name = NULL, description = NULL, src = NULL,
 
 \item{icon}{Item icon of any.}
 
-\item{status}{Icon and name color status.}
+\item{status}{Icon and name color status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 }
 \description{
 Build an argon dropdown item

@@ -195,7 +195,7 @@ argonDropdown <- function(..., name, size = NULL) {
 #' @param description Item description if any.
 #' @param src HTML target page.
 #' @param icon Item icon of any.
-#' @param status Icon and name color status.
+#' @param status Icon and name color status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #'
 #' @examples
 #' if(interactive()){

@@ -11,7 +11,7 @@ argonFooter(..., has_card = FALSE, status = NULL, gradient = FALSE)
 
 \item{has_card}{Enable card rendering in the footer. FALSE by default.}
 
-\item{status}{Footer status color.}
+\item{status}{Footer status color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 
 \item{gradient}{Whether to apply a gradient. FALSE by default.}
 }

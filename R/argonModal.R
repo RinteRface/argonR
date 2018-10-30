@@ -5,7 +5,7 @@
 #' @param ... Modal body content.
 #' @param id Modal unique id. Should be the same as modal_id from \link{argonButton}.
 #' @param title Modal title.
-#' @param status Modal color.
+#' @param status Modal color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' @param gradient Modal background gradient. FALSE by default. Does not work if status is NULL.
 #'
 #' @examples

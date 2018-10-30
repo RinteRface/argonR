@@ -30,9 +30,9 @@ Not compatible with floating.}
 
 \item{icon}{Card icon}
 
-\item{status}{Card status.}
+\item{status}{Card status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 
-\item{background_color}{Card background color. NULL by default.}
+\item{background_color}{Card background color. NULL by default. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 
 \item{gradient}{Whether to apply a gradient effect on the card background. FALSE by default.}
 

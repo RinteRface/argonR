@@ -4,11 +4,12 @@
 #'
 #' @param ... Any UI element.
 #' @param size Section size. NULL by default.
-#' @param status Section status.
+#' @param status Section status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' @param gradient Section gradient effect. FALSE by default.
 #' @param separator Section bottom separator. FALSE by default.
-#' @param separator_color Separator color. "secondary" by default.
+#' @param separator_color Separator color. "secondary" by default. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' @param shape Whether to include shape in the background. FALSE by default.
+#' @param cascade Whether to enable a cascade effect. FALSE by default.
 #' 
 #' @examples 
 #' if (interactive()) {
@@ -20,7 +21,8 @@
 #'
 #' @export
 argonSection <- function(..., size = NULL, status = "default", gradient = FALSE, 
-                         separator = FALSE, separator_color = "secondary", shape = FALSE) {
+                         separator = FALSE, separator_color = "secondary", shape = FALSE,
+                         cascade = FALSE) {
   
   if (shape) {
     if (status != "default" || status != "primary") status <- "default"
@@ -31,9 +33,10 @@ argonSection <- function(..., size = NULL, status = "default", gradient = FALSE,
   if (gradient) {
     if (!is.null(status) && !shape) sectionCl <- paste0(sectionCl, " bg-gradient-", status)
   } else {
-    if (!shape && !is.null(status)) sectionCl <- sectionCl <- paste0(sectionCl, " bg-", status)
+    if (!shape && !is.null(status)) sectionCl <- paste0(sectionCl, " bg-", status)
   }
   if (shape) sectionCl <- paste0(sectionCl, " section-shaped pb-250")
+  if (cascade) sectionCl <- paste0(sectionCl, " section-nucleo-icons pb-250")
   
   htmltools::tags$section(
     class = sectionCl,

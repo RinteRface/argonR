@@ -4,7 +4,7 @@
 #'
 #' @param ... Footer content.
 #' @param has_card Enable card rendering in the footer. FALSE by default.
-#' @param status  Footer status color.
+#' @param status  Footer status color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' @param gradient Whether to apply a gradient. FALSE by default.
 #'
 #' @examples

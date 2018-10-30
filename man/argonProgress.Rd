@@ -11,7 +11,7 @@ argonProgress(value, text = "Task completed", status = "primary")
 
 \item{text}{Label text.}
 
-\item{status}{Progress status color.}
+\item{status}{Progress status color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 }
 \description{
 Build an argon progress bar

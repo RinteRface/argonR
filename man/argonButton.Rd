@@ -11,7 +11,7 @@ argonButton(name = NULL, status = "default", icon = NULL,
 \arguments{
 \item{name}{Button label.}
 
-\item{status}{Button color.}
+\item{status}{Button color. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/buttons.html}.}
 
 \item{icon}{Button icon.}
 

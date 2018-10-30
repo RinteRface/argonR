@@ -11,7 +11,7 @@ argonBlur(..., text = NULL, text_color = NULL)
 
 \item{text}{Text that appears on hover.}
 
-\item{text_color}{Text color.}
+\item{text_color}{Text color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 }
 \description{
 Build an argon blur effect

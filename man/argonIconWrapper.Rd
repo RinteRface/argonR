@@ -15,7 +15,7 @@ argonIconWrapper(iconTag, circle = TRUE, size = NULL,
 
 \item{size}{Wrapper size. "sm", "md" or "lg".}
 
-\item{status}{Wrapper color.}
+\item{status}{Wrapper color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 
 \item{gradient_color}{icon gradient background color.}
 

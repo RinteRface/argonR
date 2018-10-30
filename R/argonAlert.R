@@ -4,7 +4,7 @@
 #'
 #' @param ... Alert content.
 #' @param icon Alert icon.
-#' @param status Alert status.
+#' @param status Alert status. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html}.
 #' @param closable Whether to make the alert closable or not. TRUE by default.
 #' 
 #' @examples 

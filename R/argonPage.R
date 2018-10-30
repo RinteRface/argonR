@@ -54,7 +54,7 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
       htmltools::tags$script(src = "inst/assets/vendor/bootstrap/bootstrap.min.js"),
       htmltools::tags$script(src = "inst/assets/vendor/headroom/headroom.min.js"),
       # Optional JS -->
-      #htmltools::tags$script(src = "inst/assets/vendor/onscreen/onscreen.min.js"),
+      htmltools::tags$script(src = "inst/assets/vendor/onscreen/onscreen.min.js"),
       #htmltools::includeScript(path = "./assets/vendor/nouislider/js/nouislider.min.js"),
       #htmltools::includeScript(path = "./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"),
       

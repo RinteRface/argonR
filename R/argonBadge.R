@@ -5,7 +5,7 @@
 #' @param text Badge text.
 #' @param src Badge external link.
 #' @param pill Pill mode. FALSE by default.
-#' @param status Badge status.
+#' @param status Badge status. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/badge.html}.
 #' 
 #' @examples 
 #' if (interactive()) {

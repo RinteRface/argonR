@@ -3,7 +3,7 @@
 #' Build an argon Nucleo icon
 #'
 #' @param name icon name.
-#' @param color icon color. 
+#' @param color icon color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' 
 #' @examples 
 #' if (interactive()) {
@@ -31,7 +31,7 @@ argonIcon <- function(name, color = NULL) {
 #' @param iconTag Slot for \link{argonIcon}
 #' @param circle Wrapper's shape. TRUE by default. 
 #' @param size Wrapper size. "sm", "md" or "lg".
-#' @param status Wrapper color. 
+#' @param status Wrapper color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' @param gradient_color icon gradient background color.
 #' @param shadow Whether to apply a shadow effet. TRUE by default.
 #' @param hover_shadow Only if shadow is TRUE. Whether to enlarge the shadow on hover. FALSE by default.

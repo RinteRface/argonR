@@ -5,22 +5,25 @@
 \title{Create a Boostrap 4 section container}
 \usage{
 argonSection(..., size = NULL, status = "default", gradient = FALSE,
-  separator = FALSE, separator_color = "secondary", shape = FALSE)
+  separator = FALSE, separator_color = "secondary", shape = FALSE,
+  cascade = FALSE)
 }
 \arguments{
 \item{...}{Any UI element.}
 
 \item{size}{Section size. NULL by default.}
 
-\item{status}{Section status.}
+\item{status}{Section status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 
 \item{gradient}{Section gradient effect. FALSE by default.}
 
 \item{separator}{Section bottom separator. FALSE by default.}
 
-\item{separator_color}{Separator color. "secondary" by default.}
+\item{separator_color}{Separator color. "secondary" by default. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 
 \item{shape}{Whether to include shape in the background. FALSE by default.}
+
+\item{cascade}{Whether to enable a cascade effect. FALSE by default.}
 }
 \description{
 Build an argon section container

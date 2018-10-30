@@ -12,8 +12,8 @@
 #' @param hover_shadow Only if shadow is TRUE. Whether to enlarge the shadow on hover. FALSE by default.
 #' @param border_level Border level. O by default.
 #' @param icon Card icon
-#' @param status Card status. 
-#' @param background_color Card background color. NULL by default.
+#' @param status Card status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
+#' @param background_color Card background color. NULL by default. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' @param gradient Whether to apply a gradient effect on the card background. FALSE by default.
 #' @param floating Whether to animate the card by a vertical floating movement. FALSE by default.
 #' Not compatible with hover_lift.

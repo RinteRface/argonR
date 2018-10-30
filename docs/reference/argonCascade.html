@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a Boostrap 4 blur effect — argonBlur • argonR</title>
+<title>Create a Boostrap 4 cascade effect — argonCascade • argonR</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Create a Boostrap 4 blur effect — argonBlur" />
+<meta property="og:title" content="Create a Boostrap 4 cascade effect — argonCascade" />
 
-<meta property="og:description" content="Build an argon blur effect" />
+<meta property="og:description" content="Build an argon cascade effect" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,39 +112,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a Boostrap 4 blur effect</h1>
+    <h1>Create a Boostrap 4 cascade effect</h1>
     <small class="dont-index">Source: <a href='https://github.com/RinteRface/argonR/blob/master/R/extra-effects.R'><code>R/extra-effects.R</code></a></small>
-    <div class="hidden name"><code>argonBlur.Rd</code></div>
+    <div class="hidden name"><code>argonCascade.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Build an argon blur effect</p>
+    <p>Build an argon cascade effect</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>argonBlur</span>(<span class='no'>...</span>, <span class='kw'>text</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>text_color</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>argonCascade</span>(<span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>...</th>
-      <td><p>Tag to be treated by the blur effect.</p></td>
-    </tr>
-    <tr>
-      <th>text</th>
-      <td><p>Text that appears on hover.</p></td>
-    </tr>
-    <tr>
-      <th>text_color</th>
-      <td><p>Text color. See <a href='https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html'>https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html</a>.</p></td>
+      <td><p>Slot for <a href='argonCascadeItem.html'>argonCascadeItem</a>. Exactly 13 items.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Not compatible with argonDash</p>
+    <p>You must pass cascade = TRUE to argonSection</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

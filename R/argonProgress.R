@@ -4,7 +4,7 @@
 #' 
 #' @param value Progress value between 0 and 100.
 #' @param text Label text.
-#' @param status Progress status color.  
+#' @param status Progress status color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' 
 #' @examples 
 #' if (interactive()) {

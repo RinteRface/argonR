@@ -14,7 +14,7 @@ argonBadge(text = NULL, src = NULL, pill = FALSE,
 
 \item{pill}{Pill mode. FALSE by default.}
 
-\item{status}{Badge status.}
+\item{status}{Badge status. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/badge.html}.}
 }
 \description{
 Build an argon badge

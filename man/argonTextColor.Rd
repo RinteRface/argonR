@@ -9,7 +9,7 @@ argonTextColor(tag, color)
 \arguments{
 \item{tag}{Any tag containing text.}
 
-\item{color}{Text color.}
+\item{color}{Text color. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 }
 \description{
 A custom color fo your text

@@ -3,7 +3,7 @@
 #' Build an argon button
 #'
 #' @param name Button label.
-#' @param status Button color.
+#' @param status Button color. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/buttons.html}.
 #' @param icon Button icon.
 #' @param size Button size: NULL, "sm" or "lg".
 #' @param block Whether the button fill its parent. FALSE by default.
