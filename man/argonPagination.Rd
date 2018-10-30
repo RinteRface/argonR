@@ -22,6 +22,18 @@ align will not work if you embed the argonPagination in an argonRow.
 \examples{
 if(interactive()){
  library(argonR)
+ argonPagination(
+  size = "lg",
+  align = "center",
+  argonPaginationItem(
+    name = 1,
+    src = "test.html"
+  ),
+  argonPaginationItem(
+    name = 2,
+    src = "https://www.google.com"
+  )
+ )
 }
 
 }

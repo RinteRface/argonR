@@ -12,6 +12,19 @@
 #' @examples
 #' if(interactive()){
 #'  library(argonR)
+#'  argonPage(
+#'   title = "ArgonR Static Template",
+#'   author =  "Somebody",
+#'   description = "HTML Static Template",
+#'   navbar = argonNavbar(id = "navbar"),
+#'   footer = argonFooter(),
+#'   # main content
+#'   argonSection(),
+#'   argonSection(),
+#'   argonSection(),
+#'   argonSection(),
+#'   argonSection()
+#'  )
 #' }
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
@@ -73,15 +86,40 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
 #' @param path Where to store the saved file. By default, getwd().
 #' @param argonPage Slot for \link{argonPage}.
 #'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#' 
+#' @note Do not forget to copy the inst folder of the package to the 
+#' root of your website folder.
+#' 
 #' @examples
 #' if(interactive()){
 #'  library(argonR)
+#'  
+#'  # generate the page
+#'  example <- argonPage(
+#'   title = "ArgonR Static Template",
+#'   author =  "Somebody",
+#'   description = "HTML Static Template",
+#'   navbar = argonNavbar(id = "navbar"),
+#'   footer = argonFooter(),
+#'   # main content
+#'   argonSection(),
+#'   argonSection(),
+#'   argonSection(),
+#'   argonSection(),
+#'   argonSection()
+#'  )
+#'  
+#'  # create the path
+#'  path <- getwd()
+#'  
+#'  # generate the static page
+#'  argonPageTemplate(filename = "example", path = path, argonPage = example)
+#'  
 #' }
 #'
-#' @author David Granjon, \email{dgranjon@@ymail.com}
-#'
 #' @export
-argonPageTemplate <- function(filename = "index.html", path = getwd(), argonPage) {
+argonPageTemplate <- function(filename = "index", path = getwd(), argonPage) {
   # add DOCTYPE html before the page
   argonPage <- paste0("<!DOCTYPE html>", as.character(argonPage), collapse = "\n")
   file.create(paste0(path, "/", filename, ".html"))

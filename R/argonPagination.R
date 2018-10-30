@@ -8,6 +8,18 @@
 #' @examples
 #' if(interactive()){
 #'  library(argonR)
+#'  argonPagination(
+#'   size = "lg",
+#'   align = "center",
+#'   argonPaginationItem(
+#'     name = 1,
+#'     src = "test.html"
+#'   ),
+#'   argonPaginationItem(
+#'     name = 2,
+#'     src = "https://www.google.com"
+#'   )
+#'  )
 #' }
 #' 
 #' @note align will not work if you embed the argonPagination in an argonRow.
@@ -78,13 +90,7 @@ argonPagination <- function(..., size = NULL, align = NULL) {
 #'
 #' @param name Item name. Better to use numerics such as 1, 2, 3, ...
 #' @param src Item target. Another html page for instance.
-#'
-#'
-#' @examples
-#' if(interactive()){
-#'  library(argonR)
-#' }
-#'
+#' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export

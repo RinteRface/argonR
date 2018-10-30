@@ -21,12 +21,6 @@ argonDropdownItem(name = NULL, description = NULL, src = NULL,
 \description{
 Build an argon dropdown item
 }
-\examples{
-if(interactive()){
- library(argonR)
-}
-
-}
 \author{
 David Granjon, \email{dgranjon@ymail.com}
 }

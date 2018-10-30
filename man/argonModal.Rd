@@ -23,6 +23,15 @@ Build an argon modal
 \examples{
 if(interactive()){
  library(argonR)
+ argonModal(
+  id = "modal1",
+  title = "This is a modal",
+  status = "danger",
+  gradient = TRUE,
+  "YOU SHOULD READ THIS!",
+  br(),
+  "A small river named Duden flows by their place and supplies it with the necessary regelialia."
+ )
 }
 
 }

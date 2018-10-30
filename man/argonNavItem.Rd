@@ -18,12 +18,6 @@ argonNavItem(name = NULL, src = NULL, icon = NULL, tooltip = NULL)
 \description{
 Build an argon navbar item
 }
-\examples{
-if(interactive()){
- library(argonR)
-}
-
-}
 \author{
 David Granjon, \email{dgranjon@ymail.com}
 }

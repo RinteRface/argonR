@@ -2,7 +2,7 @@
 % Please edit documentation in R/argonAlert.R
 \name{argonAlert}
 \alias{argonAlert}
-\title{Create a Boostrap 4 alert}
+\title{Create a Boostrap 4 argon alert}
 \usage{
 argonAlert(..., icon = NULL, status = "default", closable = TRUE)
 }
@@ -20,6 +20,13 @@ Build an argon alert
 }
 \examples{
 if (interactive()) {
+ library(argonR)
+ argonAlert(
+  icon = "basket",
+  status = "danger",
+  "This is an alert",
+  closable = TRUE
+ )
 }
 
 

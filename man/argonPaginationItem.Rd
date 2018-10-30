@@ -14,12 +14,6 @@ argonPaginationItem(name, src = NULL)
 \description{
 Build an argon pagination item
 }
-\examples{
-if(interactive()){
- library(argonR)
-}
-
-}
 \author{
 David Granjon, \email{dgranjon@ymail.com}
 }

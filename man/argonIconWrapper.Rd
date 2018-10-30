@@ -28,6 +28,14 @@ Build an argon Nucleo icon wrapper
 }
 \examples{
 if (interactive()) {
+ library(argonR)
+ argonIconWrapper(
+  iconTag = argonIcon("atom"),
+  size = "lg",
+  status = "danger",
+  shadow = TRUE,
+  hover_shadow = TRUE
+ )
 }
 
 

@@ -1,4 +1,4 @@
-#' Create a Boostrap 4 alert
+#' Create a Boostrap 4 argon alert
 #'
 #' Build an argon alert
 #'
@@ -9,6 +9,13 @@
 #' 
 #' @examples 
 #' if (interactive()) {
+#'  library(argonR)
+#'  argonAlert(
+#'   icon = "basket",
+#'   status = "danger",
+#'   "This is an alert",
+#'   closable = TRUE
+#'  )
 #' }
 #' 
 #' 

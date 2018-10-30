@@ -163,16 +163,52 @@
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>Do not work on argonR. Only for argon Dash</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fu'>interactive</span>()) {
+    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'>interactive</span>()){
+ <span class='fu'>library</span>(<span class='no'>argonR</span>)
+ <span class='fu'>argonProfile</span>(
+  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"John"</span>,
+  <span class='kw'>subtitle</span> <span class='kw'>=</span> <span class='st'>"Japan, Kagoshima"</span>,
+  <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"https://image.flaticon.com/icons/svg/1006/1006540.svg"</span>,
+  <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>"https://www.google.com"</span>,
+  <span class='kw'>url_1</span> <span class='kw'>=</span> <span class='st'>"https://www.google.com"</span>,
+  <span class='kw'>url_2</span> <span class='kw'>=</span> <span class='st'>"https://www.google.com"</span>,
+  <span class='kw'>stats</span> <span class='kw'>=</span> <span class='fu'><a href='argonProfileStats.html'>argonProfileStats</a></span>(
+    <span class='fu'><a href='argonProfileStat.html'>argonProfileStat</a></span>(
+      <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>22</span>,
+      <span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"Friends"</span>
+    ),
+    <span class='fu'><a href='argonProfileStat.html'>argonProfileStat</a></span>(
+      <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>10</span>,
+      <span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"Photos"</span>
+    ),
+    <span class='fu'><a href='argonProfileStat.html'>argonProfileStat</a></span>(
+      <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>89</span>,
+      <span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"Comments"</span>
+    )
+  ),
+  <span class='st'>"An artist of considerable range, Ryan — 
+  the name taken by Melbourne-raised, 
+  Brooklyn-based Nick Murphy — writes, 
+  performs and records all of his own music, 
+  giving it a warm, intimate feel with a solid 
+  groove structure. An artist of considerable 
+  range."</span>
+ )
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#note">Note</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

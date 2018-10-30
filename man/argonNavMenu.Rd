@@ -14,12 +14,6 @@ argonNavMenu(..., side = "left")
 \description{
 Build an argon navbar menu
 }
-\examples{
-if(interactive()){
- library(argonR)
-}
-
-}
 \author{
 David Granjon, \email{dgranjon@ymail.com}
 }

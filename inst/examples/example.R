@@ -312,6 +312,7 @@ example <- argonPage(
         circle = FALSE,
         size = "sm",
         width = 6,
+        iconList = list("cloud-upload-96", "bell-55", "calendar-grid-58"),
         argonTab(
           tabName = "Tab 1",
           active = FALSE,

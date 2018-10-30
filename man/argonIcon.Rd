@@ -16,6 +16,8 @@ Build an argon Nucleo icon
 }
 \examples{
 if (interactive()) {
+ library(argonR)
+ argonIcon("atom")
 }
 
 

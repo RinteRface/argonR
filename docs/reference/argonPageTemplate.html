@@ -123,7 +123,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>argonPageTemplate</span>(<span class='kw'>filename</span> <span class='kw'>=</span> <span class='st'>"index.html"</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'>getwd</span>(), <span class='no'>argonPage</span>)</pre>
+    <pre class="usage"><span class='fu'>argonPageTemplate</span>(<span class='kw'>filename</span> <span class='kw'>=</span> <span class='st'>"index"</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'>getwd</span>(), <span class='no'>argonPage</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,17 +142,46 @@
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>Do not forget to copy the inst folder of the package to the 
+root of your website folder.</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'>interactive</span>()){
  <span class='fu'>library</span>(<span class='no'>argonR</span>)
+
+ <span class='co'># generate the page</span>
+ <span class='no'>example</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='argonPage.html'>argonPage</a></span>(
+  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"ArgonR Static Template"</span>,
+  <span class='kw'>author</span> <span class='kw'>=</span>  <span class='st'>"Somebody"</span>,
+  <span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"HTML Static Template"</span>,
+  <span class='kw'>navbar</span> <span class='kw'>=</span> <span class='fu'><a href='argonNavbar.html'>argonNavbar</a></span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"navbar"</span>),
+  <span class='kw'>footer</span> <span class='kw'>=</span> <span class='fu'><a href='argonFooter.html'>argonFooter</a></span>(),
+  <span class='co'># main content</span>
+  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
+  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
+  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
+  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
+  <span class='fu'><a href='argonSection.html'>argonSection</a></span>()
+ )
+
+ <span class='co'># create the path</span>
+ <span class='no'>path</span> <span class='kw'>&lt;-</span> <span class='fu'>getwd</span>()
+
+ <span class='co'># generate the static page</span>
+ <span class='fu'>argonPageTemplate</span>(<span class='kw'>filename</span> <span class='kw'>=</span> <span class='st'>"example"</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='no'>path</span>, <span class='kw'>argonPage</span> <span class='kw'>=</span> <span class='no'>example</span>)
+
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#note">Note</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

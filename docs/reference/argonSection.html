@@ -171,6 +171,39 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fu'>interactive</span>()) {
+ <span class='fu'>library</span>(<span class='no'>argonR</span>)
+ <span class='fu'>argonSection</span>(
+  <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"lg"</span>,
+  <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"default"</span>,
+  <span class='kw'>gradient</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>separator</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>separator_color</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
+  <span class='kw'>shape</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='fu'><a href='argonColumn.html'>argonColumn</a></span>(
+    <span class='fu'><a href='argonRow.html'>argonRow</a></span>(
+      <span class='fu'><a href='argonColumn.html'>argonColumn</a></span>(
+        <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>,
+        <span class='fu'><a href='argonH1.html'>argonH1</a></span>(
+          <span class='kw'>display</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+          <span class='st'>"ArgonR, HTML static template for R"</span>,
+          <span class='kw pkg'>htmltools</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/htmltools/topics/builder'>span</a></span>(<span class='st'>"completed with examples"</span>)
+        ) <span class='kw'>%&gt;%</span> <span class='fu'><a href='argonTextColor.html'>argonTextColor</a></span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"white"</span>),
+        <span class='fu'><a href='argonLead.html'>argonLead</a></span>(
+          <span class='st'>"Argon is a great free UI package based on Bootstrap 
+          4 that includes the most important components and features"</span>
+        ) <span class='kw'>%&gt;%</span> <span class='fu'><a href='argonTextColor.html'>argonTextColor</a></span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"white"</span>)
+        ),
+      <span class='fu'><a href='argonColumn.html'>argonColumn</a></span>(
+        <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>,
+        <span class='fu'><a href='argonImage.html'>argonImage</a></span>(
+          <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"inst/images/imac.svg"</span>,
+          <span class='kw'>floating</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+        ) <span class='kw'>%&gt;%</span> <span class='fu'><a href='argonPersp.html'>argonPersp</a></span>(<span class='kw'>side</span> <span class='kw'>=</span> <span class='st'>"right"</span>)
+        <span class='kw'>%&gt;%</span> <span class='fu'><a href='argonBlur.html'>argonBlur</a></span>()
+      )
+      )
+  )
+ )
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

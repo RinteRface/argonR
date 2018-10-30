@@ -7,6 +7,8 @@
 #' 
 #' @examples 
 #' if (interactive()) {
+#'  library(argonR)
+#'  argonIcon("atom")
 #' }
 #' 
 #' 
@@ -38,6 +40,14 @@ argonIcon <- function(name, color = NULL) {
 #' 
 #' @examples 
 #' if (interactive()) {
+#'  library(argonR)
+#'  argonIconWrapper(
+#'   iconTag = argonIcon("atom"),
+#'   size = "lg",
+#'   status = "danger",
+#'   shadow = TRUE,
+#'   hover_shadow = TRUE
+#'  )
 #' }
 #' 
 #' 

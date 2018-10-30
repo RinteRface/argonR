@@ -6,6 +6,8 @@
 #'
 #' @examples
 #' if (interactive()) {
+#'  library(argonR)
+#'  argonMuted(argonLead("Badges"))
 #' }
 #'
 #'
@@ -27,6 +29,8 @@ argonMuted <- function(...) {
 #'
 #' @examples
 #' if (interactive()) {
+#'  library(argonR)
+#'  argonH1(display = 3, "ArgonR elements")
 #' }
 #'
 #'
@@ -39,7 +43,7 @@ argonH1 <- function(..., display) {
 
 
 
-#' Create a custim p tag
+#' Create a custom p tag
 #'
 #' A custom p tag
 #' 
@@ -47,6 +51,8 @@ argonH1 <- function(..., display) {
 #'
 #' @examples
 #' if (interactive()) {
+#'  library(argonR)
+#'  argonLead("Badges")
 #' }
 #'
 #'
@@ -71,8 +77,9 @@ argonLead <- function(...) {
 #' 
 #' @examples
 #' if (interactive()) {
+#'  library(argonR)
+#'  argonQuote(align = "center", "I am a text")
 #' }
-#'
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
@@ -184,7 +191,7 @@ argonPadding <- function(tag, orientation, value) {
 #' @examples 
 #' if (interactive()) {
 #'  library(argonR)
-#' 
+#'  argonContainer()
 #' }
 #' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
@@ -208,7 +215,21 @@ argonContainer <- function(..., size = NULL) {
 #' @examples 
 #' if (interactive()) {
 #'  library(argonR)
-#' 
+#'  argonTooltip(
+#'   position = "left", 
+#'   title = "I am a nice card",
+#'   argonCard(
+#'    status = "primary",
+#'    width = 12,
+#'    title = "Card 1",
+#'    hover_lift = TRUE,
+#'    shadow = TRUE,
+#'    icon = "check-bold",
+#'    src = "#",
+#'    "Argon is a great free UI package based on Bootstrap 4 
+#'    that includes the most important components and features."
+#'   )
+#'  )
 #' }
 #' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}

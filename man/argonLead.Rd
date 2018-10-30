@@ -2,7 +2,7 @@
 % Please edit documentation in R/typography.R
 \name{argonLead}
 \alias{argonLead}
-\title{Create a custim p tag}
+\title{Create a custom p tag}
 \usage{
 argonLead(...)
 }
@@ -14,6 +14,8 @@ A custom p tag
 }
 \examples{
 if (interactive()) {
+ library(argonR)
+ argonLead("Badges")
 }
 
 

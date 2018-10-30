@@ -16,6 +16,8 @@ A custom h1 tag
 }
 \examples{
 if (interactive()) {
+ library(argonR)
+ argonH1(display = 3, "ArgonR elements")
 }
 
 

@@ -17,7 +17,7 @@ Create a boostrap 4 container
 \examples{
 if (interactive()) {
  library(argonR)
-
+ argonContainer()
 }
 
 }

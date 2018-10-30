@@ -9,6 +9,66 @@
 #' @examples
 #' if(interactive()){
 #'  library(argonR)
+#'  argonNavbar(
+#'   id = "main-navbar",
+#'   src = "https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png",
+#'   # left menu
+#'   argonNavMenu(
+#'     argonDropdown(
+#'       name = "Components",
+#'       size = "lg",
+#'       argonDropdownItem(
+#'         name = "Getting Started",
+#'         description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
+#'         src = "test.html",
+#'         icon = "spaceship",
+#'         status = "primary"
+#'       ),
+#'       argonDropdownItem(
+#'         name = "Foundation",
+#'         description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
+#'         src = "",
+#'         icon = "palette",
+#'         status = "warning"
+#'       ),
+#'       argonDropdownItem(
+#'         name = "Components",
+#'         description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
+#'         src = "",
+#'         icon = "ui-04",
+#'         status = "success"
+#'       )
+#'     )
+#'   ),
+#'   # right menu
+#'   argonNavMenu(
+#'     side = "right",
+#'     argonNavItem(
+#'       name = "facebook",
+#'       src = "https://www.facebook.com",
+#'       icon = "facebook-square",
+#'       tooltip = "Like us on Facebook"
+#'     ),
+#'     argonNavItem(
+#'       name = "instagram",
+#'       src = "https://www.instagram.com",
+#'       icon = "instagram",
+#'       tooltip = "Follow us on Instagram"
+#'     ),
+#'     argonNavItem(
+#'       name = "twitter",
+#'       src = "https://www.twitter.com",
+#'       icon = "twitter-square",
+#'       tooltip = "Follow us on Twitter"
+#'     ),
+#'     argonNavItem(
+#'       name = "github",
+#'       src = "https://www.github.com",
+#'       icon = "github",
+#'       tooltip = "Star us on Github"
+#'     )
+#'   )
+#'  )
 #' }
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
@@ -90,11 +150,6 @@ argonNavbar <- function(..., src = NULL, id) {
 #' @param ... Slot for \link{argonNavItem} and \link{argonDropdown}.
 #' @param side Nav menu side. "left by default" but can also be "right".
 #'
-#' @examples
-#' if(interactive()){
-#'  library(argonR)
-#' }
-#'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
@@ -119,11 +174,6 @@ argonNavMenu <- function(..., side = "left") {
 #' @param src HTML target page.
 #' @param icon Item icon of any.
 #' @param tooltip Text to display when the item is hovered.
-#'
-#' @examples
-#' if(interactive()){
-#'  library(argonR)
-#' }
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
@@ -152,11 +202,6 @@ argonNavItem <- function(name = NULL, src = NULL, icon = NULL, tooltip = NULL) {
 #' @param ... Slot for \link{argonDropdownItem}.
 #' @param name Dropdown menu name.
 #' @param size Dropdown size: NULL or "xl".
-#'
-#' @examples
-#' if(interactive()){
-#'  library(argonR)
-#' }
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
@@ -196,12 +241,7 @@ argonDropdown <- function(..., name, size = NULL) {
 #' @param src HTML target page.
 #' @param icon Item icon of any.
 #' @param status Icon and name color status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
-#'
-#' @examples
-#' if(interactive()){
-#'  library(argonR)
-#' }
-#'
+#' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export

@@ -14,6 +14,8 @@ Apply the class muted to a text
 }
 \examples{
 if (interactive()) {
+ library(argonR)
+ argonMuted(argonLead("Badges"))
 }
 
 

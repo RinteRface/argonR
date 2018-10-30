@@ -16,13 +16,6 @@ argonCascadeItem(name, size = NULL, src = NULL)
 \description{
 Build an argon cascade item
 }
-\examples{
-if (interactive()) {
- library(argonR)
-
-}
-
-}
 \author{
 David Granjon, \email{dgranjon@ymail.com}
 }

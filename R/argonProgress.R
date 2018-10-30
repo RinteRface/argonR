@@ -8,6 +8,8 @@
 #' 
 #' @examples 
 #' if (interactive()) {
+#'  library(argonR)
+#'  argonProgress(value = 10, status = "danger", text = "Custom Text")
 #' }
 #' 
 #' 

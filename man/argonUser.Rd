@@ -20,6 +20,12 @@ Build an argon user image
 }
 \examples{
 if (interactive()) {
+ library(argonR)
+ argonUser(
+  title = "Ryan Tompson",
+  subtitle = "Web Developer",
+  src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-1-800x800.jpg"
+ )
 }
 
 

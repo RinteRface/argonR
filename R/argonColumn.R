@@ -8,6 +8,16 @@
 #' 
 #' @examples 
 #' if (interactive()) {
+#'  library(argonR)
+#'  argonColumn(
+#'   width = 4,
+#'   argonAlert(
+#'     icon = "basket",
+#'     status = "danger",
+#'     "This is an alert",
+#'     closable = TRUE
+#'   )
+#'  )
 #' }
 #' 
 #' 

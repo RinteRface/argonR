@@ -33,6 +33,14 @@ Build an argon button
 \examples{
 if(interactive()){
  library(argonR)
+ argonButton(
+  name = "Click me!",
+  status = "danger",
+  icon = "atom",
+  size = "lg",
+  toggle_modal = TRUE,
+  modal_id = "modal1"
+ )
 }
 
 }

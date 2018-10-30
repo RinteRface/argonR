@@ -22,7 +22,12 @@ Not compatible with argonDash
 \examples{
 if (interactive()) {
  library(argonR)
-
+ argonBlur(
+  argonImage(
+   src = "inst/images/imac.svg",
+   floating = TRUE
+  )
+ ) 
 }
 
 }

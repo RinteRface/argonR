@@ -16,12 +16,6 @@ argonDropdown(..., name, size = NULL)
 \description{
 Build an argon dropdown menu
 }
-\examples{
-if(interactive()){
- library(argonR)
-}
-
-}
 \author{
 David Granjon, \email{dgranjon@ymail.com}
 }

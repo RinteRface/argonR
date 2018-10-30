@@ -20,8 +20,9 @@ A custom quotation tool
 }
 \examples{
 if (interactive()) {
+ library(argonR)
+ argonQuote(align = "center", "I am a text")
 }
-
 
 }
 \author{

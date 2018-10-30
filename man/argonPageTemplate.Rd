@@ -4,7 +4,7 @@
 \alias{argonPageTemplate}
 \title{Create an HTML version of the argonPage}
 \usage{
-argonPageTemplate(filename = "index.html", path = getwd(), argonPage)
+argonPageTemplate(filename = "index", path = getwd(), argonPage)
 }
 \arguments{
 \item{filename}{HTML filename for instance, index.html.}
@@ -16,9 +16,35 @@ argonPageTemplate(filename = "index.html", path = getwd(), argonPage)
 \description{
 Create an HTML version of the argonPage
 }
+\note{
+Do not forget to copy the inst folder of the package to the 
+root of your website folder.
+}
 \examples{
 if(interactive()){
  library(argonR)
+ 
+ # generate the page
+ example <- argonPage(
+  title = "ArgonR Static Template",
+  author =  "Somebody",
+  description = "HTML Static Template",
+  navbar = argonNavbar(id = "navbar"),
+  footer = argonFooter(),
+  # main content
+  argonSection(),
+  argonSection(),
+  argonSection(),
+  argonSection(),
+  argonSection()
+ )
+ 
+ # create the path
+ path <- getwd()
+ 
+ # generate the static page
+ argonPageTemplate(filename = "example", path = path, argonPage = example)
+ 
 }
 
 }

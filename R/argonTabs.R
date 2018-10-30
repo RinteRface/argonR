@@ -9,9 +9,36 @@
 #' @param circle Whether to display circled design. FALSE by default.
 #' @param size Tabs size. "sm" by default. "md", "lg".
 #' @param width Tabs width. Between 1 and 12.
+#' @param iconList A list of argonIcon such as list("atom", "cloud-upload-96"). 
+#' The lenght must have the same length as the number of tabs. NULL by default.
 #' 
 #' @examples 
 #' if (interactive()) {
+#'  library(argonR)
+#'  argonTabSet(
+#'   id = "tab-1",
+#'   card_wrapper = TRUE,
+#'   horizontal = TRUE,
+#'   circle = FALSE,
+#'   size = "sm",
+#'   width = 6,
+#'   iconList = list("cloud-upload-96", "bell-55", "calendar-grid-58"),
+#'   argonTab(
+#'     tabName = "Tab 1",
+#'     active = FALSE,
+#'     tabText1
+#'   ),
+#'   argonTab(
+#'     tabName = "Tab 2",
+#'     active = TRUE,
+#'     tabText2
+#'   ),
+#'   argonTab(
+#'     tabName = "Tab 3",
+#'     active = FALSE,
+#'     tabText3
+#'   )
+#'  )
 #' }
 #' 
 #' 
@@ -19,7 +46,7 @@
 #'
 #' @export
 argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle = FALSE,
-                      size = "sm", width = 6) {
+                      size = "sm", width = 6, iconList = NULL) {
   
   tabCl <- "nav nav-pills nav-fill flex-column"
   if (horizontal) {
@@ -68,6 +95,7 @@ argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle
             role = "tab",
             `aria-controls` = current_item_id,
             `aria-selected` = "true",
+            if (!is.null(iconList)) argonIcon(name = iconList[[i]]),
             current_item_name
           )
         )

@@ -26,6 +26,19 @@ Build an argon page
 \examples{
 if(interactive()){
  library(argonR)
+ argonPage(
+  title = "ArgonR Static Template",
+  author =  "Somebody",
+  description = "HTML Static Template",
+  navbar = argonNavbar(id = "navbar"),
+  footer = argonFooter(),
+  # main content
+  argonSection(),
+  argonSection(),
+  argonSection(),
+  argonSection(),
+  argonSection()
+ )
 }
 
 }

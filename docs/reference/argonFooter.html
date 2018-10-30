@@ -150,6 +150,48 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'>interactive</span>()){
  <span class='fu'>library</span>(<span class='no'>argonR</span>)
+ <span class='fu'>argonFooter</span>(
+  <span class='kw'>has_card</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='fu'><a href='argonContainer.html'>argonContainer</a></span>(
+    <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"lg"</span>,
+    <span class='fu'><a href='argonRow.html'>argonRow</a></span>(
+      <span class='fu'><a href='argonColumn.html'>argonColumn</a></span>(
+        <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>,
+        <span class='fu'><a href='argonIconWrapper.html'>argonIconWrapper</a></span>(
+          <span class='kw'>iconTag</span> <span class='kw'>=</span> <span class='fu'><a href='argonIcon.html'>argonIcon</a></span>(<span class='st'>"atom"</span>),
+          <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"lg"</span>,
+          <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"success"</span>,
+          <span class='kw'>shadow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+          <span class='kw'>hover_shadow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+        ),
+        <span class='fu'><a href='argonH1.html'>argonH1</a></span>(
+          <span class='kw'>display</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+          <span class='st'>"Insert anything in the footer"</span>
+        ),
+        <span class='fu'><a href='argonLead.html'>argonLead</a></span>(
+          <span class='st'>"The Arctic Ocean freezes every winter and much of 
+          the sea-ice then thaws every summer, and that process 
+          will continue whatever"</span>
+        )
+        ),
+      <span class='fu'><a href='argonColumn.html'>argonColumn</a></span>(
+        <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>,
+        <span class='fu'><a href='argonCarousel.html'>argonCarousel</a></span>(
+          <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>12</span>,
+          <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"carousel2"</span>,
+          <span class='fu'><a href='argonCarouselItem.html'>argonCarouselItem</a></span>(
+            <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png"</span>,
+            <span class='kw'>active</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+          ),
+          <span class='fu'><a href='argonCarouselItem.html'>argonCarouselItem</a></span>(
+            <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png"</span>,
+            <span class='kw'>active</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+          )
+        )
+      )
+    )
+   )
+ )
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

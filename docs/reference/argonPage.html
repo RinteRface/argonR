@@ -159,6 +159,19 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'>interactive</span>()){
  <span class='fu'>library</span>(<span class='no'>argonR</span>)
+ <span class='fu'>argonPage</span>(
+  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"ArgonR Static Template"</span>,
+  <span class='kw'>author</span> <span class='kw'>=</span>  <span class='st'>"Somebody"</span>,
+  <span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"HTML Static Template"</span>,
+  <span class='kw'>navbar</span> <span class='kw'>=</span> <span class='fu'><a href='argonNavbar.html'>argonNavbar</a></span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"navbar"</span>),
+  <span class='kw'>footer</span> <span class='kw'>=</span> <span class='fu'><a href='argonFooter.html'>argonFooter</a></span>(),
+  <span class='co'># main content</span>
+  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
+  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
+  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
+  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
+  <span class='fu'><a href='argonSection.html'>argonSection</a></span>()
+ )
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
