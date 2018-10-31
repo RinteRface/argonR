@@ -105,6 +105,16 @@
 <div id="getting-started" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting Started</h2>
+<div id="installing-assets" class="section level3">
+<h3 class="hasAnchor">
+<a href="#installing-assets" class="anchor"></a>Installing assets</h3>
+<p>To install all mandatory CSS and javascript files run the following command</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/argonInstall.html">argonInstall</a></span>()</code></pre></div>
+<p>By default, the path corresponds the the current working directory (<code>getwd()</code>) but you can change it. In the following, make sure to generate html pages in the same directory.</p>
+</div>
+<div id="example-page" class="section level3">
+<h3 class="hasAnchor">
+<a href="#example-page" class="anchor"></a>Example page</h3>
 <p>Below is an example of a very basic HTML page:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This examples show how to create a simple static html page using aronR</span>
 <span class="kw">library</span>(argonR)
@@ -420,6 +430,7 @@ example &lt;-<span class="st"> </span><span class="kw"><a href="reference/argonP
         <span class="dt">circle =</span> <span class="ot">FALSE</span>,
         <span class="dt">size =</span> <span class="st">"sm"</span>,
         <span class="dt">width =</span> <span class="dv">6</span>,
+        <span class="dt">iconList =</span> <span class="kw">list</span>(<span class="st">"cloud-upload-96"</span>, <span class="st">"bell-55"</span>, <span class="st">"calendar-grid-58"</span>),
         <span class="kw"><a href="reference/argonTab.html">argonTab</a></span>(
           <span class="dt">tabName =</span> <span class="st">"Tab 1"</span>,
           <span class="dt">active =</span> <span class="ot">FALSE</span>,
@@ -566,7 +577,7 @@ example &lt;-<span class="st"> </span><span class="kw"><a href="reference/argonP
           <span class="dt">src =</span> <span class="st">"https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-4-800x800.jpg"</span>
         ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/argonBlur.html">argonBlur</a></span>(<span class="dt">text =</span> <span class="st">"John Doe"</span>, <span class="dt">text_color =</span> <span class="st">"default"</span>)
       )
-    )<span class="co">#,</span>
+    )
     <span class="co"># br(), br(),</span>
     <span class="co"># argonContainer(</span>
     <span class="co">#   argonProfile(</span>
@@ -599,19 +610,46 @@ example &lt;-<span class="st"> </span><span class="kw"><a href="reference/argonP
     <span class="co">#     range."</span>
     <span class="co">#   )</span>
     <span class="co"># )</span>
+  ),
+  <span class="kw"><a href="reference/argonSection.html">argonSection</a></span>(
+    <span class="dt">size =</span> <span class="st">"lg"</span>,
+    <span class="dt">status =</span> <span class="st">"default"</span>,
+    <span class="dt">cascade =</span> <span class="ot">TRUE</span>,
+    
+    <span class="kw"><a href="reference/argonH1.html">argonH1</a></span>(<span class="dt">display =</span> <span class="dv">3</span>, <span class="st">"ArgonR Cascade Effect"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">      </span><span class="kw"><a href="reference/argonPadding.html">argonPadding</a></span>(<span class="dt">orientation =</span> <span class="st">"l"</span>, <span class="dt">value =</span> <span class="dv">5</span>) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw"><a href="reference/argonPadding.html">argonPadding</a></span>(<span class="dt">orientation =</span> <span class="st">"b"</span>, <span class="dt">value =</span> <span class="dv">5</span>) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw"><a href="reference/argonTextColor.html">argonTextColor</a></span>(<span class="dt">color =</span> <span class="st">"white"</span>),
+    
+    <span class="kw"><a href="reference/argonCascade.html">argonCascade</a></span>(
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"diamond"</span>, <span class="dt">src =</span> <span class="st">"https://www.google.com"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"album-2"</span>, <span class="dt">size =</span> <span class="st">"sm"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"app"</span>, <span class="dt">size =</span> <span class="st">"sm"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"atom"</span>, <span class="dt">size =</span> <span class="st">"sm"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"bag-17"</span>, <span class="dt">src =</span> <span class="st">"https://www.google.com"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"bell-55"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"credit-card"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"briefcase-24"</span>, <span class="dt">size =</span> <span class="st">"sm"</span>, <span class="st">"https://www.google.com"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"building"</span>, <span class="dt">size =</span> <span class="st">"sm"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"button-play"</span>, <span class="dt">size =</span> <span class="st">"sm"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"calendar-grid-58"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"camera-compact"</span>),
+      <span class="kw"><a href="reference/argonCascadeItem.html">argonCascadeItem</a></span>(<span class="dt">name =</span> <span class="st">"chart-bar-32"</span>)
+    )
   )
 )
 
 
-<span class="kw"><a href="reference/argonPageTemplate.html">argonPageTemplate</a></span>(<span class="dt">filename =</span> <span class="st">"example"</span>, <span class="dt">path =</span> <span class="st">"/Users/macdavidgranjon/Desktop/"</span>, example)</code></pre></div>
+<span class="kw"><a href="reference/argonPageTemplate.html">argonPageTemplate</a></span>(<span class="dt">filename =</span> <span class="st">"example"</span>, <span class="dt">path =</span> <span class="kw">getwd</span>(), example)</code></pre></div>
 <p>While the first part is responsible for creating the page skeleton, the <code><a href="reference/argonPageTemplate.html">argonPageTemplate()</a></code> provides additional treatments to make it run without shiny.</p>
+</div>
 </div>
 <div id="how-to-host-it" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-host-it" class="anchor"></a>How to host it?</h2>
 <p>This is very simple:</p>
 <ul>
-<li>test it locally: after having generated your HTML page as described previously, copy the inst folder of this package, which contains all necessary assets, in the same folder as your HTML page and open the HTML page with any web browser</li>
+<li>test it locally: after having generated your HTML page as described previously, open it with any web browser</li>
 <li>On apache or nginx server: copy example.html and the inst folder to the root of your web server. Enter the web server adress in the web browser.</li>
 <li>On shiny-server: copy example.html and the inst folder to the root of your shiny-server (usually /srv/shiny-server). Enter the web server adress in the web browser</li>
 </ul>
@@ -621,9 +659,9 @@ example &lt;-<span class="st"> </span><span class="kw"><a href="reference/argonP
 <a href="#use-with-shiny" class="anchor"></a>Use with shiny</h2>
 <p>Coming soon…</p>
 </div>
-<div id="aknowledgements" class="section level2">
+<div id="acknowledgements" class="section level2">
 <h2 class="hasAnchor">
-<a href="#aknowledgements" class="anchor"></a>Aknowledgements</h2>
+<a href="#acknowledgements" class="anchor"></a>Acknowledgements</h2>
 <ul>
 <li>Many thanks to CreativeTim for creating argon HTML.</li>
 </ul>

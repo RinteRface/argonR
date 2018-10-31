@@ -31,7 +31,7 @@ See a demonstration [here](http://130.60.24.205/example.html):
 To install all mandatory CSS and javascript files run the following command
 
 ```r
-argonRInstall()
+argonInstall()
 ```
 
 By default, the path corresponds the the current working directory (`getwd()`) but you 
