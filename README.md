@@ -26,6 +26,19 @@ See a demonstration [here](http://130.60.24.205/example.html):
 
 ## Getting Started
 
+### Installing assets
+
+To install all mandatory CSS and javascript files run the following command
+
+```r
+argonRInstall()
+```
+
+By default, the path corresponds the the current working directory (`getwd()`) but you 
+can change it. In the following, make sure to generate html pages in the same directory.
+
+### Example page
+
 Below is an example of a very basic HTML page:
 
 ```r
@@ -343,6 +356,7 @@ example <- argonPage(
         circle = FALSE,
         size = "sm",
         width = 6,
+        iconList = list("cloud-upload-96", "bell-55", "calendar-grid-58"),
         argonTab(
           tabName = "Tab 1",
           active = FALSE,
@@ -489,7 +503,7 @@ example <- argonPage(
           src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-4-800x800.jpg"
         ) %>% argonBlur(text = "John Doe", text_color = "default")
       )
-    )#,
+    )
     # br(), br(),
     # argonContainer(
     #   argonProfile(
@@ -522,11 +536,37 @@ example <- argonPage(
     #     range."
     #   )
     # )
+  ),
+  argonSection(
+    size = "lg",
+    status = "default",
+    cascade = TRUE,
+    
+    argonH1(display = 3, "ArgonR Cascade Effect") %>% 
+      argonPadding(orientation = "l", value = 5) %>%
+      argonPadding(orientation = "b", value = 5) %>%
+      argonTextColor(color = "white"),
+    
+    argonCascade(
+      argonCascadeItem(name = "diamond", src = "https://www.google.com"),
+      argonCascadeItem(name = "album-2", size = "sm"),
+      argonCascadeItem(name = "app", size = "sm"),
+      argonCascadeItem(name = "atom", size = "sm"),
+      argonCascadeItem(name = "bag-17", src = "https://www.google.com"),
+      argonCascadeItem(name = "bell-55"),
+      argonCascadeItem(name = "credit-card"),
+      argonCascadeItem(name = "briefcase-24", size = "sm", "https://www.google.com"),
+      argonCascadeItem(name = "building", size = "sm"),
+      argonCascadeItem(name = "button-play", size = "sm"),
+      argonCascadeItem(name = "calendar-grid-58"),
+      argonCascadeItem(name = "camera-compact"),
+      argonCascadeItem(name = "chart-bar-32")
+    )
   )
 )
 
 
-argonPageTemplate(filename = "example", path = "/Users/macdavidgranjon/Desktop/", example)
+argonPageTemplate(filename = "example", path = getwd(), example)
 ```
 
 While the first part is responsible for creating the page skeleton, 
@@ -535,8 +575,7 @@ the `argonPageTemplate()` provides additional treatments to make it run without 
 ## How to host it?
 This is very simple:
 * test it locally: after having generated your HTML page as described previously, 
-copy the inst folder of this package, which contains all necessary assets, in the
-same folder as your HTML page and open the HTML page with any web browser
+open it with any web browser
 * On apache or nginx server: copy example.html and the inst folder to the root of your
 web server. Enter the web server adress in the web browser.
 * On shiny-server: copy example.html and the inst folder to the root of your
@@ -546,5 +585,5 @@ shiny-server (usually /srv/shiny-server). Enter the web server adress in the web
 
 Coming soon...
 
-## Aknowledgements
+## Acknowledgements
 * Many thanks to CreativeTim for creating argon HTML.

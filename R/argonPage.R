@@ -122,6 +122,8 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
 argonPageTemplate <- function(filename = "index", path = getwd(), argonPage) {
   # add DOCTYPE html before the page
   argonPage <- paste0("<!DOCTYPE html>", as.character(argonPage), collapse = "\n")
+  
+  # html page
   file.create(paste0(path, "/", filename, ".html"))
   utils::write.table(
     argonPage,
@@ -130,4 +132,33 @@ argonPageTemplate <- function(filename = "index", path = getwd(), argonPage) {
     col.names = FALSE,
     row.names = FALSE
   )
+}
+
+
+#' Install argon assets
+#'
+#' @param path Where to store assets. By default, getwd().
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#' 
+#' @note argon assets are stored in the inst folder similarly as the package folder.
+#' 
+#' @examples
+#' if(interactive()){
+#'  library(argonR)
+#'  argonInstall()
+#' }
+#'
+#' @export
+argonInstall <- function(path = getwd()) {
+  
+  dir.create(paste0(path, "/inst"))
+  
+  assets_path <- system.file("assets", package = "argonR")
+  images_path <- system.file("images", package = "argonR")
+  
+  # copy assets files to the website path
+  system(paste0("scp -r ", assets_path, " ", path, "/inst"))
+  system(paste0("scp -r ", images_path, " ", path, "/inst"))
+  
 }
