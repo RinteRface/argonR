@@ -13,7 +13,11 @@ See [here](https://github.com/RinteRface/argonDash) for more details.
 
 ## Installation
 
+Requires the dev version of htmltools
+
 ```r
+# install the dev version of htmltools
+devtools::install_github("rstudio/htmltools")
 devtools::install_github("RinteRface/argonR")
 ```
 

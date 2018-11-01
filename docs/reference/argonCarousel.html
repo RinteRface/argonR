@@ -123,7 +123,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>argonCarousel</span>(<span class='no'>...</span>, <span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>)</pre>
+    <pre class="usage"><span class='fu'>argonCarousel</span>(<span class='no'>...</span>, <span class='no'>id</span>, <span class='kw'>floating</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>hover_lift</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -135,6 +136,15 @@
     <tr>
       <th>id</th>
       <td><p>Carousel unique id.</p></td>
+    </tr>
+    <tr>
+      <th>floating</th>
+      <td><p>Whether to apply a floating effect. FALSE by default.</p></td>
+    </tr>
+    <tr>
+      <th>hover_lift</th>
+      <td><p>Whether to apply a lift effect on hover. FALSE by default.
+Not compatible with floating. Only if card_mode is TRUE.</p></td>
     </tr>
     <tr>
       <th>width</th>

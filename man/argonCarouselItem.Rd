@@ -4,12 +4,14 @@
 \alias{argonCarouselItem}
 \title{Create a carousel item}
 \usage{
-argonCarouselItem(src = NULL, active = FALSE)
+argonCarouselItem(src = NULL, active = FALSE, mode = "img")
 }
 \arguments{
 \item{src}{Image url or path.}
 
 \item{active}{Whether the item is active or not.}
+
+\item{mode}{Item mode: "img" by default but also "iframe" or "video".}
 }
 \description{
 Build an argon carousel item

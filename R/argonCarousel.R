@@ -4,6 +4,9 @@
 #' 
 #' @param ... Slot for \link{argonCarouselItem}.
 #' @param id Carousel unique id.
+#' @param floating Whether to apply a floating effect. FALSE by default.
+#' @param hover_lift Whether to apply a lift effect on hover. FALSE by default.
+#' Not compatible with floating. Only if card_mode is TRUE.
 #' @param width Carousel width.
 #'
 #' @examples
@@ -26,7 +29,19 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-argonCarousel <- function(..., id, width = 6) {
+argonCarousel <- function(..., id, floating = FALSE, hover_lift = FALSE, width = 6) {
+  
+  if (hover_lift) floating <- FALSE
+  
+  carouselCl <- if (hover_lift) {
+    "rounded card-lift--hover shadow-lg overflow-hidden"
+  } else {
+    if (floating) {
+      "rounded floating shadow-lg overflow-hidden"
+    } else {
+      "rounded shadow-lg overflow-hidden"
+    }
+  }
   
   carouselItems <- list(...)
   len <- length(carouselItems)
@@ -56,7 +71,7 @@ argonCarousel <- function(..., id, width = 6) {
   carouselNav <- htmltools::tags$ol(class = "carousel-indicators", carouselNavItems)
   
   # main content
-  carouselContent <- htmltools::tags$div(class = "carousel-inner", ...)
+  carouselContent <- htmltools::tags$div(class = "carousel-inner embed-responsive embed-responsive-4by3", ...)
   
   # controls
   carouselControls <- htmltools::tagList(
@@ -80,14 +95,14 @@ argonCarousel <- function(..., id, width = 6) {
   
   # main tag
   carouselTag <- htmltools::tags$div(
-    class = "rounded shadow-lg overflow-hidden",
+    class = carouselCl,
     htmltools::tags$div(
       class = "carousel slide",
       id = id,
       `data-ride` = "carousel",
       carouselNav,
-      carouselContent,
-      carouselControls
+      carouselContent#,
+      #carouselControls
     )
   )
   
@@ -104,13 +119,29 @@ argonCarousel <- function(..., id, width = 6) {
 #' 
 #' @param src Image url or path.
 #' @param active Whether the item is active or not. 
+#' @param mode Item mode: "img" by default but also "iframe" or "video".
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-argonCarouselItem <- function(src = NULL, active = FALSE) {
+argonCarouselItem <- function(src = NULL, active = FALSE, mode = "img") {
   htmltools::tags$div(
-    class = if (active) "carousel-item active" else "carousel-item",
-    htmltools::img(src = src, class = "img-fluid")
+    class = if (active) {
+      "carousel-item active embed-responsive-item"
+    } else {
+      "carousel-item embed-responsive-item"
+    },
+    switch (mode,
+      "img" = htmltools::img(src = src, class = "img-fluid"),
+      "iframe" = htmltools::tags$iframe(src = src),
+      "video" = htmltools::tags$iframe(
+        src = src,
+        frameborder="0",
+        allow = "accelerometer; 
+                 autoplay; encrypted-media; 
+                 gyroscope; picture-in-picture",
+        allowfullscreen = NA
+      )
+    )
   )
 }

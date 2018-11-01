@@ -4,12 +4,18 @@
 \alias{argonCarousel}
 \title{Create a carousel}
 \usage{
-argonCarousel(..., id, width = 6)
+argonCarousel(..., id, floating = FALSE, hover_lift = FALSE,
+  width = 6)
 }
 \arguments{
 \item{...}{Slot for \link{argonCarouselItem}.}
 
 \item{id}{Carousel unique id.}
+
+\item{floating}{Whether to apply a floating effect. FALSE by default.}
+
+\item{hover_lift}{Whether to apply a lift effect on hover. FALSE by default.
+Not compatible with floating. Only if card_mode is TRUE.}
 
 \item{width}{Carousel width.}
 }
