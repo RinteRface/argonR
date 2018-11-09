@@ -9,3 +9,6 @@
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+
+## Re submit
+Fix non standard files NOTES (_pkgdown.yml and docs folder) 
