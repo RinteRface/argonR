@@ -1,2 +1,2 @@
-# argonR 0.1.0.9000
+# argonR 0.1.0
 - first release
