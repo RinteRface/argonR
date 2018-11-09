@@ -65,50 +65,7 @@ app_test <- argonPage(
       )
     )
   ),
-  footer = argonFooter(
-    has_card = FALSE,
-    #status = "info",
-    #gradient = TRUE,
-    argonContainer(
-      size = "lg",
-      argonRow(
-        argonColumn(
-          width = 6,
-          argonIconWrapper(
-            iconTag = argonIcon("atom"),
-            size = "lg",
-            status = "success",
-            shadow = TRUE,
-            hover_shadow = TRUE
-          ),
-          argonH1(
-            display = 3,
-            "Insert anything in the footer"
-          ),
-          argonLead(
-            "The Arctic Ocean freezes every winter and much of 
-            the sea-ice then thaws every summer, and that process 
-            will continue whatever"
-          )
-        ),
-        argonColumn(
-          width = 6,
-          argonCarousel(
-            width = 12,
-            id = "carousel1",
-            argonCarouselItem(
-              src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-1-1200x1000.jpg",
-              active = TRUE
-            ),
-            argonCarouselItem(
-              src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-2-1200x1000.jpg",
-              active = FALSE
-            )
-          ) %>% argonPersp(side = "right")
-        )
-      )
-    )
-  ) %>% argonMargin(orientation = "t", value = 20),
+  footer = argonFooter() %>% argonMargin(orientation = "t", value = 20),
   # main content
   argonSection(
     size = "lg",
@@ -138,11 +95,6 @@ app_test <- argonPage(
           src = "http://130.60.24.205/argonDash/",
           active = FALSE,
           mode = "iframe"
-        ),
-        argonCarouselItem(
-          src = "https://www.youtube.com/embed/0wQflJ7bFNg",
-          active = FALSE,
-          mode = "video"
         )
       ) %>% argonPersp(side = "right")
     )
