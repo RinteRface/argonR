@@ -1,3 +1,295 @@
+---
+title: "Getting Started"
+author: "David Granjon"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+## Introduction
+
+We need to load the following packages:
+
+```r
+library(argonR)
+library(htmltools)
+library(magrittr)
+```
+
+### Installing assets
+
+To install all mandatory CSS and javascript files run the following command
+
+```r
+argonInstall()
+```
+
+By default, the path corresponds the the current working directory (`getwd()`) but you 
+can change it. In the following, make sure to generate html pages in the same directory!
+
+### Generate a Page
+
+#### argonPage
+
+Below is an example of a very basic HTML page:
+
+```r
+ argonPage(
+  title = "ArgonR Static Template",
+  author =  "Somebody",
+  description = "HTML Static Template",
+  navbar = NULL,
+  footer = NULL
+ )
+```
+
+which generate the following HTML:
+
+<details>
+<summary>Code</summary>
+```html
+<html>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="description" content="HTML Static Template"/>
+  <meta name="author" content="Somebody"/>
+  <title>ArgonR Static Template</title>
+  <link href="inst/assets/img/brand/favicon.png" rel="icon" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+  <link href="inst/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet"/>
+  <link href="inst/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link type="text/css" href="inst/assets/css/argon.min.css" rel="stylesheet"/>
+  <body>
+    <header class="header-global"></header>
+    <main></main>
+    <script src="inst/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="inst/assets/vendor/popper/popper.min.js"></script>
+    <script src="inst/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="inst/assets/vendor/headroom/headroom.min.js"></script>
+    <script src="inst/assets/vendor/onscreen/onscreen.min.js"></script>
+    <script src="inst/assets/js/argon.min.js"></script>
+  </body>
+</html>
+```
+</details>
+<br>
+
+This template is however empty, so not very interesting. Moreover, there
+are missing elements that will prevent it from being correctly rendered. 
+
+#### Insert a navbar
+
+Surprisingly, we need the `argonNavbar()` function, see below:
+
+<details>
+<summary>Code</summary>
+```r
+navbar <- argonNavbar(
+  id = "main-navbar",
+  src = "https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png",
+  # left menu
+  argonNavMenu(
+    argonDropdown(
+      name = "Components",
+      size = "lg",
+      argonDropdownItem(
+        name = "Getting Started",
+        description = "Blabla",
+        src = "",
+        icon = "spaceship",
+        status = "primary"
+      ),
+      argonDropdownItem(
+        name = "Foundation",
+        description = "Blabla",
+        src = "",
+        icon = "palette",
+        status = "warning"
+      ),
+      argonDropdownItem(
+        name = "Components",
+        description = "Blabla",
+        src = "",
+        icon = "ui-04",
+        status = "success"
+      )
+    )
+  ),
+  # right menu
+  argonNavMenu(
+    side = "right",
+    argonNavItem(
+      name = "facebook",
+      src = "https://www.facebook.com",
+      icon = "facebook-square",
+      tooltip = "Like us on Facebook"
+    ),
+    argonNavItem(
+      name = "instagram",
+      src = "https://www.instagram.com",
+      icon = "instagram",
+      tooltip = "Follow us on Instagram"
+    ),
+    argonNavItem(
+      name = "twitter",
+      src = "https://www.twitter.com",
+      icon = "twitter-square",
+      tooltip = "Follow us on Twitter"
+    ),
+    argonNavItem(
+      name = "github",
+      src = "https://www.github.com",
+      icon = "github",
+      tooltip = "Star us on Github"
+    )
+  )
+ )
+```
+</details>
+<br>
+
+The `argonNavbar()` function accepts `argonNavMenu()`, which in turns takes
+`argonNavItem()` and `argonDropdown()`.
+
+
+#### Insert the footer
+
+We need the `argonFooter()` function:
+
+<details>
+<summary>Code</summary>
+```r
+footer <- argonFooter(
+  has_card = FALSE,
+  argonContainer(
+    size = "lg",
+    argonRow(
+      argonColumn(
+        width = 6,
+        argonIconWrapper(
+          iconTag = argonIcon("atom"),
+          size = "lg",
+          status = "success",
+          shadow = TRUE,
+          hover_shadow = TRUE
+        ),
+        argonH1(
+          display = 3,
+          "Insert anything in the footer"
+        ),
+        argonLead(
+          "The Arctic Ocean freezes every winter and much of 
+          the sea-ice then thaws every summer, and that process 
+          will continue whatever"
+        )
+        ),
+      argonColumn(
+        width = 6,
+        argonCarousel(
+          width = 12,
+          id = "carousel2",
+          argonCarouselItem(
+            src = "http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png",
+            active = TRUE
+          ),
+          argonCarouselItem(
+            src = "http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png",
+            active = FALSE
+          )
+        )
+      )
+    )
+  )
+ )
+```
+</details>
+<br>
+
+In general, footer elements are wrapped in several `argonSection()`. 
+
+#### Fill the body
+
+All body elements must be wrapped in a `argonSection()`, for instance:
+
+```r
+body <- argonSection(
+  size = "lg",
+  status = "default",
+  gradient = TRUE,
+  separator = TRUE,
+  separator_color = "white",
+  shape = TRUE,
+  argonColumn(
+    argonRow(
+      argonColumn(
+        width = 6,
+        argonH1(
+          display = 3, 
+          "ArgonR, HTML static template for R", 
+          htmltools::span("completed with examples")
+        ) %>% argonTextColor(color = "white"),
+        argonLead(
+          "Argon is a great free UI package based on Bootstrap 
+          4 that includes the most important components and features"
+        ) %>% argonTextColor(color = "white")
+        ),
+      argonColumn(
+        width = 6,
+        argonImage(
+          src = "inst/images/imac.svg",
+          floating = TRUE
+        ) %>% argonPersp(side = "right")
+        %>% argonBlur()
+      )
+    )
+  )
+)
+```
+
+#### Create the template
+
+```r
+# generate the page
+ example <- argonPage(
+  title = "ArgonR Static Template",
+  author =  "Somebody",
+  description = "HTML Static Template",
+  navbar = navbar,
+  footer = footer,
+  # main content
+  body
+ )
+
+ # create the path
+ path <- getwd()
+
+ # generate the static page
+ argonPageTemplate(filename = "example", path = path, argonPage = example)
+```
+
+While the first part is responsible for creating the page skeleton, 
+the `argonPageTemplate()` function provides additional treatments 
+to make it run without shiny. (In the following, we will see that it also
+works with shiny).
+
+## Example
+
+Below is a fully working example:
+
+<details>
+<summary>Code</summary>
+```r
 # This examples show how to create a simple static html page using argonR
 library(argonR)
 library(htmltools)
@@ -521,5 +813,7 @@ example <- argonPage(
   )
 )
 
-
-argonPageTemplate(filename = "example", path = "/Users/macdavidgranjon/Desktop/", example)
+argonPageTemplate(filename = "example", path = getwd(), example)
+```
+</details>
+<br>

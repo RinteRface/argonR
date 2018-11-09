@@ -58,7 +58,7 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
     # Body
     htmltools::tags$body(
       htmltools::tags$header(class = "header-global", navbar),
-      htmltools::tags$main(...),
+      tags$main(...),
       footer,
       
       # Core -->

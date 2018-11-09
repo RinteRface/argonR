@@ -104,7 +104,13 @@ navbar:
       icon: fa-github fa-lg
       href: https://github.com/RinteRface/argonR
   
+articles:
+- title: All vignettes
+  desc: ~
+  contents:
+  - '`getting_started`'
 
 news:
  releases:
  - text: "argonR 0.1.0.9000"
+ 
