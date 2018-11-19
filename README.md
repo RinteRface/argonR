@@ -15,6 +15,9 @@ See [here](https://github.com/RinteRface/argonDash) for more details.
 ## Installation
 
 ```r
+# from CRAN
+install.packages("argonR")
+# Latest version
 devtools::install_github("RinteRface/argonR")
 ```
 
