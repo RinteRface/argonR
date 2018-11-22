@@ -112,5 +112,6 @@ articles:
 
 news:
  releases:
+ - text: "argonR 0.2.0.9000"
  - text: "argonR 0.1.0"
  

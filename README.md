@@ -1,4 +1,4 @@
-# argonR
+# argonR <img src="man/figures/argonR_logo.png" width=200 align="right" />
 
 [![Travis build status](https://travis-ci.org/RinteRface/argonR.svg?branch=master)](https://travis-ci.org/RinteRface/argonR)
 [![CRAN status](https://www.r-pkg.org/badges/version/argonR)](https://cran.r-project.org/package=argonR)
