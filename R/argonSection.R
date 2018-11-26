@@ -58,7 +58,8 @@ argonSection <- function(..., size = NULL, status = "default", gradient = FALSE,
                          cascade = FALSE) {
   
   if (shape) {
-    if (status != "default" || status != "primary") status <- "default"
+    if (status != "default" || status != "primary" || status != "dark") 
+      status <- "default"
   } 
   
   sectionCl <- "section"
