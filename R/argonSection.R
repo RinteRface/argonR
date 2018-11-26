@@ -57,10 +57,9 @@ argonSection <- function(..., size = NULL, status = "default", gradient = FALSE,
                          separator = FALSE, separator_color = "secondary", shape = FALSE,
                          cascade = FALSE) {
   
-  if (shape) {
-    if (status != "default" || status != "primary" || status != "dark") 
-      status <- "default"
-  } 
+  #if (shape) {
+  #  if (status != "default" || status != "primary" || status != "dark") status <- "default"
+  #} 
   
   sectionCl <- "section"
   if (!is.null(size)) sectionCl <- paste0(sectionCl, " section-", size)
