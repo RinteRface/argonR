@@ -280,8 +280,8 @@ body <- argonSection(
 
 While the first part is responsible for creating the page skeleton, 
 the `argonPageTemplate()` function provides additional treatments 
-to make it run without shiny. (In the following, we will see that it also
-works with shiny).
+to make it run without shiny. The view argument enable whether 
+to preview the page or not.
 
 ## Example
 

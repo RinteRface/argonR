@@ -12,7 +12,7 @@ Description: R wrapper around the argon HTML library.
     More at <https://demos.creative-tim.com/argon-design-system/>.
 URL: https://github.com/RinteRface/argonR
 BugReports: https://github.com/RinteRface/argonR/issues
-Imports: htmltools, utils
+Imports: htmltools, utils, rstudioapi
 Suggests: 
     magrittr,
     knitr,

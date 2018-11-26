@@ -85,6 +85,7 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
 #' @param filename HTML filename for instance, index.html.
 #' @param path Where to store the saved file. By default, getwd().
 #' @param argonPage Slot for \link{argonPage}.
+#' @param view Whether to preview the page in a web browser. TRUE by default.
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #' 
@@ -119,7 +120,7 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
 #' }
 #'
 #' @export
-argonPageTemplate <- function(filename = "index", path = getwd(), argonPage) {
+argonPageTemplate <- function(filename = "index", path = getwd(), argonPage, view = TRUE) {
   # add DOCTYPE html before the page
   argonPage <- paste0("<!DOCTYPE html>", as.character(argonPage), collapse = "\n")
   
@@ -132,6 +133,10 @@ argonPageTemplate <- function(filename = "index", path = getwd(), argonPage) {
     col.names = FALSE,
     row.names = FALSE
   )
+  
+  if (view) {
+    rstudioapi::viewer(url = paste0(path, "/example.html"))
+  }
 }
 
 
