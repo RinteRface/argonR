@@ -101,7 +101,7 @@ argonSocialButton <- function(src = NULL, status = "default", icon = NULL) {
     class = btnCl,
     href = src,
     target = "_blank",
-    htmltools::tags$i(class = "fa fa-", icon)
+    htmltools::tags$i(class = paste0("fa fa-", icon))
   )
   
 }
