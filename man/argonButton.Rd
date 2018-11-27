@@ -6,7 +6,7 @@
 \usage{
 argonButton(name = NULL, status = "default", icon = NULL,
   size = NULL, block = FALSE, disabled = FALSE, outline = FALSE,
-  toggle_modal = FALSE, modal_id = NULL)
+  toggle_modal = FALSE, modal_id = NULL, rounded = FALSE)
 }
 \arguments{
 \item{name}{Button label.}
@@ -26,6 +26,8 @@ argonButton(name = NULL, status = "default", icon = NULL,
 \item{toggle_modal}{Whether to use th button for a modal. FALSE by default.}
 
 \item{modal_id}{If toggle_modal is TRUE, nedd to provide the modal targeted.}
+
+\item{rounded}{Whether to set the rounded style. FALSE by default.}
 }
 \description{
 Build an argon button

@@ -5,7 +5,7 @@
 \title{Create a Boostrap 4 argon page}
 \usage{
 argonPage(..., title = NULL, description = NULL, author = NULL,
-  navbar = NULL, footer = NULL)
+  navbar = NULL, footer = NULL, favicon = NULL)
 }
 \arguments{
 \item{...}{Body content}
@@ -19,6 +19,8 @@ argonPage(..., title = NULL, description = NULL, author = NULL,
 \item{navbar}{Navbar.}
 
 \item{footer}{Footer.}
+
+\item{favicon}{Website favicon. The png must be located in inst/images}
 }
 \description{
 Build an argon page

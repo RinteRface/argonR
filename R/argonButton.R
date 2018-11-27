@@ -11,6 +11,7 @@
 #' @param outline Whether to outline the button. FALSE by default.
 #' @param toggle_modal Whether to use th button for a modal. FALSE by default.
 #' @param modal_id If toggle_modal is TRUE, nedd to provide the modal targeted.
+#' @param rounded Whether to set the rounded style. FALSE by default.
 #'
 #' @examples
 #' if(interactive()){
@@ -30,12 +31,14 @@
 #' @export
 argonButton <- function(name = NULL, status = "default", icon = NULL, 
                         size = NULL, block = FALSE, disabled = FALSE, 
-                        outline = FALSE, toggle_modal = FALSE, modal_id = NULL) {
+                        outline = FALSE, toggle_modal = FALSE, modal_id = NULL,
+                        rounded = FALSE) {
   
   btnCl <- "btn"
   if (!is.null(status)) btnCl <- paste0(btnCl, " btn-", if (outline) "outline-" else NULL, status)
   if (!is.null(size)) btnCl <- paste0(btnCl, " btn-", size)
   if (block) btnCl <- paste0(btnCl, " btn-block")
+  if (rounded) btnCl <- paste0(btnCl, " rounded-circle")
   
   htmltools::tags$button(
     class = btnCl,

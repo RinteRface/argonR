@@ -8,6 +8,7 @@
 #' @param title App title.
 #' @param author Author.
 #' @param description Purpose.
+#' @param favicon Website favicon. The png must be located in inst/images
 #'
 #' @examples
 #' if(interactive()){
@@ -31,7 +32,7 @@
 #'
 #' @export
 argonPage <- function(..., title = NULL, description = NULL, author = NULL, 
-                      navbar = NULL, footer = NULL){
+                      navbar = NULL, footer = NULL, favicon = NULL){
   
   htmltools::tags$html(
     # head: need to use takeHeads from htmltools to extract all head elements
@@ -47,7 +48,9 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
         htmltools::tags$title(title),
         
         # web dependencies CSS
-        htmltools::tags$link(href = "inst/assets/img/brand/favicon.png", rel = "icon", type = "image/png"),
+        if (!is.null(favicon)) {
+          htmltools::tags$link(href = paste0("inst/images/", favicon), rel = "icon", type = "image/png")
+        },
         htmltools::tags$link(href = "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700", rel = "stylesheet"),
         htmltools::tags$link(href = "inst/assets/vendor/nucleo/css/nucleo.css", rel = "stylesheet"),
         htmltools::tags$link(href = "inst/assets/vendor/font-awesome/css/font-awesome.min.css", rel = "stylesheet"),

@@ -4,12 +4,14 @@
 \alias{argonNavbar}
 \title{Create a Boostrap 4 argon navbar}
 \usage{
-argonNavbar(..., src = NULL, id)
+argonNavbar(..., src = NULL, src_collapsed = NULL, id)
 }
 \arguments{
 \item{...}{Slot for \link{argonNavMenu}.}
 
 \item{src}{Brand image path or url.}
+
+\item{src_collapsed}{Brand image path or url on small devices. Background is white.}
 
 \item{id}{Navbar toggle unique id.}
 }

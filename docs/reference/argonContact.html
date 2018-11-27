@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a Boostrap 4 argon page — argonPage • argonR</title>
+<title>Create a Boostrap 4 argon contact form — argonContact • argonR</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Create a Boostrap 4 argon page — argonPage" />
+<meta property="og:title" content="Create a Boostrap 4 argon contact form — argonContact" />
 
-<meta property="og:description" content="Build an argon page" />
+<meta property="og:description" content="Build an argon contact form" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -127,79 +127,72 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a Boostrap 4 argon page</h1>
-    <small class="dont-index">Source: <a href='https://github.com/RinteRface/argonR/blob/master/R/argonPage.R'><code>R/argonPage.R</code></a></small>
-    <div class="hidden name"><code>argonPage.Rd</code></div>
+    <h1>Create a Boostrap 4 argon contact form</h1>
+    <small class="dont-index">Source: <a href='https://github.com/RinteRface/argonR/blob/master/R/argonContact.R'><code>R/argonContact.R</code></a></small>
+    <div class="hidden name"><code>argonContact.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Build an argon page</p>
+    <p>Build an argon contact form</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>argonPage</span>(<span class='no'>...</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>description</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>author</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>navbar</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>footer</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>favicon</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>argonContact</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>subtitle</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Your name"</span>,
+  <span class='kw'>mail</span> <span class='kw'>=</span> <span class='st'>"Email Adress"</span>, <span class='kw'>subject</span> <span class='kw'>=</span> <span class='st'>"Subject"</span>, <span class='no'>message</span>, <span class='no'>mailto</span>,
+  <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>8</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>Body content</p></td>
-    </tr>
-    <tr>
       <th>title</th>
-      <td><p>App title.</p></td>
+      <td><p>Form title.</p></td>
     </tr>
     <tr>
-      <th>description</th>
-      <td><p>Purpose.</p></td>
+      <th>subtitle</th>
+      <td><p>Form subtitle.</p></td>
     </tr>
     <tr>
-      <th>author</th>
-      <td><p>Author.</p></td>
+      <th>name</th>
+      <td><p>Contact name.</p></td>
     </tr>
     <tr>
-      <th>navbar</th>
-      <td><p>Navbar.</p></td>
+      <th>mail</th>
+      <td><p>Contact mail.</p></td>
     </tr>
     <tr>
-      <th>footer</th>
-      <td><p>Footer.</p></td>
+      <th>subject</th>
+      <td><p>Message subject.</p></td>
     </tr>
     <tr>
-      <th>favicon</th>
-      <td><p>Website favicon. The png must be located in inst/images</p></td>
+      <th>message</th>
+      <td><p>For message</p></td>
+    </tr>
+    <tr>
+      <th>mailto</th>
+      <td><p>Adress to which send the form.</p></td>
+    </tr>
+    <tr>
+      <th>width</th>
+      <td><p>Form width. Between 1 and 12.</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/interactive'>interactive</a></span>()){
- <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>argonR</span>)
- <span class='fu'>argonPage</span>(
-  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"ArgonR Static Template"</span>,
-  <span class='kw'>author</span> <span class='kw'>=</span>  <span class='st'>"Somebody"</span>,
-  <span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"HTML Static Template"</span>,
-  <span class='kw'>navbar</span> <span class='kw'>=</span> <span class='fu'><a href='argonNavbar.html'>argonNavbar</a></span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"navbar"</span>),
-  <span class='kw'>footer</span> <span class='kw'>=</span> <span class='fu'><a href='argonFooter.html'>argonFooter</a></span>(),
-  <span class='co'># main content</span>
-  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
-  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
-  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
-  <span class='fu'><a href='argonSection.html'>argonSection</a></span>(),
-  <span class='fu'><a href='argonSection.html'>argonSection</a></span>()
- )
-}</div></pre>
+    <p>Need to have an active formspree.io account.
+See <a href='https://formspree.io'>https://formspree.io</a>. Only works on web-server!</p>
+    
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      
+      <li><a href="#note">Note</a></li>
+          </ul>
 
     <h2>Author</h2>
     <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>

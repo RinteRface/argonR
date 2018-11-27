@@ -51,6 +51,7 @@ reference:
   - '`argonAlert`'
   - '`argonBadge`'
   - '`argonButton`'
+  - '`argonContact`'
   - '`argonModal`'
   - '`argonPagination`'
   - '`argonPaginationItem`'

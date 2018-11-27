@@ -4,6 +4,7 @@
 #'
 #' @param ... Slot for \link{argonNavMenu}.
 #' @param src Brand image path or url. 
+#' @param src_collapsed Brand image path or url on small devices. Background is white.
 #' @param id Navbar toggle unique id.
 #'
 #' @examples
@@ -74,7 +75,7 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-argonNavbar <- function(..., src = NULL, id) {
+argonNavbar <- function(..., src = NULL, src_collapsed = NULL, id) {
   
   # brand
   navBrand <- htmltools::tags$a(
@@ -106,7 +107,7 @@ argonNavbar <- function(..., src = NULL, id) {
         class="row",
         htmltools::tags$div(
           class="col-6 collapse-brand",
-          htmltools::tags$a(href="#", htmltools::tags$img(src = src))
+          htmltools::tags$a(href="#", htmltools::tags$img(src = src_collapsed))
         ),
         htmltools::tags$div( 
           class="col-6 collapse-close",
