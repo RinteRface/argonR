@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • argonR</title>
+<title>Create a Boostrap 4 argon social button — argonSocialButton • argonR</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,10 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Create a Boostrap 4 argon social button — argonSocialButton" />
+
+<meta property="og:description" content="Build an argon social button" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -47,7 +50,7 @@
   </head>
 
   <body>
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -124,48 +127,58 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/RinteRface/argonR/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Create a Boostrap 4 argon social button</h1>
+    <small class="dont-index">Source: <a href='https://github.com/RinteRface/argonR/blob/master/R/argonButton.R'><code>R/argonButton.R</code></a></small>
+    <div class="hidden name"><code>argonSocialButton.Rd</code></div>
     </div>
 
-    <div id="argonr-0-2-0-9000" class="section level1">
-<h1 class="page-header">
-<a href="#argonr-0-2-0-9000" class="anchor"></a>argonR 0.2.0.9000<small> Unreleased </small>
-</h1>
-<ul>
-<li>add hex</li>
-<li>add a view argument to <code><a href="../reference/argonPageTemplate.html">argonPageTemplate()</a></code>
-</li>
-<li>add src_collapsed arg to <code><a href="../reference/argonNavbar.html">argonNavbar()</a></code> so that brand logo are displayed on small screens</li>
-<li>add <code><a href="../reference/argonContact.html">argonContact()</a></code>
-</li>
-<li>add favicon argument to <code><a href="../reference/argonPage.html">argonPage()</a></code> and update assets folder accordingly</li>
-<li>add src argument to <code><a href="../reference/argonButton.html">argonButton()</a></code>
-</li>
-<li>add <code><a href="../reference/argonSocialButton.html">argonSocialButton()</a></code>
-</li>
-</ul>
-</div>
-    <div id="argonr-0-1-0" class="section level1">
-<h1 class="page-header">
-<a href="#argonr-0-1-0" class="anchor"></a>argonR 0.1.0<small> 2018-11-18 </small>
-</h1>
-<ul>
-<li>first release</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    
+    <p>Build an argon social button</p>
+    
+    </div>
 
+    <pre class="usage"><span class='fu'>argonSocialButton</span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"default"</span>, <span class='kw'>icon</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>src</th>
+      <td><p>Button external link.</p></td>
+    </tr>
+    <tr>
+      <th>status</th>
+      <td><p>Button color. See <a href='https://demos.creative-tim.com/argon-design-system/docs/components/buttons.html'>https://demos.creative-tim.com/argon-design-system/docs/components/buttons.html</a>.</p></td>
+    </tr>
+    <tr>
+      <th>icon</th>
+      <td><p>Button icon.</p></td>
+    </tr>
+    </table>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/interactive'>interactive</a></span>()){
+ <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>argonR</span>)
+ <span class='fu'>argonSocialButton</span>(
+  <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"http://rinterface.com"</span>,
+  <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"danger"</span>,
+  <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"atom"</span>
+ )
+}</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#argonr-0-2-0-9000">0.2.0.9000</a></li>
-        <li><a href="#argonr-0-1-0">0.1.0</a></li>
-      </ul>
-    </div>
-  </div>
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
+    <h2>Author</h2>
+    <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>
+  </div>
 </div>
 
       <footer>

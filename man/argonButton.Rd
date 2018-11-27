@@ -4,11 +4,13 @@
 \alias{argonButton}
 \title{Create a Boostrap 4 argon button}
 \usage{
-argonButton(name = NULL, status = "default", icon = NULL,
-  size = NULL, block = FALSE, disabled = FALSE, outline = FALSE,
-  toggle_modal = FALSE, modal_id = NULL, rounded = FALSE)
+argonButton(src = NULL, name = NULL, status = "default",
+  icon = NULL, size = NULL, block = FALSE, disabled = FALSE,
+  outline = FALSE, toggle_modal = FALSE, modal_id = NULL)
 }
 \arguments{
+\item{src}{Button external link.}
+
 \item{name}{Button label.}
 
 \item{status}{Button color. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/buttons.html}.}
@@ -26,8 +28,6 @@ argonButton(name = NULL, status = "default", icon = NULL,
 \item{toggle_modal}{Whether to use th button for a modal. FALSE by default.}
 
 \item{modal_id}{If toggle_modal is TRUE, nedd to provide the modal targeted.}
-
-\item{rounded}{Whether to set the rounded style. FALSE by default.}
 }
 \description{
 Build an argon button

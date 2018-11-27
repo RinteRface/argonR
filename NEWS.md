@@ -4,7 +4,8 @@
 - add src_collapsed arg to `argonNavbar()` so that brand logo are displayed on small screens
 - add `argonContact()`
 - add favicon argument to `argonPage()` and update assets folder accordingly
-- add rounded argument to `argonButton()`
+- add src argument to `argonButton()`
+- add `argonSocialButton()`
 
 # argonR 0.1.0
 - first release
