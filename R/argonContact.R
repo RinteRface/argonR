@@ -30,35 +30,47 @@ argonContact <- function(title = NULL, subtitle = NULL, name = "Your name",
       value = 2,
       argonRow(
         center = TRUE,
-        argonColumn(
-          width = 3,
-          center = TRUE,
-          htmltools::tags$input(
-            class = "input-group input-group-alternative",
-            type = "text", 
-            name ="name", 
-            placeholder = name
-          ) 
+        argonMargin(
+          orientation = "y",
+          value = 2,
+          argonColumn(
+            width = 3,
+            center = TRUE,
+            htmltools::tags$input(
+              class = "input-group input-group-alternative",
+              type = "text", 
+              name ="name", 
+              placeholder = name
+            ) 
+          )
         ),
-        argonColumn(
-          width = 3, 
-          center = TRUE,
-          htmltools::tags$input(
-            class = "input-group input-group-alternative", 
-            type = "email", 
-            name = "email", 
-            placeholder = mail
-          ) 
+        argonMargin(
+          orientation = "y",
+          value = 2,
+          argonColumn(
+            width = 3, 
+            center = TRUE,
+            htmltools::tags$input(
+              class = "input-group input-group-alternative", 
+              type = "email", 
+              name = "email", 
+              placeholder = mail
+            ) 
+          )
         ),
-        argonColumn(
-          width = 3,
-          center = TRUE,
-          htmltools::tags$input(
-            class = "input-group input-group-alternative", 
-            type = "text", 
-            name = "_subject", 
-            placeholder = subject
-          ) 
+        argonMargin(
+          orientation = "y",
+          value = 2,
+          argonColumn(
+            width = 3,
+            center = TRUE,
+            htmltools::tags$input(
+              class = "input-group input-group-alternative", 
+              type = "text", 
+              name = "_subject", 
+              placeholder = subject
+            ) 
+          )
         )
       )
     ),
