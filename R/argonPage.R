@@ -127,18 +127,20 @@ argonPageTemplate <- function(filename = "index", path = getwd(), argonPage, vie
   # add DOCTYPE html before the page
   argonPage <- paste0("<!DOCTYPE html>", as.character(argonPage), collapse = "\n")
   
+  file_path <- paste0(path, "/", filename, ".html")
+  
   # html page
-  file.create(paste0(path, "/", filename, ".html"))
+  file.create(file_path)
   utils::write.table(
     argonPage,
-    file = paste0(path, "/", filename, ".html"),
+    file = file_path,
     quote = FALSE,
     col.names = FALSE,
     row.names = FALSE
   )
   
   if (view) {
-    rstudioapi::viewer(url = paste0(path, "/example.html"))
+    rstudioapi::viewer(url = file_path)
   }
 }
 
