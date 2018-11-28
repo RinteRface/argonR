@@ -139,7 +139,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>argonPage</span>(<span class='no'>...</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>description</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>author</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>navbar</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>footer</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>favicon</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>navbar</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>footer</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>favicon</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>analytics</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -170,7 +170,13 @@
     </tr>
     <tr>
       <th>favicon</th>
-      <td><p>Website favicon. The png must be located in inst/images</p></td>
+      <td><p>Website favicon. The png must be located in inst/images.</p></td>
+    </tr>
+    <tr>
+      <th>analytics</th>
+      <td><p>Website analytics such as Hotjar or google analytics. 
+Must be wrapped in tagList or list. Moreover the script must be contained
+in a &lt;script&gt;&lt;/script&gt; tag: if it is not already the case, use tags$script.</p></td>
     </tr>
     </table>
     

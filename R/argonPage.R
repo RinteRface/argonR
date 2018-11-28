@@ -8,7 +8,10 @@
 #' @param title App title.
 #' @param author Author.
 #' @param description Purpose.
-#' @param favicon Website favicon. The png must be located in inst/images
+#' @param favicon Website favicon. The png must be located in inst/images.
+#' @param analytics Website analytics such as Hotjar or google analytics. 
+#' Must be wrapped in tagList or list. Moreover the script must be contained
+#' in a <script></script> tag: if it is not already the case, use tags$script.
 #'
 #' @examples
 #' if(interactive()){
@@ -32,7 +35,8 @@
 #'
 #' @export
 argonPage <- function(..., title = NULL, description = NULL, author = NULL, 
-                      navbar = NULL, footer = NULL, favicon = NULL){
+                      navbar = NULL, footer = NULL, favicon = NULL,
+                      analytics = NULL){
   
   htmltools::tags$html(
     # head: need to use takeHeads from htmltools to extract all head elements
@@ -54,7 +58,10 @@ argonPage <- function(..., title = NULL, description = NULL, author = NULL,
         htmltools::tags$link(href = "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700", rel = "stylesheet"),
         htmltools::tags$link(href = "inst/assets/vendor/nucleo/css/nucleo.css", rel = "stylesheet"),
         htmltools::tags$link(href = "inst/assets/vendor/font-awesome/css/font-awesome.min.css", rel = "stylesheet"),
-        htmltools::tags$link(type = "text/css", href = "inst/assets/css/argon.min.css", rel = "stylesheet")
+        htmltools::tags$link(type = "text/css", href = "inst/assets/css/argon.min.css", rel = "stylesheet"),
+        
+        # add analytic scripts if any
+        if (!is.null(analytics)) analytics
         
       )
     ),
