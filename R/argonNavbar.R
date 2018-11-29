@@ -186,7 +186,7 @@ argonNavItem <- function(name = NULL, src = NULL, icon = NULL, tooltip = NULL) {
     htmltools::tags$a(
       class = "nav-link nav-link-icon", 
       href = src,
-      target = "_blank",
+      #target = "_blank",
       `data-toggle` = "tooltip",
       title = "",
       `data-original-title` = tooltip,
