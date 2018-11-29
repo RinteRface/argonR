@@ -4,10 +4,12 @@
 \alias{argonNavbar}
 \title{Create a Boostrap 4 argon navbar}
 \usage{
-argonNavbar(..., src = NULL, src_collapsed = NULL, id)
+argonNavbar(..., href = "#", src = NULL, src_collapsed = NULL, id)
 }
 \arguments{
 \item{...}{Slot for \link{argonNavMenu}.}
+
+\item{href}{Link to another HTML page.}
 
 \item{src}{Brand image path or url.}
 

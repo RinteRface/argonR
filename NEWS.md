@@ -2,6 +2,7 @@
 - add hex
 - add a view argument to `argonPageTemplate()`
 - add analytics argument to `argonPage()`
+- add href argument to `argonNavbar()`
 - add src_collapsed arg to `argonNavbar()` so that brand logo are displayed on small screens
 - add `argonContact()`
 - add favicon argument to `argonPage()` and update assets folder accordingly

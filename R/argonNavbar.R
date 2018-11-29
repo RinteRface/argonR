@@ -3,6 +3,7 @@
 #' Build an argon navbar
 #'
 #' @param ... Slot for \link{argonNavMenu}.
+#' @param href Link to another HTML page.
 #' @param src Brand image path or url. 
 #' @param src_collapsed Brand image path or url on small devices. Background is white.
 #' @param id Navbar toggle unique id.
@@ -75,19 +76,19 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-argonNavbar <- function(..., src = NULL, src_collapsed = NULL, id) {
+argonNavbar <- function(..., href = "#", src = NULL, src_collapsed = NULL, id) {
   
   # brand
   navBrand <- htmltools::tags$a(
     class = "navbar-brand mr-lg-5",
-    href= "#",
+    href = href,
     htmltools::tags$img(src = src)
   )
   
   # toggler
   navbarToggler <- htmltools::tags$button(
-    class="navbar-toggler collapsed",
-    type="button",
+    class = "navbar-toggler collapsed",
+    type = "button",
     `data-toggle` = "collapse",
     `data-target` = paste0("#", id),
     `aria-controls` = id,
@@ -102,15 +103,15 @@ argonNavbar <- function(..., src = NULL, src_collapsed = NULL, id) {
     id = id,
     style = NA,
     htmltools::tags$div(
-      class="navbar-collapse-header",
+      class = "navbar-collapse-header",
       htmltools::tags$div( 
-        class="row",
+        class = "row",
         htmltools::tags$div(
-          class="col-6 collapse-brand",
-          htmltools::tags$a(href="#", htmltools::tags$img(src = src_collapsed))
+          class = "col-6 collapse-brand",
+          htmltools::tags$a(href = href, htmltools::tags$img(src = src_collapsed))
         ),
         htmltools::tags$div( 
-          class="col-6 collapse-close",
+          class = "col-6 collapse-close",
           htmltools::tags$button(
             type = "button", 
             class = "navbar-toggler", 
@@ -118,7 +119,7 @@ argonNavbar <- function(..., src = NULL, src_collapsed = NULL, id) {
             `data-target` = paste0("#", id), 
             `aria-controls` = id, 
             `aria-expanded` = "false", 
-            `aria-label`="Toggle navigation",
+            `aria-label` = "Toggle navigation",
             htmltools::tags$span(),
             htmltools::tags$span()
           )
