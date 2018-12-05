@@ -44,9 +44,13 @@ argonImage <- function(src = NULL, url = NULL, floating = FALSE, card_mode = FAL
       ) 
     )
   } else {
-    htmltools::img(
-      class = imgCl,
-      src = src
+    htmltools::tags$a(
+      href = url,
+      target = "_blank",
+      htmltools::img(
+        class = imgCl,
+        src = src
+      )
     )
   }
   

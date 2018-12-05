@@ -1,4 +1,5 @@
 # argonR 0.2.0.9000
+- bug fix: argonImage link was missing when card_mode is FALSE in `argonImage()`.
 - add hex
 - add a view argument to `argonPageTemplate()`
 - add analytics argument to `argonPage()`
