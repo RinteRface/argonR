@@ -5,7 +5,7 @@
 \title{Create a Boostrap 4 image container}
 \usage{
 argonImage(src = NULL, url = NULL, floating = FALSE,
-  card_mode = FALSE, hover_lift = FALSE)
+  card_mode = FALSE, hover_lift = FALSE, width = NULL)
 }
 \arguments{
 \item{src}{Image source or path.}
@@ -18,6 +18,8 @@ argonImage(src = NULL, url = NULL, floating = FALSE,
 
 \item{hover_lift}{Whether to apply a lift effect on hover. FALSE by default.
 Not compatible with floating. Only if card_mode is TRUE.}
+
+\item{width}{Image manual width in px.}
 }
 \description{
 Build an argon image container

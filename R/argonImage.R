@@ -8,6 +8,7 @@
 #' @param card_mode Whether to include the image in a card wrapper. FALSE by default. 
 #' @param hover_lift Whether to apply a lift effect on hover. FALSE by default.
 #' Not compatible with floating. Only if card_mode is TRUE.
+#' @param width Image manual width in px.
 #' 
 #' @examples 
 #' if (interactive()) {
@@ -24,7 +25,7 @@
 #'
 #' @export
 argonImage <- function(src = NULL, url = NULL, floating = FALSE, card_mode = FALSE,
-                       hover_lift = FALSE) {
+                       hover_lift = FALSE, width = NULL) {
   
   imgCl <- "img-fluid"
   cardCl <- "card shadow border-0"
@@ -39,7 +40,8 @@ argonImage <- function(src = NULL, url = NULL, floating = FALSE, card_mode = FAL
         target = "_blank",
         htmltools::img(
           class = "card-img",
-          src = src 
+          src = src ,
+          width = width
         )
       ) 
     )
@@ -49,7 +51,8 @@ argonImage <- function(src = NULL, url = NULL, floating = FALSE, card_mode = FAL
       target = "_blank",
       htmltools::img(
         class = imgCl,
-        src = src
+        src = src,
+        width = width
       )
     )
   }
