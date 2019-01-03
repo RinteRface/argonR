@@ -23,10 +23,10 @@ devtools::install_github("RinteRface/argonR")
 
 ## Demo
 
-See a demonstration [here](http://130.60.24.205/example.html):
+See a demonstration [here](http://rinterface.com/shiny/argonR/):
 
 <br>
-<a href="http://130.60.24.205/example.html" target="_blank"><img src="man/figures/argonRDemo.png"></a>
+<a href="http://rinterface.com/shiny/argonR/" target="_blank"><img src="man/figures/argonRDemo.png"></a>
 
 ## How to host it?
 This is pretty simple:
@@ -39,8 +39,7 @@ shiny-server (usually /srv/shiny-server). Enter the web server adress in the web
 
 ## Use with shiny
 
-### Embedded web applications
-See [here](http://130.60.24.205/app_test.html)
+See [argonDash](https://github.com/RinteRface/argonDash).
 
 ## Acknowledgements
 * Many thanks to CreativeTim for creating argon HTML.
