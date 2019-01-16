@@ -82,9 +82,13 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
     # header
     if (!is.null(title)) {
       htmltools::tags$div(
-        class = "card-header",
+        class = if (!is.null(background_color)) {
+          "cqrd-header bg-transparent"
+        } else {
+          "card-header"
+        },
         htmltools::tags$div(
-          class = "row align-items-center",
+          class = "row align-items-center m-2",
           # icon
           if(!is.null(icon)) {
             argonIconWrapper(

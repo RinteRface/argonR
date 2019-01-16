@@ -1,4 +1,6 @@
 # argonR 0.2.0.9000
+- Fix #2: setting background_color in `argonCard()` make the background title
+transparent
 - add width argument to `argonImage()`
 - bug fix: argonImage link was missing when card_mode is FALSE in `argonImage()`
 - add hex
