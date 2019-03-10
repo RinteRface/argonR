@@ -132,21 +132,24 @@ argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle
 #'
 #' @param ... Tab content
 #' @param tabName Tab name: it will be also passed as the id argument. Should be unique.
+#' @param id Defaults to NULL. If provided, it will override tabName as the id.
 #' @param active Whether the tab is active or not. FALSE bu default. 
 #' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-argonTab <- function(..., tabName, active = FALSE) {
+argonTab <- function(..., tabName, id = NULL, active = FALSE) {
   
   tabCl <- if (active) "tab-pane fade show active" else "tab-pane fade"
   
-  id <- tabName
-  # handle punctuation
-  id <- gsub(x = id, pattern = "[[:punct:]]", replacement = "")
-  # handle tab names with space
-  id <- gsub(x = id, pattern = " ", replacement = "")
-  
+  if (is.null(id)) {
+    id <- tabName
+    # handle punctuation
+    id <- gsub(x = id, pattern = "[[:punct:]]", replacement = "")
+    # handle tab names with space
+    id <- gsub(x = id, pattern = " ", replacement = "")
+  }
+
   tabTag <- htmltools::tags$div(
     class = tabCl,
     role = "tabpanel",
