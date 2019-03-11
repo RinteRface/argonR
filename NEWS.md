@@ -1,4 +1,6 @@
 # argonR 0.2.0.9000
+- Fix #4: prefix all argonTabs by the namespace of their argonTabSet container. 
+Thanks @shawnlinxl!
 - Fix #2: setting background_color in `argonCard()` make the background title
 transparent
 - add width argument to `argonImage()`

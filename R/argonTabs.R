@@ -16,7 +16,7 @@
 #' if (interactive()) {
 #'  library(argonR)
 #'  argonTabSet(
-#'   id = "tab-1",
+#'   id = "tabset1",
 #'   card_wrapper = TRUE,
 #'   horizontal = TRUE,
 #'   circle = FALSE,
@@ -26,17 +26,17 @@
 #'   argonTab(
 #'     tabName = "Tab 1",
 #'     active = FALSE,
-#'     tabText1
+#'     "tabText1"
 #'   ),
 #'   argonTab(
 #'     tabName = "Tab 2",
 #'     active = TRUE,
-#'     tabText2
+#'     "tabText2"
 #'   ),
 #'   argonTab(
 #'     tabName = "Tab 3",
 #'     active = FALSE,
-#'     tabText3
+#'     "tabText3"
 #'   )
 #'  )
 #' }
@@ -47,6 +47,8 @@
 #' @export
 argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle = FALSE,
                       size = "sm", width = 6, iconList = NULL) {
+  
+  ns <- NS(id)
   
   tabCl <- "nav nav-pills nav-fill flex-column"
   if (horizontal) {
@@ -89,11 +91,11 @@ argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle
           class = "nav-item",
           htmltools::a(
             class = if (active) "nav-link mb-sm-3 mb-md-3 active" else "nav-link mb-sm-3 mb-md-3",
-            id = current_item_label,
+            id = ns(current_item_label),
             `data-toggle` = "tab",
-            href = paste0("#", current_item_id), 
+            href = paste0("#", ns(current_item_id)), 
             role = "tab",
-            `aria-controls` = current_item_id,
+            `aria-controls` = ns(current_item_id),
             `aria-selected` = "true",
             if (!is.null(iconList)) argonIcon(name = iconList[[i]]),
             current_item_name
@@ -107,7 +109,10 @@ argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle
   tabContent <- htmltools::tags$div(
     class = "tab-content",
     id = id,
-    lapply(X = 1:len_items, FUN = function(i) tabItems[[i]][[2]])
+    lapply(X = 1:len_items, FUN = function(i) {
+      tabItems[[i]][[2]]$attribs$id <- ns(tabItems[[i]][[2]]$attribs$id)
+      tabItems[[i]][[2]]
+    })
   )
   
   tabWrapper <- if (card_wrapper) {

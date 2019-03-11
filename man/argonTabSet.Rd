@@ -32,7 +32,7 @@ Build an argon tabs
 if (interactive()) {
  library(argonR)
  argonTabSet(
-  id = "tab-1",
+  id = "tabset1",
   card_wrapper = TRUE,
   horizontal = TRUE,
   circle = FALSE,
@@ -42,17 +42,17 @@ if (interactive()) {
   argonTab(
     tabName = "Tab 1",
     active = FALSE,
-    tabText1
+    "tabText1"
   ),
   argonTab(
     tabName = "Tab 2",
     active = TRUE,
-    tabText2
+    "tabText2"
   ),
   argonTab(
     tabName = "Tab 3",
     active = FALSE,
-    tabText3
+    "tabText3"
   )
  )
 }
