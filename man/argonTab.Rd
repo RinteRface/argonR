@@ -11,6 +11,8 @@ argonTab(..., tabName, active = FALSE)
 
 \item{tabName}{Tab name: it will be also passed as the id argument. Should be unique.}
 
+\item{id}{Defaults to NULL. If provided, it will override tabName as the id.}
+
 \item{active}{Whether the tab is active or not. FALSE bu default.}
 }
 \description{
