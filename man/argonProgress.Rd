@@ -4,7 +4,7 @@
 \alias{argonProgress}
 \title{Create a progress bar}
 \usage{
-argonProgress(value, text = "Task completed", status = "primary")
+argonProgress(value, text = NULL, status = "primary")
 }
 \arguments{
 \item{value}{Progress value between 0 and 100.}

@@ -1,10 +1,11 @@
 # argonR 0.2.0.9000
-- Fix #4: prefix all argonTabs by the namespace of their argonTabSet container. 
+- `argonProgress()` text arg has been set to NULL by default.
+- Fix #4: prefix all `argonTabs()` by the namespace of their `argonTabSet()` container. 
 Thanks @shawnlinxl!
 - Fix #2: setting background_color in `argonCard()` make the background title
 transparent
 - add width argument to `argonImage()`
-- bug fix: argonImage link was missing when card_mode is FALSE in `argonImage()`
+- bug fix: `argonImage()` link was missing when card_mode is FALSE in `argonImage()`
 - add hex
 - add a view argument to `argonPageTemplate()`
 - add analytics argument to `argonPage()`

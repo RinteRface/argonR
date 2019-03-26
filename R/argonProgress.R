@@ -16,7 +16,7 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-argonProgress <- function(value, text = "Task completed", status = "primary") {
+argonProgress <- function(value, text = NULL, status = "primary") {
   
   stopifnot(value < 100)
   
