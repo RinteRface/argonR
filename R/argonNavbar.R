@@ -7,6 +7,7 @@
 #' @param src Brand image path or url. 
 #' @param src_collapsed Brand image path or url on small devices. Background is white.
 #' @param id Navbar toggle unique id.
+#' @param headroom Whether to apply headroom.js effect to the header. TRUE by default.
 #'
 #' @examples
 #' if(interactive()){
@@ -76,7 +77,8 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-argonNavbar <- function(..., href = "#", src = NULL, src_collapsed = NULL, id) {
+argonNavbar <- function(..., href = "#", src = NULL, src_collapsed = NULL, id,
+                        headroom = TRUE) {
   
   # brand
   navBrand <- htmltools::tags$a(
@@ -131,7 +133,10 @@ argonNavbar <- function(..., href = "#", src = NULL, src_collapsed = NULL, id) {
   
   # wrapper
   htmltools::tags$nav(
-    class = "navbar navbar-main navbar-expand-lg navbar-transparent navbar-light",
+    class = paste0(
+      "navbar navbar-main navbar-expand-lg navbar-transparent navbar-light",
+      if (headroom) " headroom headroom--not-bottom headroom--pinned headroom--top"
+    ),
     id = "navbar-main",
     htmltools::tags$div(
       class = "container",

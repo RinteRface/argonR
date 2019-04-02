@@ -522,4 +522,4 @@ example <- argonPage(
 )
 
 
-argonPageTemplate(filename = "example", path = "/Users/macdavidgranjon/Desktop/", example)
+argonPageTemplate(filename = "example", path = "/Users/macdavidgranjon/Desktop/argonTest", example)
