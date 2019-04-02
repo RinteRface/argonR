@@ -195,5 +195,6 @@ NS <- function (namespace, id = NULL) {
   }
 }
 
-# make R CMD check happy
-globalVariables("ns.sep")
+#' @rdname NS
+#' @export
+ns.sep <- "-"

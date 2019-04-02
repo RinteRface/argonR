@@ -1,4 +1,5 @@
 # argonR 0.2.0.9000
+- Fix #7 introduced with #4. 
 - `argonProgress()` text arg has been set to NULL by default.
 - Fix #4: prefix all `argonTabs()` by the namespace of their `argonTabSet()` container. 
 Thanks @shawnlinxl!
