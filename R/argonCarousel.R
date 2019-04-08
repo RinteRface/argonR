@@ -71,7 +71,7 @@ argonCarousel <- function(..., id, floating = FALSE, hover_lift = FALSE, width =
   carouselNav <- htmltools::tags$ol(class = "carousel-indicators", carouselNavItems)
   
   # main content
-  carouselContent <- htmltools::tags$div(class = "carousel-inner", ...)
+  carouselContent <- htmltools::tags$div(class = "carousel-inner embed-responsive embed-responsive-4by3", ...)
   
   # controls
   carouselControls <- htmltools::tagList(
@@ -127,9 +127,9 @@ argonCarousel <- function(..., id, floating = FALSE, hover_lift = FALSE, width =
 argonCarouselItem <- function(src = NULL, active = FALSE, mode = "img") {
   htmltools::tags$div(
     class = if (active) {
-      "carousel-item active"
+      "carousel-item active embed-responsive-item"
     } else {
-      "carousel-item"
+      "carousel-item embed-responsive-item"
     },
     switch (mode,
       "img" = htmltools::img(src = src, class = "img-fluid"),
