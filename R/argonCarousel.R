@@ -107,7 +107,7 @@ argonCarousel <- function(..., id, floating = FALSE, hover_lift = FALSE, width =
   )
   
   # column wrapper
-  argonColumn(width = width, carouselTag)
+  argonContainer(argonColumn(width = width, carouselTag))
 }
 
 
