@@ -6,9 +6,9 @@
 \usage{
 argonCard(..., title = NULL, src = NULL, hover_lift = FALSE,
   shadow = FALSE, shadow_size = NULL, hover_shadow = FALSE,
-  border_level = 0, icon = NULL, status = "primary",
-  background_color = NULL, gradient = FALSE, floating = FALSE,
-  width = 6)
+  border_level = 0, icon = NULL, btn_text = "More",
+  status = "primary", background_color = NULL, gradient = FALSE,
+  floating = FALSE, width = 6)
 }
 \arguments{
 \item{...}{Body content.}
@@ -28,7 +28,9 @@ Not compatible with floating.}
 
 \item{border_level}{Border level. O by default.}
 
-\item{icon}{Card icon}
+\item{icon}{Card icon.}
+
+\item{btn_text}{Button text. src arg must not be NULL so that this button appears.}
 
 \item{status}{Card status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.}
 

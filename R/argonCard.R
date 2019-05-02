@@ -11,7 +11,8 @@
 #' @param shadow_size Card shadow size. Only if shadow is TRUE. NULL by default.
 #' @param hover_shadow Only if shadow is TRUE. Whether to enlarge the shadow on hover. FALSE by default.
 #' @param border_level Border level. O by default.
-#' @param icon Card icon
+#' @param icon Card icon.
+#' @param btn_text Button text. src arg must not be NULL so that this button appears.
 #' @param status Card status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' @param background_color Card background color. NULL by default. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' @param gradient Whether to apply a gradient effect on the card background. FALSE by default.
@@ -41,7 +42,7 @@
 #' @export
 argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE, 
                       shadow = FALSE, shadow_size = NULL, hover_shadow = FALSE, 
-                      border_level = 0, icon = NULL, 
+                      border_level = 0, icon = NULL, btn_text = "More",
                       status = "primary", background_color = NULL, gradient = FALSE,
                       floating = FALSE, width = 6) {
   
@@ -115,7 +116,7 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
           class = paste0("btn btn-", status, " mt-4"), 
           href = src, 
           target = "_blank", 
-          "More"
+          btn_text
         )
       }
     )

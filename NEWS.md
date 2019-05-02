@@ -1,6 +1,7 @@
 # argonR 0.2.0.9000
+- Add btn_text argument to `argonCard()`
 - Fix #1: headroom.js and add the corresponding argument to `argonNavbar()`
-- Fix #7 introduced with #4. 
+- Fix #7 introduced with #4
 - `argonProgress()` text arg has been set to NULL by default
 - Fix #4: prefix all `argonTabs()` by the namespace of their `argonTabSet()` container
 Thanks @shawnlinxl!

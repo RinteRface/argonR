@@ -140,9 +140,9 @@
 
     <pre class="usage"><span class='fu'>argonCard</span>(<span class='no'>...</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>src</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>hover_lift</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>shadow</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>shadow_size</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>hover_shadow</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>border_level</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>icon</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"primary"</span>,
-  <span class='kw'>background_color</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gradient</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>floating</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>)</pre>
+  <span class='kw'>border_level</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>icon</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>btn_text</span> <span class='kw'>=</span> <span class='st'>"More"</span>,
+  <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"primary"</span>, <span class='kw'>background_color</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gradient</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>floating</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -182,7 +182,11 @@ Not compatible with floating.</p></td>
     </tr>
     <tr>
       <th>icon</th>
-      <td><p>Card icon</p></td>
+      <td><p>Card icon.</p></td>
+    </tr>
+    <tr>
+      <th>btn_text</th>
+      <td><p>Button text. src arg must not be NULL so that this button appears.</p></td>
     </tr>
     <tr>
       <th>status</th>
