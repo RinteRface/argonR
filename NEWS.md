@@ -1,4 +1,5 @@
 # argonR 0.2.0.9000
+- add offset arg to `argonColumn()`
 - Add btn_text argument to `argonCard()`
 - Fix #1: headroom.js and add the corresponding argument to `argonNavbar()`
 - Fix #7 introduced with #4

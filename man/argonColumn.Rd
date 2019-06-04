@@ -4,7 +4,7 @@
 \alias{argonColumn}
 \title{Create a Boostrap 4 column}
 \usage{
-argonColumn(..., width = NULL, center = FALSE)
+argonColumn(..., width = NULL, center = FALSE, offset = NULL)
 }
 \arguments{
 \item{...}{Any UI element.}
@@ -12,6 +12,8 @@ argonColumn(..., width = NULL, center = FALSE)
 \item{width}{Optional. Column width between 1 and 12.}
 
 \item{center}{Whether to center column elements or not. FALSE by default.}
+
+\item{offset}{Column offset. NULL by default. Importantly, offset + width cannot exceed 12!}
 }
 \description{
 Build an argon column
