@@ -15,7 +15,7 @@ argonButton(src = NULL, name = NULL, status = "default",
 
 \item{status}{Button color. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/buttons.html}.}
 
-\item{icon}{Button icon.}
+\item{icon}{Button icon. Expect \link{argonIcon} or \link[shiny]{icon}.}
 
 \item{size}{Button size: NULL, "sm" or "lg".}
 
@@ -38,7 +38,7 @@ if(interactive()){
  argonButton(
   name = "Click me!",
   status = "danger",
-  icon = "atom",
+  icon = argonIcon("atom"),
   size = "lg",
   toggle_modal = TRUE,
   modal_id = "modal1"

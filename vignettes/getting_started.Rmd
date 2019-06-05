@@ -667,7 +667,7 @@ example <- argonPage(
           argonButton(
             name = "Click me!",
             status = "danger",
-            icon = "atom",
+            icon = argonIcon("atom"),
             size = "lg",
             toggle_modal = TRUE,
             modal_id = "modal1"

@@ -5,7 +5,7 @@
 #' @param src Button external link.
 #' @param name Button label.
 #' @param status Button color. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/buttons.html}.
-#' @param icon Button icon.
+#' @param icon Button icon. Expect \link{argonIcon} or \link[shiny]{icon}.
 #' @param size Button size: NULL, "sm" or "lg".
 #' @param block Whether the button fill its parent. FALSE by default.
 #' @param disabled Whether to disable the button. FALSE by default.
@@ -19,7 +19,7 @@
 #'  argonButton(
 #'   name = "Click me!",
 #'   status = "danger",
-#'   icon = "atom",
+#'   icon = argonIcon("atom"),
 #'   size = "lg",
 #'   toggle_modal = TRUE,
 #'   modal_id = "modal1"
@@ -49,7 +49,7 @@ argonButton <- function(src = NULL, name = NULL, status = "default", icon = NULL
         htmltools::tags$a(
           href = src,
           target = "_blank",
-          htmltools::tags$span(class = "btn-inner--icon", argonIcon(icon)),
+          htmltools::tags$span(class = "btn-inner--icon", icon),
           htmltools::tags$span(class = "btn-inner--text", name)
         )
       } else {

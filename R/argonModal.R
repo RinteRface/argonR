@@ -41,7 +41,7 @@ argonModal <- function(..., id, title = NULL, status = NULL, gradient = FALSE) {
     htmltools::tags$h5(class = "modal-title", id = paste0(id, "Label") , title),
     htmltools::tags$button(
       type = "button", 
-      class="close", 
+      class = "close", 
       `data-dismiss` = "modal",
       `aria-label` = "Close",
       htmltools::tags$span(`aria-hidden` = "true", "x")
@@ -49,16 +49,7 @@ argonModal <- function(..., id, title = NULL, status = NULL, gradient = FALSE) {
   )
   
   # footer
-  modalFooter <- htmltools::tags$div(
-    class = "modal-footer",
-    htmltools::tags$button(
-      type = "button", 
-      class="btn btn-secondary", 
-      `data-dismiss` = "modal", 
-      "Close"
-    )#,
-    #argonButton(name = "Ok", status = "primary")
-  )
+  modalFooter <- htmltools::tags$div(class = "modal-footer")
   
   # content
   modalBody <- htmltools::tags$div(class = "modal-body", ...)
