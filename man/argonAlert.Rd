@@ -9,7 +9,7 @@ argonAlert(..., icon = NULL, status = "default", closable = TRUE)
 \arguments{
 \item{...}{Alert content.}
 
-\item{icon}{Alert icon.}
+\item{icon}{Alert icon. Expect \link{argonIcon} or \link[shiny]{icon}.}
 
 \item{status}{Alert status. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html}.}
 
@@ -22,7 +22,7 @@ Build an argon alert
 if (interactive()) {
  library(argonR)
  argonAlert(
-  icon = "basket",
+  icon = argonIcon("basket"),
   status = "danger",
   "This is an alert",
   closable = TRUE

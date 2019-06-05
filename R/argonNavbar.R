@@ -179,7 +179,7 @@ argonNavMenu <- function(..., side = "left") {
 #'
 #' @param name Item name.
 #' @param src HTML target page.
-#' @param icon Item icon of any.
+#' @param icon Item icon of any. Expect \link{argonIcon} or \link[shiny]{icon}.
 #' @param tooltip Text to display when the item is hovered.
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
@@ -195,7 +195,7 @@ argonNavItem <- function(name = NULL, src = NULL, icon = NULL, tooltip = NULL) {
       `data-toggle` = "tooltip",
       title = "",
       `data-original-title` = tooltip,
-      htmltools::tags$i(class = paste0("fa fa-", icon)),
+      icon,
       htmltools::tags$span(class = "nav-link-inner--text d-lg-none", name)
     )
   )
@@ -246,7 +246,7 @@ argonDropdown <- function(..., name, size = NULL) {
 #' @param name Item name.
 #' @param description Item description if any.
 #' @param src HTML target page.
-#' @param icon Item icon of any.
+#' @param icon Item icon of any. Expect \link{argonIcon} or \link[shiny]{icon}.
 #' @param status Icon and name color status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
@@ -260,7 +260,7 @@ argonDropdownItem <- function(name = NULL, description = NULL, src = NULL,
     # icon if any
     if (!is.null(icon)) {
       argonIconWrapper(
-        iconTag = argonIcon(icon, color = "white"),
+        iconTag = icon,
         gradient_color = status,
         circle = TRUE,
         size = NULL,

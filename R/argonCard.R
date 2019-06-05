@@ -11,7 +11,7 @@
 #' @param shadow_size Card shadow size. Only if shadow is TRUE. NULL by default.
 #' @param hover_shadow Only if shadow is TRUE. Whether to enlarge the shadow on hover. FALSE by default.
 #' @param border_level Border level. O by default.
-#' @param icon Card icon.
+#' @param icon Card icon. Expect \link{argonIcon} or \link[shiny]{icon}.
 #' @param btn_text Button text. src arg must not be NULL so that this button appears.
 #' @param status Card status. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
 #' @param background_color Card background color. NULL by default. See \url{https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html}.
@@ -29,7 +29,7 @@
 #'   title = "Card 1",
 #'   hover_lift = TRUE,
 #'   shadow = TRUE,
-#'   icon = "check-bold",
+#'   icon = argonIcon("check-bold"),
 #'   src = "#",
 #'   "Argon is a great free UI package based on Bootstrap 4 
 #'   that includes the most important components and features."
@@ -84,7 +84,7 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
     if (!is.null(title)) {
       htmltools::tags$div(
         class = if (!is.null(background_color)) {
-          "cqrd-header bg-transparent"
+          "card-header bg-transparent"
         } else {
           "card-header"
         },
@@ -93,7 +93,7 @@ argonCard <- function(..., title = NULL, src = NULL, hover_lift = FALSE,
           # icon
           if(!is.null(icon)) {
             argonIconWrapper(
-              iconTag = argonIcon(name = icon, color = status),
+              iconTag = icon,
               circle = TRUE,
               size = "sm",
               shadow = TRUE,

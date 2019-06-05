@@ -9,7 +9,7 @@
 #' @param circle Whether to display circled design. FALSE by default.
 #' @param size Tabs size. "sm" by default. "md", "lg".
 #' @param width Tabs width. Between 1 and 12.
-#' @param iconList A list of argonIcon such as list("atom", "cloud-upload-96"). 
+#' @param iconList A list of \link{argonIcon} or \link[shiny]{icon}. 
 #' The lenght must have the same length as the number of tabs. NULL by default.
 #' 
 #' @examples 
@@ -22,7 +22,11 @@
 #'   circle = FALSE,
 #'   size = "sm",
 #'   width = 6,
-#'   iconList = list("cloud-upload-96", "bell-55", "calendar-grid-58"),
+#'   iconList = list(
+#'    argonIcon("cloud-upload-96"), 
+#'    argonIcon("bell-55"), 
+#'    argonIcon("calendar-grid-58")
+#'   ),
 #'   argonTab(
 #'     tabName = "Tab 1",
 #'     active = FALSE,
@@ -97,7 +101,7 @@ argonTabSet <- function(..., id, card_wrapper = FALSE, horizontal = TRUE, circle
             role = "tab",
             `aria-controls` = ns(current_item_id),
             `aria-selected` = "true",
-            if (!is.null(iconList)) argonIcon(name = iconList[[i]]),
+            if (!is.null(iconList)) iconList[[i]],
             current_item_name
           )
         )

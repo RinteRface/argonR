@@ -11,7 +11,7 @@ argonNavItem(name = NULL, src = NULL, icon = NULL, tooltip = NULL)
 
 \item{src}{HTML target page.}
 
-\item{icon}{Item icon of any.}
+\item{icon}{Item icon of any. Expect \link{argonIcon} or \link[shiny]{icon}.}
 
 \item{tooltip}{Text to display when the item is hovered.}
 }

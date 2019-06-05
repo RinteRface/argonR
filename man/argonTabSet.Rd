@@ -22,7 +22,7 @@ argonTabSet(..., id, card_wrapper = FALSE, horizontal = TRUE,
 
 \item{width}{Tabs width. Between 1 and 12.}
 
-\item{iconList}{A list of argonIcon such as list("atom", "cloud-upload-96"). 
+\item{iconList}{A list of \link{argonIcon} or \link[shiny]{icon}. 
 The lenght must have the same length as the number of tabs. NULL by default.}
 }
 \description{
@@ -38,7 +38,11 @@ if (interactive()) {
   circle = FALSE,
   size = "sm",
   width = 6,
-  iconList = list("cloud-upload-96", "bell-55", "calendar-grid-58"),
+  iconList = list(
+   argonIcon("cloud-upload-96"), 
+   argonIcon("bell-55"), 
+   argonIcon("calendar-grid-58")
+  ),
   argonTab(
     tabName = "Tab 1",
     active = FALSE,

@@ -107,21 +107,21 @@ navbar <- argonNavbar(
         name = "Getting Started",
         description = "Blabla",
         src = "",
-        icon = "spaceship",
+        icon = argonIcon("spaceship", color = "white"),
         status = "primary"
       ),
       argonDropdownItem(
         name = "Foundation",
         description = "Blabla",
         src = "",
-        icon = "palette",
+        icon = argonIcon("palette", color = "white"),
         status = "warning"
       ),
       argonDropdownItem(
         name = "Components",
         description = "Blabla",
         src = "",
-        icon = "ui-04",
+        icon = argonIcon("ui-04", color = "white),
         status = "success"
       )
     )
@@ -132,25 +132,25 @@ navbar <- argonNavbar(
     argonNavItem(
       name = "facebook",
       src = "https://www.facebook.com",
-      icon = "facebook-square",
+      icon = icon("facebook-square"),
       tooltip = "Like us on Facebook"
     ),
     argonNavItem(
       name = "instagram",
       src = "https://www.instagram.com",
-      icon = "instagram",
+      icon = icon("instagram"),
       tooltip = "Follow us on Instagram"
     ),
     argonNavItem(
       name = "twitter",
       src = "https://www.twitter.com",
-      icon = "twitter-square",
+      icon = icon("twitter-square"),
       tooltip = "Follow us on Twitter"
     ),
     argonNavItem(
       name = "github",
       src = "https://www.github.com",
-      icon = "github",
+      icon = icon("github"),
       tooltip = "Star us on Github"
     )
   )
@@ -327,22 +327,19 @@ example <- argonPage(
           name = "Getting Started",
           description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
           src = "test.html",
-          icon = "spaceship",
-          status = "primary"
+          icon = argonIcon(name = "spaceship" color = "primary")
         ),
         argonDropdownItem(
           name = "Foundation",
           description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
           src = "",
-          icon = "palette",
-          status = "warning"
+          icon = argonIcon(name = "palette" color = "warning")
         ),
         argonDropdownItem(
           name = "Components",
           description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
           src = "",
-          icon = "ui-04",
-          status = "success"
+          icon = argonIcon(name = "ui-04" color = "success")
         )
       )
     ),
@@ -352,25 +349,25 @@ example <- argonPage(
       argonNavItem(
         name = "facebook",
         src = "https://www.facebook.com",
-        icon = "facebook-square",
+        icon = icon("facebook-square"),
         tooltip = "Like us on Facebook"
       ),
       argonNavItem(
         name = "instagram",
         src = "https://www.instagram.com",
-        icon = "instagram",
+        icon = icon("instagram"),
         tooltip = "Follow us on Instagram"
       ),
       argonNavItem(
         name = "twitter",
         src = "https://www.twitter.com",
-        icon = "twitter-square",
+        icon = icon("twitter-square"),
         tooltip = "Follow us on Twitter"
       ),
       argonNavItem(
         name = "github",
         src = "https://www.github.com",
-        icon = "github",
+        icon = icon("github"),
         tooltip = "Star us on Github"
       )
     )
@@ -468,7 +465,7 @@ example <- argonPage(
           title = "Card 1",
           hover_lift = TRUE,
           shadow = TRUE,
-          icon = "check-bold",
+          icon = argonIcon("check-bold"),
           src = "#",
           "Argon is a great free UI package based on Bootstrap 4 
           that includes the most important components and features."
@@ -482,7 +479,7 @@ example <- argonPage(
           title = "Card 2",
           hover_lift = TRUE,
           shadow = TRUE,
-          icon = "istanbul",
+          icon = argonIcon("istanbul"),
           src = "#",
           "Argon is a great free UI package based on Bootstrap 4 
           that includes the most important components and features"
@@ -496,7 +493,7 @@ example <- argonPage(
           title = "Card 3",
           hover_lift = TRUE,
           shadow = TRUE,
-          icon = "planet",
+          icon = argonIcon("planet"),
           src = "#",
           "Argon is a great free UI package based on Bootstrap 4 
           that includes the most important components and features"
@@ -568,7 +565,7 @@ example <- argonPage(
       argonColumn(
         width = 4,
         argonAlert(
-          icon = "basket",
+          icon = argonIcon("basket"),
           status = "danger",
           "This is an alert",
           closable = TRUE
@@ -577,7 +574,7 @@ example <- argonPage(
       argonColumn(
         width = 4,
         argonAlert(
-          icon = "ui-02",
+          icon = argonIcon("ui-02"),
           status = "success",
           "This is an alert",
           closable = TRUE
@@ -586,7 +583,7 @@ example <- argonPage(
       argonColumn(
         width = 4,
         argonAlert(
-          icon = "ui-03",
+          icon = argonIcon("ui-03"),
           status = "info",
           "This is an alert",
           closable = TRUE
@@ -604,7 +601,11 @@ example <- argonPage(
         circle = FALSE,
         size = "sm",
         width = 6,
-        iconList = list("cloud-upload-96", "bell-55", "calendar-grid-58"),
+        iconList = list(
+         argonIcon("cloud-upload-96"), 
+         argonIcon("bell-55"), 
+         argonicon("calendar-grid-58")
+        ),
         argonTab(
           tabName = "Tab 1",
           active = FALSE,

@@ -28,7 +28,7 @@ Not compatible with floating.}
 
 \item{border_level}{Border level. O by default.}
 
-\item{icon}{Card icon.}
+\item{icon}{Card icon. Expect \link{argonIcon} or \link[shiny]{icon}.}
 
 \item{btn_text}{Button text. src arg must not be NULL so that this button appears.}
 
@@ -55,7 +55,7 @@ if (interactive()) {
   title = "Card 1",
   hover_lift = TRUE,
   shadow = TRUE,
-  icon = "check-bold",
+  icon = argonIcon("check-bold"),
   src = "#",
   "Argon is a great free UI package based on Bootstrap 4 
   that includes the most important components and features."

@@ -1,4 +1,7 @@
 # argonR 0.2.0.9000
+- change the icon parameter of `argonTabSet()`, `argonCard()`, `argonAlert()`,
+`argonDropdownItem()` and `argonNavItem()`
+Now you can use `icon("cogs")` from shiny or `argonIcon()` as usual
 - add offset arg to `argonColumn()`
 - Add btn_text argument to `argonCard()`
 - Fix #1: headroom.js and add the corresponding argument to `argonNavbar()`

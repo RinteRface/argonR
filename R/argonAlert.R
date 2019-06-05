@@ -3,7 +3,7 @@
 #' Build an argon alert
 #'
 #' @param ... Alert content.
-#' @param icon Alert icon.
+#' @param icon Alert icon. Expect \link{argonIcon} or \link[shiny]{icon}.
 #' @param status Alert status. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html}.
 #' @param closable Whether to make the alert closable or not. TRUE by default.
 #' 
@@ -11,7 +11,7 @@
 #' if (interactive()) {
 #'  library(argonR)
 #'  argonAlert(
-#'   icon = "basket",
+#'   icon = argonIcon("basket"),
 #'   status = "danger",
 #'   "This is an alert",
 #'   closable = TRUE
@@ -33,7 +33,7 @@ argonAlert <- function(..., icon = NULL, status = "default", closable = TRUE) {
     if (!is.null(icon)) {
       htmltools::tags$span(
         class = "alert-inner--icon",
-        argonIcon(icon)
+        icon
       )
     },
     htmltools::tags$span(
