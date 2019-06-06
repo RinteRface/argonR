@@ -78,7 +78,7 @@ argonButton <- function(src = NULL, name = NULL, status = "default", icon = NULL
 #'
 #' @param src Button external link.
 #' @param status Button color. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/buttons.html}.
-#' @param icon Button icon.
+#' @param icon Button icon. Expect \link[shiny]{icon}.
 #'
 #' @examples
 #' if(interactive()){
@@ -86,7 +86,7 @@ argonButton <- function(src = NULL, name = NULL, status = "default", icon = NULL
 #'  argonSocialButton(
 #'   src = "http://rinterface.com",
 #'   status = "danger",
-#'   icon = "atom"
+#'   icon = icon("facebook")
 #'  )
 #' }
 #'
@@ -101,7 +101,6 @@ argonSocialButton <- function(src = NULL, status = "default", icon = NULL) {
     class = btnCl,
     href = src,
     target = "_blank",
-    htmltools::tags$i(class = paste0("fa fa-", icon))
+    icon
   )
-  
 }

@@ -11,7 +11,7 @@ argonSocialButton(src = NULL, status = "default", icon = NULL)
 
 \item{status}{Button color. See \url{https://demos.creative-tim.com/argon-design-system/docs/components/buttons.html}.}
 
-\item{icon}{Button icon.}
+\item{icon}{Button icon. Expect \link[shiny]{icon}.}
 }
 \description{
 Build an argon social button
@@ -22,7 +22,7 @@ if(interactive()){
  argonSocialButton(
   src = "http://rinterface.com",
   status = "danger",
-  icon = "atom"
+  icon = icon("facebook")
  )
 }
 
