@@ -4,6 +4,8 @@
 [![CRAN status](https://www.r-pkg.org/badges/version/argonR)](https://cran.r-project.org/package=argonR)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Project Status](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![cranlogs](https://cranlogs.r-pkg.org/badges/argonR)](https://cran.r-project.org/package=argonR)
+[![total](https://cranlogs.r-pkg.org/badges/grand-total/argonR)](https://www.rpackages.io/package/argonR)
 
 > R interface to argon HTML design
 
