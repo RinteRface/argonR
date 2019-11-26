@@ -4,8 +4,7 @@
 \alias{argonCarousel}
 \title{Create a carousel}
 \usage{
-argonCarousel(..., id, floating = FALSE, hover_lift = FALSE,
-  width = 6)
+argonCarousel(..., id, floating = FALSE, hover_lift = FALSE, width = 6)
 }
 \arguments{
 \item{...}{Slot for \link{argonCarouselItem}.}

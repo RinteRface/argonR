@@ -4,8 +4,7 @@
 \alias{argonBadge}
 \title{Create a Boostrap 4 badge}
 \usage{
-argonBadge(text = NULL, src = NULL, pill = FALSE,
-  status = "default")
+argonBadge(text = NULL, src = NULL, pill = FALSE, status = "default")
 }
 \arguments{
 \item{text}{Badge text.}

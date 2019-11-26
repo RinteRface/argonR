@@ -4,9 +4,16 @@
 \alias{argonContact}
 \title{Create a Boostrap 4 argon contact form}
 \usage{
-argonContact(title = NULL, subtitle = NULL, name = "Your name",
-  mail = "Email Adress", subject = "Subject", message, mailto,
-  width = 8)
+argonContact(
+  title = NULL,
+  subtitle = NULL,
+  name = "Your name",
+  mail = "Email Adress",
+  subject = "Subject",
+  message,
+  mailto,
+  width = 8
+)
 }
 \arguments{
 \item{title}{Form title.}

@@ -4,9 +4,18 @@
 \alias{argonButton}
 \title{Create a Boostrap 4 argon button}
 \usage{
-argonButton(src = NULL, name = NULL, status = "default",
-  icon = NULL, size = NULL, block = FALSE, disabled = FALSE,
-  outline = FALSE, toggle_modal = FALSE, modal_id = NULL)
+argonButton(
+  src = NULL,
+  name = NULL,
+  status = "default",
+  icon = NULL,
+  size = NULL,
+  block = FALSE,
+  disabled = FALSE,
+  outline = FALSE,
+  toggle_modal = FALSE,
+  modal_id = NULL
+)
 }
 \arguments{
 \item{src}{Button external link.}

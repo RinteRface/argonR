@@ -4,8 +4,14 @@
 \alias{argonImage}
 \title{Create a Boostrap 4 image container}
 \usage{
-argonImage(src = NULL, url = NULL, floating = FALSE,
-  card_mode = FALSE, hover_lift = FALSE, width = NULL)
+argonImage(
+  src = NULL,
+  url = NULL,
+  floating = FALSE,
+  card_mode = FALSE,
+  hover_lift = FALSE,
+  width = NULL
+)
 }
 \arguments{
 \item{src}{Image source or path.}

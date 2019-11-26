@@ -4,8 +4,7 @@
 \alias{argonPageTemplate}
 \title{Create an HTML version of the argonPage}
 \usage{
-argonPageTemplate(filename = "index", path = getwd(), argonPage,
-  view = TRUE)
+argonPageTemplate(filename = "index", path = getwd(), argonPage, view = TRUE)
 }
 \arguments{
 \item{filename}{HTML filename for instance, index.html.}

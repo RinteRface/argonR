@@ -4,8 +4,14 @@
 \alias{argonNavbar}
 \title{Create a Boostrap 4 argon navbar}
 \usage{
-argonNavbar(..., href = "#", src = NULL, src_collapsed = NULL, id,
-  headroom = TRUE)
+argonNavbar(
+  ...,
+  href = "#",
+  src = NULL,
+  src_collapsed = NULL,
+  id,
+  headroom = TRUE
+)
 }
 \arguments{
 \item{...}{Slot for \link{argonNavMenu}.}

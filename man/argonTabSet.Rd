@@ -4,8 +4,16 @@
 \alias{argonTabSet}
 \title{Create a Boostrap 4 tabs}
 \usage{
-argonTabSet(..., id, card_wrapper = FALSE, horizontal = TRUE,
-  circle = FALSE, size = "sm", width = 6, iconList = NULL)
+argonTabSet(
+  ...,
+  id,
+  card_wrapper = FALSE,
+  horizontal = TRUE,
+  circle = FALSE,
+  size = "sm",
+  width = 6,
+  iconList = NULL
+)
 }
 \arguments{
 \item{...}{Slot for \link{argonTab}.}

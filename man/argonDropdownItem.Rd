@@ -4,8 +4,13 @@
 \alias{argonDropdownItem}
 \title{Create a Boostrap 4 argon dropdown item}
 \usage{
-argonDropdownItem(name = NULL, description = NULL, src = NULL,
-  icon = NULL, status = NULL)
+argonDropdownItem(
+  name = NULL,
+  description = NULL,
+  src = NULL,
+  icon = NULL,
+  status = NULL
+)
 }
 \arguments{
 \item{name}{Item name.}
