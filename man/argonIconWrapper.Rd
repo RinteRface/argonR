@@ -4,9 +4,15 @@
 \alias{argonIconWrapper}
 \title{Create a Nucleo icon wrapper}
 \usage{
-argonIconWrapper(iconTag, circle = TRUE, size = NULL,
-  status = "default", gradient_color = NULL, shadow = TRUE,
-  hover_shadow = FALSE)
+argonIconWrapper(
+  iconTag,
+  circle = TRUE,
+  size = NULL,
+  status = "default",
+  gradient_color = NULL,
+  shadow = TRUE,
+  hover_shadow = FALSE
+)
 }
 \arguments{
 \item{iconTag}{Slot for \link{argonIcon}}

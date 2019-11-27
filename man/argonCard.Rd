@@ -4,11 +4,23 @@
 \alias{argonCard}
 \title{Create a Boostrap 4 card}
 \usage{
-argonCard(..., title = NULL, src = NULL, hover_lift = FALSE,
-  shadow = FALSE, shadow_size = NULL, hover_shadow = FALSE,
-  border_level = 0, icon = NULL, btn_text = "More",
-  status = "primary", background_color = NULL, gradient = FALSE,
-  floating = FALSE, width = 6)
+argonCard(
+  ...,
+  title = NULL,
+  src = NULL,
+  hover_lift = FALSE,
+  shadow = FALSE,
+  shadow_size = NULL,
+  hover_shadow = FALSE,
+  border_level = 0,
+  icon = NULL,
+  btn_text = "More",
+  status = "primary",
+  background_color = NULL,
+  gradient = FALSE,
+  floating = FALSE,
+  width = 6
+)
 }
 \arguments{
 \item{...}{Body content.}

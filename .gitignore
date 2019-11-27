@@ -4,3 +4,6 @@ inst/doc
 .RData
 .Ruserdata
 .DS_Store
+revdep/checks.noindex
+revdep/library.noindex
+revdep/data.sqlite

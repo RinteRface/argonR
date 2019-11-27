@@ -4,9 +4,16 @@
 \alias{argonSection}
 \title{Create a Boostrap 4 section container}
 \usage{
-argonSection(..., size = NULL, status = "default", gradient = FALSE,
-  separator = FALSE, separator_color = "secondary", shape = FALSE,
-  cascade = FALSE)
+argonSection(
+  ...,
+  size = NULL,
+  status = "default",
+  gradient = FALSE,
+  separator = FALSE,
+  separator_color = "secondary",
+  shape = FALSE,
+  cascade = FALSE
+)
 }
 \arguments{
 \item{...}{Any UI element.}

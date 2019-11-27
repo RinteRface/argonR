@@ -4,8 +4,16 @@
 \alias{argonPage}
 \title{Create a Boostrap 4 argon page}
 \usage{
-argonPage(..., title = NULL, description = NULL, author = NULL,
-  navbar = NULL, footer = NULL, favicon = NULL, analytics = NULL)
+argonPage(
+  ...,
+  title = NULL,
+  description = NULL,
+  author = NULL,
+  navbar = NULL,
+  footer = NULL,
+  favicon = NULL,
+  analytics = NULL
+)
 }
 \arguments{
 \item{...}{Body content}

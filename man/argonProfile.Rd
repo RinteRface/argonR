@@ -4,8 +4,16 @@
 \alias{argonProfile}
 \title{Create a Boostrap 4 profile card}
 \usage{
-argonProfile(..., title = NULL, subtitle = NULL, src = NULL,
-  url = NULL, url_1 = NULL, url_2 = NULL, stats)
+argonProfile(
+  ...,
+  title = NULL,
+  subtitle = NULL,
+  src = NULL,
+  url = NULL,
+  url_1 = NULL,
+  url_2 = NULL,
+  stats
+)
 }
 \arguments{
 \item{...}{Any element.}

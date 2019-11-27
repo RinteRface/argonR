@@ -16,9 +16,10 @@ Imports: htmltools, utils, rstudioapi
 Suggests: 
     magrittr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    shiny
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.0
 VignetteBuilder: knitr

@@ -5,3 +5,4 @@
 ^\.travis\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^revdep$
