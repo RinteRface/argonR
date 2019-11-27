@@ -1,4 +1,4 @@
-# argonR 0.2.0.9000
+# argonR 0.2.0
 - Fix #9: remove close button from `argonModal()`. Thanks @Morais14
 - change the icon parameter of `argonTabSet()`, `argonCard()`, `argonAlert()`,
 `argonDropdownItem()`, `argonNavItem()`, `argonButton()` and `argonSocialButton()`
