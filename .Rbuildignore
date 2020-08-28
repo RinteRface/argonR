@@ -2,7 +2,9 @@
 ^docs$
 ^_pkgdown\.yml$
 ^cran-comments\.md$
-^\.travis\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^revdep$
+^CODE_OF_CONDUCT\.md$
+^\.github$
+^pkgdown$

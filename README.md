@@ -1,9 +1,8 @@
 # argonR <img src="http://www.rinterface.com/inst/images/argonR.svg" width=200 align="right" />
 
-[![Travis build status](https://travis-ci.org/RinteRface/argonR.svg?branch=master)](https://travis-ci.org/RinteRface/argonR)
+[![R build status](https://github.com/RinteRface/argonR/workflows/R-CMD-check/badge.svg)](https://github.com/RinteRface/argonR/actions)
 [![CRAN status](https://www.r-pkg.org/badges/version/argonR)](https://cran.r-project.org/package=argonR)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Project Status](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![cranlogs](https://cranlogs.r-pkg.org/badges/argonR)](https://cran.r-project.org/package=argonR)
 [![total](https://cranlogs.r-pkg.org/badges/grand-total/argonR)](https://www.rpackages.io/package/argonR)
 
@@ -43,5 +42,9 @@ shiny-server (usually /srv/shiny-server). Enter the web server adress in the web
 
 See [argonDash](https://github.com/RinteRface/argonDash).
 
-## Acknowledgements
+## Acknowledgement
 * Many thanks to CreativeTim for creating argon HTML.
+
+## Code of Conduct
+  
+  Please note that the argonR project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
