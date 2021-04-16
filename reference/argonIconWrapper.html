@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -97,7 +97,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/RinteRface/argonR">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fas fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -123,15 +123,15 @@
     <p>Build an argon Nucleo icon wrapper</p>
     </div>
 
-    <pre class="usage"><span class='fu'>argonIconWrapper</span>(
-  <span class='no'>iconTag</span>,
-  <span class='kw'>circle</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"default"</span>,
-  <span class='kw'>gradient_color</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>shadow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>hover_shadow</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>argonIconWrapper</span><span class='op'>(</span>
+  <span class='va'>iconTag</span>,
+  circle <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  size <span class='op'>=</span> <span class='cn'>NULL</span>,
+  status <span class='op'>=</span> <span class='st'>"default"</span>,
+  gradient_color <span class='op'>=</span> <span class='cn'>NULL</span>,
+  shadow <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  hover_shadow <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,18 +166,24 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()) {
- <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>argonR</span>)
- <span class='fu'>argonIconWrapper</span>(
-  <span class='kw'>iconTag</span> <span class='kw'>=</span> <span class='fu'><a href='argonIcon.html'>argonIcon</a></span>(<span class='st'>"atom"</span>),
-  <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"lg"</span>,
-  <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"danger"</span>,
-  <span class='kw'>shadow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>hover_shadow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
- )
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
+ <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/RinteRface/argonR'>argonR</a></span><span class='op'>)</span>
+ <span class='fu'>argonIconWrapper</span><span class='op'>(</span>
+  iconTag <span class='op'>=</span> <span class='fu'><a href='argonIcon.html'>argonIcon</a></span><span class='op'>(</span><span class='st'>"atom"</span><span class='op'>)</span>,
+  size <span class='op'>=</span> <span class='st'>"lg"</span>,
+  status <span class='op'>=</span> <span class='st'>"danger"</span>,
+  shadow <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  hover_shadow <span class='op'>=</span> <span class='cn'>TRUE</span>
+ <span class='op'>)</span>
+<span class='op'>}</span>
+
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -193,7 +199,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

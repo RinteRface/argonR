@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -97,7 +97,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/RinteRface/argonR">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fas fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -123,14 +123,14 @@
     <p>Build an argon navbar</p>
     </div>
 
-    <pre class="usage"><span class='fu'>argonNavbar</span>(
-  <span class='no'>...</span>,
-  <span class='kw'>href</span> <span class='kw'>=</span> <span class='st'>"#"</span>,
-  <span class='kw'>src</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>src_collapsed</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='no'>id</span>,
-  <span class='kw'>headroom</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>argonNavbar</span><span class='op'>(</span>
+  <span class='va'>...</span>,
+  href <span class='op'>=</span> <span class='st'>"#"</span>,
+  src <span class='op'>=</span> <span class='cn'>NULL</span>,
+  src_collapsed <span class='op'>=</span> <span class='cn'>NULL</span>,
+  <span class='va'>id</span>,
+  headroom <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -161,71 +161,76 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){
- <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>argonR</span>)
- <span class='fu'>argonNavbar</span>(
-  <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"main-navbar"</span>,
-  <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png"</span>,
+    <pre class="examples"><div class='input'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
+ <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/RinteRface/argonR'>argonR</a></span><span class='op'>)</span>
+ <span class='fu'>argonNavbar</span><span class='op'>(</span>
+  id <span class='op'>=</span> <span class='st'>"main-navbar"</span>,
+  src <span class='op'>=</span> <span class='st'>"https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png"</span>,
   <span class='co'># left menu</span>
-  <span class='fu'><a href='argonNavMenu.html'>argonNavMenu</a></span>(
-    <span class='fu'><a href='argonDropdown.html'>argonDropdown</a></span>(
-      <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Components"</span>,
-      <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"lg"</span>,
-      <span class='fu'><a href='argonDropdownItem.html'>argonDropdownItem</a></span>(
-        <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Getting Started"</span>,
-        <span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla"</span>,
-        <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"test.html"</span>,
-        <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"spaceship"</span>,
-        <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"primary"</span>
-      ),
-      <span class='fu'><a href='argonDropdownItem.html'>argonDropdownItem</a></span>(
-        <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Foundation"</span>,
-        <span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla"</span>,
-        <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>""</span>,
-        <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"palette"</span>,
-        <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"warning"</span>
-      ),
-      <span class='fu'><a href='argonDropdownItem.html'>argonDropdownItem</a></span>(
-        <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Components"</span>,
-        <span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla"</span>,
-        <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>""</span>,
-        <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"ui-04"</span>,
-        <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"success"</span>
-      )
-    )
-  ),
+  <span class='fu'><a href='argonNavMenu.html'>argonNavMenu</a></span><span class='op'>(</span>
+    <span class='fu'><a href='argonDropdown.html'>argonDropdown</a></span><span class='op'>(</span>
+      name <span class='op'>=</span> <span class='st'>"Components"</span>,
+      size <span class='op'>=</span> <span class='st'>"lg"</span>,
+      <span class='fu'><a href='argonDropdownItem.html'>argonDropdownItem</a></span><span class='op'>(</span>
+        name <span class='op'>=</span> <span class='st'>"Getting Started"</span>,
+        description <span class='op'>=</span> <span class='st'>"BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla"</span>,
+        src <span class='op'>=</span> <span class='st'>"test.html"</span>,
+        icon <span class='op'>=</span> <span class='st'>"spaceship"</span>,
+        status <span class='op'>=</span> <span class='st'>"primary"</span>
+      <span class='op'>)</span>,
+      <span class='fu'><a href='argonDropdownItem.html'>argonDropdownItem</a></span><span class='op'>(</span>
+        name <span class='op'>=</span> <span class='st'>"Foundation"</span>,
+        description <span class='op'>=</span> <span class='st'>"BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla"</span>,
+        src <span class='op'>=</span> <span class='st'>""</span>,
+        icon <span class='op'>=</span> <span class='st'>"palette"</span>,
+        status <span class='op'>=</span> <span class='st'>"warning"</span>
+      <span class='op'>)</span>,
+      <span class='fu'><a href='argonDropdownItem.html'>argonDropdownItem</a></span><span class='op'>(</span>
+        name <span class='op'>=</span> <span class='st'>"Components"</span>,
+        description <span class='op'>=</span> <span class='st'>"BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla"</span>,
+        src <span class='op'>=</span> <span class='st'>""</span>,
+        icon <span class='op'>=</span> <span class='st'>"ui-04"</span>,
+        status <span class='op'>=</span> <span class='st'>"success"</span>
+      <span class='op'>)</span>
+    <span class='op'>)</span>
+  <span class='op'>)</span>,
   <span class='co'># right menu</span>
-  <span class='fu'><a href='argonNavMenu.html'>argonNavMenu</a></span>(
-    <span class='kw'>side</span> <span class='kw'>=</span> <span class='st'>"right"</span>,
-    <span class='fu'><a href='argonNavItem.html'>argonNavItem</a></span>(
-      <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"facebook"</span>,
-      <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"https://www.facebook.com"</span>,
-      <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"facebook-square"</span>,
-      <span class='kw'>tooltip</span> <span class='kw'>=</span> <span class='st'>"Like us on Facebook"</span>
-    ),
-    <span class='fu'><a href='argonNavItem.html'>argonNavItem</a></span>(
-      <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"instagram"</span>,
-      <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"https://www.instagram.com"</span>,
-      <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"instagram"</span>,
-      <span class='kw'>tooltip</span> <span class='kw'>=</span> <span class='st'>"Follow us on Instagram"</span>
-    ),
-    <span class='fu'><a href='argonNavItem.html'>argonNavItem</a></span>(
-      <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"twitter"</span>,
-      <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"https://www.twitter.com"</span>,
-      <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"twitter-square"</span>,
-      <span class='kw'>tooltip</span> <span class='kw'>=</span> <span class='st'>"Follow us on Twitter"</span>
-    ),
-    <span class='fu'><a href='argonNavItem.html'>argonNavItem</a></span>(
-      <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"github"</span>,
-      <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"https://www.github.com"</span>,
-      <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"github"</span>,
-      <span class='kw'>tooltip</span> <span class='kw'>=</span> <span class='st'>"Star us on Github"</span>
-    )
-  )
- )
-}</div></pre>
+  <span class='fu'><a href='argonNavMenu.html'>argonNavMenu</a></span><span class='op'>(</span>
+    side <span class='op'>=</span> <span class='st'>"right"</span>,
+    <span class='fu'><a href='argonNavItem.html'>argonNavItem</a></span><span class='op'>(</span>
+      name <span class='op'>=</span> <span class='st'>"facebook"</span>,
+      src <span class='op'>=</span> <span class='st'>"https://www.facebook.com"</span>,
+      icon <span class='op'>=</span> <span class='st'>"facebook-square"</span>,
+      tooltip <span class='op'>=</span> <span class='st'>"Like us on Facebook"</span>
+    <span class='op'>)</span>,
+    <span class='fu'><a href='argonNavItem.html'>argonNavItem</a></span><span class='op'>(</span>
+      name <span class='op'>=</span> <span class='st'>"instagram"</span>,
+      src <span class='op'>=</span> <span class='st'>"https://www.instagram.com"</span>,
+      icon <span class='op'>=</span> <span class='st'>"instagram"</span>,
+      tooltip <span class='op'>=</span> <span class='st'>"Follow us on Instagram"</span>
+    <span class='op'>)</span>,
+    <span class='fu'><a href='argonNavItem.html'>argonNavItem</a></span><span class='op'>(</span>
+      name <span class='op'>=</span> <span class='st'>"twitter"</span>,
+      src <span class='op'>=</span> <span class='st'>"https://www.twitter.com"</span>,
+      icon <span class='op'>=</span> <span class='st'>"twitter-square"</span>,
+      tooltip <span class='op'>=</span> <span class='st'>"Follow us on Twitter"</span>
+    <span class='op'>)</span>,
+    <span class='fu'><a href='argonNavItem.html'>argonNavItem</a></span><span class='op'>(</span>
+      name <span class='op'>=</span> <span class='st'>"github"</span>,
+      src <span class='op'>=</span> <span class='st'>"https://www.github.com"</span>,
+      icon <span class='op'>=</span> <span class='st'>"github"</span>,
+      tooltip <span class='op'>=</span> <span class='st'>"Star us on Github"</span>
+    <span class='op'>)</span>
+  <span class='op'>)</span>
+ <span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -241,7 +246,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
