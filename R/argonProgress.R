@@ -18,7 +18,7 @@
 #' @export
 argonProgress <- function(value, text = NULL, status = "primary") {
   
-  stopifnot(value < 100)
+  stopifnot(value <= 100)
   
   progressWrapper <- htmltools::tags$div(class = "progress-wrapper")
   progressTag <- htmltools::tags$div(class = "progress-info")
