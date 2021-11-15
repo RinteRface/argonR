@@ -47,8 +47,19 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="articles/index.html">Articles</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li class="divider">
+    <li class="dropdown-header">User Guide</li>
+    <li>
+      <a href="articles/getting_started.html">Getting Started</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="news/index.html">Changelog</a>
@@ -79,12 +90,12 @@
 </h1></div>
 
 <blockquote>
-<p>R interface to argon HTML design</p>
+<p>R interface to argon HTML Bootstrap 4 template</p>
 </blockquote>
 <div id="argonr-philosophy" class="section level2">
 <h2 class="hasAnchor">
 <a href="#argonr-philosophy" class="anchor"></a>ArgonR philosophy</h2>
-<p>ArgonR primarily aims at building static webpages, without the need of shiny or server part. However, it can be also used within shiny packages such as argonDash, a bootstrap4 shiny dashboard. See <a href="https://github.com/RinteRface/argonDash">here</a> for more details.</p>
+<p><a href="https://github.com/RinteRface/argonR">argonR</a> primarily aims at building static webpages from R, without the need of shiny or server part. However, it can be also used within shiny packages such as <a href="https://github.com/RinteRface/argonDash">argonDash</a>, a bootstrap4 shiny dashboard. See <a href="https://github.com/RinteRface/argonDash">here</a> for more details.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -106,7 +117,7 @@
 <a href="#how-to-host-it" class="anchor"></a>How to host it?</h2>
 <p>This is pretty simple:</p>
 <ul>
-<li>test it locally: after having generated your HTML page as described previously, open it with any web browser</li>
+<li>Test it locally: after having generated your HTML page as described previously, open it with any web browser</li>
 <li>On apache or nginx server: copy example.html and the inst folder to the root of your web server. Enter the web server adress in the web browser.</li>
 <li>On shiny-server: copy example.html and the inst folder to the root of your shiny-server (usually /srv/shiny-server). Enter the web server adress in the web browser</li>
 </ul>
@@ -114,7 +125,7 @@
 <div id="use-with-shiny" class="section level2">
 <h2 class="hasAnchor">
 <a href="#use-with-shiny" class="anchor"></a>Use with shiny</h2>
-<p>See <a href="https://github.com/RinteRface/argonDash">argonDash</a>.</p>
+<p>See <a href="https://github.com/RinteRface/argonDash">{argonDash}</a>.</p>
 </div>
 <div id="acknowledgement" class="section level2">
 <h2 class="hasAnchor">
