@@ -24,7 +24,7 @@ devtools::install_github("RinteRface/argonR")
 
 ## Demo
 
-See a demonstration [here](http://rinterface.com/shiny/argonR/):
+See a demonstration [here](https://rinterface.com).
 
 <br>
 <a href="http://rinterface.com/shiny/argonR/" target="_blank"><img src="man/figures/argonRDemo.png"></a>
@@ -43,7 +43,7 @@ shiny-server (usually /srv/shiny-server). Enter the web server adress in the web
 See [argonDash](https://github.com/RinteRface/argonDash).
 
 ## Acknowledgement
-* Many thanks to CreativeTim for creating argon HTML.
+* Many thanks to [Creative Tim](https://www.creative-tim.com/) for creating argon HTML.
 
 ## Code of Conduct
   
