@@ -87,8 +87,19 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="../articles/index.html">Articles</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="divider"></li>
+    <li class="dropdown-header">User Guide</li>
+    <li>
+      <a href="../articles/getting_started.html">Getting Started</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -123,7 +134,7 @@
     <p>Build an argon footer</p>
     </div>
 
-    <pre class="usage"><span class='fu'>argonFooter</span>(<span class='no'>...</span>, <span class='kw'>has_card</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>status</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gradient</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>argonFooter</span><span class='op'>(</span><span class='va'>...</span>, has_card <span class='op'>=</span> <span class='cn'>FALSE</span>, status <span class='op'>=</span> <span class='cn'>NULL</span>, gradient <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -146,53 +157,58 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){
- <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>argonR</span>)
- <span class='fu'>argonFooter</span>(
-  <span class='kw'>has_card</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='fu'><a href='argonContainer.html'>argonContainer</a></span>(
-    <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"lg"</span>,
-    <span class='fu'><a href='argonRow.html'>argonRow</a></span>(
-      <span class='fu'><a href='argonColumn.html'>argonColumn</a></span>(
-        <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-        <span class='fu'><a href='argonIconWrapper.html'>argonIconWrapper</a></span>(
-          <span class='kw'>iconTag</span> <span class='kw'>=</span> <span class='fu'><a href='argonIcon.html'>argonIcon</a></span>(<span class='st'>"atom"</span>),
-          <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"lg"</span>,
-          <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"success"</span>,
-          <span class='kw'>shadow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-          <span class='kw'>hover_shadow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-        ),
-        <span class='fu'><a href='argonH1.html'>argonH1</a></span>(
-          <span class='kw'>display</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-          <span class='st'>"Insert anything in the footer"</span>
-        ),
-        <span class='fu'><a href='argonLead.html'>argonLead</a></span>(
-          <span class='st'>"The Arctic Ocean freezes every winter and much of 
-          the sea-ice then thaws every summer, and that process 
-          will continue whatever"</span>
-        )
-        ),
-      <span class='fu'><a href='argonColumn.html'>argonColumn</a></span>(
-        <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-        <span class='fu'><a href='argonCarousel.html'>argonCarousel</a></span>(
-          <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>12</span>,
-          <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"carousel2"</span>,
-          <span class='fu'><a href='argonCarouselItem.html'>argonCarouselItem</a></span>(
-            <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png"</span>,
-            <span class='kw'>active</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-          ),
-          <span class='fu'><a href='argonCarouselItem.html'>argonCarouselItem</a></span>(
-            <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png"</span>,
-            <span class='kw'>active</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
-          )
-        )
-      )
-    )
-   )
- )
-}</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span></span>
+<span class='r-in'> <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/RinteRface/argonR'>argonR</a></span><span class='op'>)</span></span>
+<span class='r-in'> <span class='fu'>argonFooter</span><span class='op'>(</span></span>
+<span class='r-in'>  has_card <span class='op'>=</span> <span class='cn'>FALSE</span>,</span>
+<span class='r-in'>  <span class='fu'><a href='argonContainer.html'>argonContainer</a></span><span class='op'>(</span></span>
+<span class='r-in'>    size <span class='op'>=</span> <span class='st'>"lg"</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='argonRow.html'>argonRow</a></span><span class='op'>(</span></span>
+<span class='r-in'>      <span class='fu'><a href='argonColumn.html'>argonColumn</a></span><span class='op'>(</span></span>
+<span class='r-in'>        width <span class='op'>=</span> <span class='fl'>6</span>,</span>
+<span class='r-in'>        <span class='fu'><a href='argonIconWrapper.html'>argonIconWrapper</a></span><span class='op'>(</span></span>
+<span class='r-in'>          iconTag <span class='op'>=</span> <span class='fu'><a href='argonIcon.html'>argonIcon</a></span><span class='op'>(</span><span class='st'>"atom"</span><span class='op'>)</span>,</span>
+<span class='r-in'>          size <span class='op'>=</span> <span class='st'>"lg"</span>,</span>
+<span class='r-in'>          status <span class='op'>=</span> <span class='st'>"success"</span>,</span>
+<span class='r-in'>          shadow <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span class='r-in'>          hover_shadow <span class='op'>=</span> <span class='cn'>TRUE</span></span>
+<span class='r-in'>        <span class='op'>)</span>,</span>
+<span class='r-in'>        <span class='fu'><a href='argonH1.html'>argonH1</a></span><span class='op'>(</span></span>
+<span class='r-in'>          display <span class='op'>=</span> <span class='fl'>3</span>,</span>
+<span class='r-in'>          <span class='st'>"Insert anything in the footer"</span></span>
+<span class='r-in'>        <span class='op'>)</span>,</span>
+<span class='r-in'>        <span class='fu'><a href='argonLead.html'>argonLead</a></span><span class='op'>(</span></span>
+<span class='r-in'>          <span class='st'>"The Arctic Ocean freezes every winter and much of </span>
+<span class='r-in'>          the sea-ice then thaws every summer, and that process </span>
+<span class='r-in'>          will continue whatever"</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>        <span class='op'>)</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='argonColumn.html'>argonColumn</a></span><span class='op'>(</span></span>
+<span class='r-in'>        width <span class='op'>=</span> <span class='fl'>6</span>,</span>
+<span class='r-in'>        <span class='fu'><a href='argonCarousel.html'>argonCarousel</a></span><span class='op'>(</span></span>
+<span class='r-in'>          width <span class='op'>=</span> <span class='fl'>12</span>,</span>
+<span class='r-in'>          id <span class='op'>=</span> <span class='st'>"carousel2"</span>,</span>
+<span class='r-in'>          <span class='fu'><a href='argonCarouselItem.html'>argonCarouselItem</a></span><span class='op'>(</span></span>
+<span class='r-in'>            src <span class='op'>=</span> <span class='st'>"http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png"</span>,</span>
+<span class='r-in'>            active <span class='op'>=</span> <span class='cn'>TRUE</span></span>
+<span class='r-in'>          <span class='op'>)</span>,</span>
+<span class='r-in'>          <span class='fu'><a href='argonCarouselItem.html'>argonCarouselItem</a></span><span class='op'>(</span></span>
+<span class='r-in'>            src <span class='op'>=</span> <span class='st'>"http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png"</span>,</span>
+<span class='r-in'>            active <span class='op'>=</span> <span class='cn'>FALSE</span></span>
+<span class='r-in'>          <span class='op'>)</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'>   <span class='op'>)</span></span>
+<span class='r-in'> <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -208,7 +224,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

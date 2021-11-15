@@ -6,11 +6,11 @@
 [![cranlogs](https://cranlogs.r-pkg.org/badges/argonR)](https://cran.r-project.org/package=argonR)
 [![total](https://cranlogs.r-pkg.org/badges/grand-total/argonR)](https://www.rpackages.io/package/argonR)
 
-> R interface to argon HTML design
+> R interface to argon HTML Bootstrap 4 template
 
 ## ArgonR philosophy
-ArgonR primarily aims at building static webpages, without the need of shiny or server part. However,
-it can be also used within shiny packages such as argonDash, a bootstrap4 shiny dashboard.
+`{argonR}` primarily aims at building static webpages from R, without the need of shiny or server part. However,
+it can be also used within shiny packages such as `{argonDash}`, a bootstrap4 shiny dashboard.
 See [here](https://github.com/RinteRface/argonDash) for more details.
 
 ## Installation
@@ -31,7 +31,7 @@ See a demonstration [here](https://rinterface.com).
 
 ## How to host it?
 This is pretty simple:
-* test it locally: after having generated your HTML page as described previously, 
+* Test it locally: after having generated your HTML page as described previously, 
 open it with any web browser
 * On apache or nginx server: copy example.html and the inst folder to the root of your
 web server. Enter the web server adress in the web browser.
@@ -40,7 +40,7 @@ shiny-server (usually /srv/shiny-server). Enter the web server adress in the web
 
 ## Use with shiny
 
-See [argonDash](https://github.com/RinteRface/argonDash).
+See [{argonDash}](https://github.com/RinteRface/argonDash).
 
 ## Acknowledgement
 * Many thanks to [Creative Tim](https://www.creative-tim.com/) for creating argon HTML.

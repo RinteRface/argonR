@@ -46,8 +46,19 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="../articles/index.html">Articles</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li class="divider">
+    <li class="dropdown-header">User Guide</li>
+    <li>
+      <a href="../articles/getting_started.html">Getting Started</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -70,13 +81,13 @@
 
       
 
-      </header><script src="getting_started_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="getting_started_files/header-attrs-2.11/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Getting Started</h1>
                         <h4 class="author">David Granjon</h4>
             
-            <h4 class="date">2020-08-28</h4>
+            <h4 class="date">2021-11-15</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/RinteRface/argonR/blob/master/vignettes/getting_started.Rmd"><code>vignettes/getting_started.Rmd</code></a></small>
       <div class="hidden name"><code>getting_started.Rmd</code></div>
@@ -89,14 +100,16 @@
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
 <p>We need to load the following packages:</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">argonR</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">htmltools</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">magrittr</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/RinteRface/argonR">argonR</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools">htmltools</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span></code></pre></div>
 <div id="installing-assets" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installing-assets" class="anchor"></a>Installing assets</h3>
 <p>To install all mandatory CSS and javascript files run the following command</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="../reference/argonInstall.html">argonInstall</a></span>()</pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/argonInstall.html">argonInstall</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>By default, the path corresponds the the current working directory (<code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code>) but you can change it. In the following, make sure to generate html pages in the same directory!</p>
 </div>
 <div id="generate-a-page" class="section level3">
@@ -106,37 +119,39 @@
 <h4 class="hasAnchor">
 <a href="#argonpage" class="anchor"></a>argonPage</h4>
 <p>Below is an example of a very basic HTML page:</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"> <span class="fu"><a href="../reference/argonPage.html">argonPage</a></span>(
-  <span class="kw">title</span> <span class="kw">=</span> <span class="st">"ArgonR Static Template"</span>,
-  <span class="kw">author</span> <span class="kw">=</span>  <span class="st">"Somebody"</span>,
-  <span class="kw">description</span> <span class="kw">=</span> <span class="st">"HTML Static Template"</span>,
-  <span class="kw">navbar</span> <span class="kw">=</span> <span class="kw">NULL</span>,
-  <span class="kw">footer</span> <span class="kw">=</span> <span class="kw">NULL</span>
- )</pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"> <span class="fu"><a href="../reference/argonPage.html">argonPage</a></span><span class="op">(</span>
+  title <span class="op">=</span> <span class="st">"ArgonR Static Template"</span>,
+  author <span class="op">=</span>  <span class="st">"Somebody"</span>,
+  description <span class="op">=</span> <span class="st">"HTML Static Template"</span>,
+  navbar <span class="op">=</span> <span class="cn">NULL</span>,
+  footer <span class="op">=</span> <span class="cn">NULL</span>
+ <span class="op">)</span></code></pre></div>
 <p>which generate the following HTML:</p>
-<details><p><summary>Code</summary></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">"utf-8"</span><span class="kw">/&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">"viewport"</span><span class="ot"> content=</span><span class="st">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="kw">/&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">"description"</span><span class="ot"> content=</span><span class="st">"HTML Static Template"</span><span class="kw">/&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">"author"</span><span class="ot"> content=</span><span class="st">"Somebody"</span><span class="kw">/&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>  <span class="kw">&lt;title&gt;</span>ArgonR Static Template<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">"inst/assets/img/brand/favicon.png"</span><span class="ot"> rel=</span><span class="st">"icon"</span><span class="ot"> type=</span><span class="st">"image/png"</span><span class="kw">/&gt;</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">"https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"</span><span class="ot"> rel=</span><span class="st">"stylesheet"</span><span class="kw">/&gt;</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a>  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">"inst/assets/vendor/nucleo/css/nucleo.css"</span><span class="ot"> rel=</span><span class="st">"stylesheet"</span><span class="kw">/&gt;</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">"inst/assets/vendor/font-awesome/css/font-awesome.min.css"</span><span class="ot"> rel=</span><span class="st">"stylesheet"</span><span class="kw">/&gt;</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a>  <span class="kw">&lt;link</span><span class="ot"> type=</span><span class="st">"text/css"</span><span class="ot"> href=</span><span class="st">"inst/assets/css/argon.min.css"</span><span class="ot"> rel=</span><span class="st">"stylesheet"</span><span class="kw">/&gt;</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a>  <span class="kw">&lt;body&gt;</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>    <span class="kw">&lt;header</span><span class="ot"> class=</span><span class="st">"header-global"</span><span class="kw">&gt;&lt;/header&gt;</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a>    <span class="kw">&lt;main&gt;&lt;/main&gt;</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">"inst/assets/vendor/jquery/jquery.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">"inst/assets/vendor/popper/popper.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">"inst/assets/vendor/bootstrap/bootstrap.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb4-18"><a href="#cb4-18"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">"inst/assets/vendor/headroom/headroom.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb4-19"><a href="#cb4-19"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">"inst/assets/vendor/onscreen/onscreen.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">"inst/assets/js/argon.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a>  <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<details><summary>
+Code
+</summary><div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">"utf-8"</span><span class="kw">/&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">"viewport"</span> <span class="er">content</span><span class="ot">=</span><span class="st">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="kw">/&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">"description"</span> <span class="er">content</span><span class="ot">=</span><span class="st">"HTML Static Template"</span><span class="kw">/&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">"author"</span> <span class="er">content</span><span class="ot">=</span><span class="st">"Somebody"</span><span class="kw">/&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;title&gt;</span>ArgonR Static Template<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;link</span> <span class="er">href</span><span class="ot">=</span><span class="st">"inst/assets/img/brand/favicon.png"</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"icon"</span> <span class="er">type</span><span class="ot">=</span><span class="st">"image/png"</span><span class="kw">/&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;link</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span><span class="kw">/&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;link</span> <span class="er">href</span><span class="ot">=</span><span class="st">"inst/assets/vendor/nucleo/css/nucleo.css"</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span><span class="kw">/&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;link</span> <span class="er">href</span><span class="ot">=</span><span class="st">"inst/assets/vendor/font-awesome/css/font-awesome.min.css"</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span><span class="kw">/&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;link</span> <span class="er">type</span><span class="ot">=</span><span class="st">"text/css"</span> <span class="er">href</span><span class="ot">=</span><span class="st">"inst/assets/css/argon.min.css"</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span><span class="kw">/&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;header</span> <span class="er">class</span><span class="ot">=</span><span class="st">"header-global"</span><span class="kw">&gt;&lt;/header&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;main&gt;&lt;/main&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"inst/assets/vendor/jquery/jquery.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"inst/assets/vendor/popper/popper.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"inst/assets/vendor/bootstrap/bootstrap.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"inst/assets/vendor/headroom/headroom.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"inst/assets/vendor/onscreen/onscreen.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"inst/assets/js/argon.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 </details><p><br></p>
 <p>This template is however empty, so not very interesting. Moreover, there are missing elements that will prevent it from being correctly rendered.</p>
 </div>
@@ -144,67 +159,68 @@
 <h4 class="hasAnchor">
 <a href="#insert-a-navbar" class="anchor"></a>Insert a navbar</h4>
 <p>Surprisingly, we need the <code><a href="../reference/argonNavbar.html">argonNavbar()</a></code> function, see below:</p>
-<details><p><summary>Code</summary></p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r">navbar &lt;- argonNavbar(
-  id = "main-navbar",
-  src = "https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png",
-  # left menu
-  argonNavMenu(
-    argonDropdown(
-      name = "Components",
-      size = "lg",
-      argonDropdownItem(
-        name = "Getting Started",
-        description = "Blabla",
-        src = "",
-        icon = argonIcon("spaceship", color = "white"),
-        status = "primary"
-      ),
-      argonDropdownItem(
-        name = "Foundation",
-        description = "Blabla",
-        src = "",
-        icon = argonIcon("palette", color = "white"),
-        status = "warning"
-      ),
-      argonDropdownItem(
-        name = "Components",
-        description = "Blabla",
-        src = "",
-        icon = argonIcon("ui-04", color = "white),
-        status = "success"
-      )
-    )
-  ),
-  # right menu
-  argonNavMenu(
-    side = "right",
-    argonNavItem(
-      name = "facebook",
-      src = "https://www.facebook.com",
-      icon = icon("facebook-square"),
-      tooltip = "Like us on Facebook"
-    ),
-    argonNavItem(
-      name = "instagram",
-      src = "https://www.instagram.com",
-      icon = icon("instagram"),
-      tooltip = "Follow us on Instagram"
-    ),
-    argonNavItem(
-      name = "twitter",
-      src = "https://www.twitter.com",
-      icon = icon("twitter-square"),
-      tooltip = "Follow us on Twitter"
-    ),
-    argonNavItem(
-      name = "github",
-      src = "https://www.github.com",
-      icon = icon("github"),
-      tooltip = "Star us on Github"
-    )
-  )
- )</pre></body></html></div>
+<details><summary>
+Code
+</summary><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>navbar <span class="ot">&lt;-</span> <span class="fu">argonNavbar</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="st">"main-navbar"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">src =</span> <span class="st">"https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># left menu</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">argonNavMenu</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonDropdown</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Components"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonDropdownItem</span>(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">"Getting Started"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">description =</span> <span class="st">"Blabla"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">src =</span> <span class="st">""</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="st">"spaceship"</span>, <span class="at">color =</span> <span class="st">"white"</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">status =</span> <span class="st">"primary"</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonDropdownItem</span>(</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">"Foundation"</span>,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">description =</span> <span class="st">"Blabla"</span>,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">src =</span> <span class="st">""</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="st">"palette"</span>, <span class="at">color =</span> <span class="st">"white"</span>),</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">status =</span> <span class="st">"warning"</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonDropdownItem</span>(</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">"Components"</span>,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">description =</span> <span class="st">"Blabla"</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">src =</span> <span class="st">""</span>,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="st">"ui-04"</span>, <span class="at">color =</span> <span class="st">"white),</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="st">        status = "</span>success<span class="st">"</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="st">      )</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="st">    )</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="st">  ),</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="st">  # right menu</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="st">  argonNavMenu(</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="st">    side = "</span>right<span class="st">",</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="st">    argonNavItem(</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="st">      name = "</span>facebook<span class="st">",</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="st">      src = "</span>https<span class="sc">:</span><span class="er">//</span>www.facebook.com<span class="st">",</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="st">      icon = icon("</span>facebook<span class="sc">-</span>square<span class="st">"),</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="st">      tooltip = "</span>Like us on Facebook<span class="st">"</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="st">    ),</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="st">    argonNavItem(</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="st">      name = "</span>instagram<span class="st">",</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="st">      src = "</span>https<span class="sc">:</span><span class="er">//</span>www.instagram.com<span class="st">",</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="st">      icon = icon("</span>instagram<span class="st">"),</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="st">      tooltip = "</span>Follow us on Instagram<span class="st">"</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="st">    ),</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="st">    argonNavItem(</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="st">      name = "</span>twitter<span class="st">",</span></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="st">      src = "</span>https<span class="sc">:</span><span class="er">//</span>www.twitter.com<span class="st">",</span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="st">      icon = icon("</span>twitter<span class="sc">-</span>square<span class="st">"),</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="st">      tooltip = "</span>Follow us on Twitter<span class="st">"</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="st">    ),</span></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="st">    argonNavItem(</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="st">      name = "</span>github<span class="st">",</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="st">      src = "</span>https<span class="sc">:</span><span class="er">//</span>www.github.com<span class="st">",</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="st">      icon = icon("</span>github<span class="st">"),</span></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="st">      tooltip = "</span>Star us on Github<span class="st">"</span></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="st">    )</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="st">  )</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="st"> )</span></span></code></pre></div>
 </details><p><br></p>
 <p>The <code><a href="../reference/argonNavbar.html">argonNavbar()</a></code> function accepts <code><a href="../reference/argonNavMenu.html">argonNavMenu()</a></code>, which in turns takes <code><a href="../reference/argonNavItem.html">argonNavItem()</a></code> and <code><a href="../reference/argonDropdown.html">argonDropdown()</a></code>.</p>
 </div>
@@ -212,49 +228,51 @@
 <h4 class="hasAnchor">
 <a href="#insert-the-footer" class="anchor"></a>Insert the footer</h4>
 <p>We need the <code><a href="../reference/argonFooter.html">argonFooter()</a></code> function:</p>
-<details><p><summary>Code</summary></p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">footer</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/argonFooter.html">argonFooter</a></span>(
-  <span class="kw">has_card</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
-  <span class="fu"><a href="../reference/argonContainer.html">argonContainer</a></span>(
-    <span class="kw">size</span> <span class="kw">=</span> <span class="st">"lg"</span>,
-    <span class="fu"><a href="../reference/argonRow.html">argonRow</a></span>(
-      <span class="fu"><a href="../reference/argonColumn.html">argonColumn</a></span>(
-        <span class="kw">width</span> <span class="kw">=</span> <span class="fl">6</span>,
-        <span class="fu"><a href="../reference/argonIconWrapper.html">argonIconWrapper</a></span>(
-          <span class="kw">iconTag</span> <span class="kw">=</span> <span class="fu"><a href="../reference/argonIcon.html">argonIcon</a></span>(<span class="st">"atom"</span>),
-          <span class="kw">size</span> <span class="kw">=</span> <span class="st">"lg"</span>,
-          <span class="kw">status</span> <span class="kw">=</span> <span class="st">"success"</span>,
-          <span class="kw">shadow</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-          <span class="kw">hover_shadow</span> <span class="kw">=</span> <span class="fl">TRUE</span>
-        ),
-        <span class="fu"><a href="../reference/argonH1.html">argonH1</a></span>(
-          <span class="kw">display</span> <span class="kw">=</span> <span class="fl">3</span>,
+<details><summary>
+Code
+</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">footer</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/argonFooter.html">argonFooter</a></span><span class="op">(</span>
+  has_card <span class="op">=</span> <span class="cn">FALSE</span>,
+  <span class="fu"><a href="../reference/argonContainer.html">argonContainer</a></span><span class="op">(</span>
+    size <span class="op">=</span> <span class="st">"lg"</span>,
+    <span class="fu"><a href="../reference/argonRow.html">argonRow</a></span><span class="op">(</span>
+      <span class="fu"><a href="../reference/argonColumn.html">argonColumn</a></span><span class="op">(</span>
+        width <span class="op">=</span> <span class="fl">6</span>,
+        <span class="fu"><a href="../reference/argonIconWrapper.html">argonIconWrapper</a></span><span class="op">(</span>
+          iconTag <span class="op">=</span> <span class="fu"><a href="../reference/argonIcon.html">argonIcon</a></span><span class="op">(</span><span class="st">"atom"</span><span class="op">)</span>,
+          size <span class="op">=</span> <span class="st">"lg"</span>,
+          status <span class="op">=</span> <span class="st">"success"</span>,
+          shadow <span class="op">=</span> <span class="cn">TRUE</span>,
+          hover_shadow <span class="op">=</span> <span class="cn">TRUE</span>
+        <span class="op">)</span>,
+        <span class="fu"><a href="../reference/argonH1.html">argonH1</a></span><span class="op">(</span>
+          display <span class="op">=</span> <span class="fl">3</span>,
           <span class="st">"Insert anything in the footer"</span>
-        ),
-        <span class="fu"><a href="../reference/argonLead.html">argonLead</a></span>(
+        <span class="op">)</span>,
+        <span class="fu"><a href="../reference/argonLead.html">argonLead</a></span><span class="op">(</span>
           <span class="st">"The Arctic Ocean freezes every winter and much of 
           the sea-ice then thaws every summer, and that process 
           will continue whatever"</span>
-        )
-        ),
-      <span class="fu"><a href="../reference/argonColumn.html">argonColumn</a></span>(
-        <span class="kw">width</span> <span class="kw">=</span> <span class="fl">6</span>,
-        <span class="fu"><a href="../reference/argonCarousel.html">argonCarousel</a></span>(
-          <span class="kw">width</span> <span class="kw">=</span> <span class="fl">12</span>,
-          <span class="kw">id</span> <span class="kw">=</span> <span class="st">"carousel2"</span>,
-          <span class="fu"><a href="../reference/argonCarouselItem.html">argonCarouselItem</a></span>(
-            <span class="kw">src</span> <span class="kw">=</span> <span class="st">"http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png"</span>,
-            <span class="kw">active</span> <span class="kw">=</span> <span class="fl">TRUE</span>
-          ),
-          <span class="fu"><a href="../reference/argonCarouselItem.html">argonCarouselItem</a></span>(
-            <span class="kw">src</span> <span class="kw">=</span> <span class="st">"http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png"</span>,
-            <span class="kw">active</span> <span class="kw">=</span> <span class="fl">FALSE</span>
-          )
-        )
-      )
-    )
-  )
- )</pre></body></html></div>
+        <span class="op">)</span>
+        <span class="op">)</span>,
+      <span class="fu"><a href="../reference/argonColumn.html">argonColumn</a></span><span class="op">(</span>
+        width <span class="op">=</span> <span class="fl">6</span>,
+        <span class="fu"><a href="../reference/argonCarousel.html">argonCarousel</a></span><span class="op">(</span>
+          width <span class="op">=</span> <span class="fl">12</span>,
+          id <span class="op">=</span> <span class="st">"carousel2"</span>,
+          <span class="fu"><a href="../reference/argonCarouselItem.html">argonCarouselItem</a></span><span class="op">(</span>
+            src <span class="op">=</span> <span class="st">"http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png"</span>,
+            active <span class="op">=</span> <span class="cn">TRUE</span>
+          <span class="op">)</span>,
+          <span class="fu"><a href="../reference/argonCarouselItem.html">argonCarouselItem</a></span><span class="op">(</span>
+            src <span class="op">=</span> <span class="st">"http://www.72pxdesigns.com/wp-content/uploads/2017/06/preview-814162.png"</span>,
+            active <span class="op">=</span> <span class="cn">FALSE</span>
+          <span class="op">)</span>
+        <span class="op">)</span>
+      <span class="op">)</span>
+    <span class="op">)</span>
+  <span class="op">)</span>
+ <span class="op">)</span></code></pre></div>
 </details><p><br></p>
 <p>In general, footer elements are wrapped in several <code><a href="../reference/argonSection.html">argonSection()</a></code>.</p>
 </div>
@@ -262,58 +280,60 @@
 <h4 class="hasAnchor">
 <a href="#fill-the-body" class="anchor"></a>Fill the body</h4>
 <p>All body elements must be wrapped in a <code><a href="../reference/argonSection.html">argonSection()</a></code>, for instance:</p>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">body</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/argonSection.html">argonSection</a></span>(
-  <span class="kw">size</span> <span class="kw">=</span> <span class="st">"lg"</span>,
-  <span class="kw">status</span> <span class="kw">=</span> <span class="st">"default"</span>,
-  <span class="kw">gradient</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">separator</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">separator_color</span> <span class="kw">=</span> <span class="st">"white"</span>,
-  <span class="kw">shape</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="fu"><a href="../reference/argonColumn.html">argonColumn</a></span>(
-    <span class="fu"><a href="../reference/argonRow.html">argonRow</a></span>(
-      <span class="fu"><a href="../reference/argonColumn.html">argonColumn</a></span>(
-        <span class="kw">width</span> <span class="kw">=</span> <span class="fl">6</span>,
-        <span class="fu"><a href="../reference/argonH1.html">argonH1</a></span>(
-          <span class="kw">display</span> <span class="kw">=</span> <span class="fl">3</span>,
-          <span class="st">"ArgonR, HTML static template for R"</span>,
-          <span class="kw pkg">htmltools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">span</a></span>(<span class="st">"completed with examples"</span>)
-        ) <span class="kw">%&gt;%</span> <span class="fu"><a href="../reference/argonTextColor.html">argonTextColor</a></span>(<span class="kw">color</span> <span class="kw">=</span> <span class="st">"white"</span>),
-        <span class="fu"><a href="../reference/argonLead.html">argonLead</a></span>(
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">body</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/argonSection.html">argonSection</a></span><span class="op">(</span>
+  size <span class="op">=</span> <span class="st">"lg"</span>,
+  status <span class="op">=</span> <span class="st">"default"</span>,
+  gradient <span class="op">=</span> <span class="cn">TRUE</span>,
+  separator <span class="op">=</span> <span class="cn">TRUE</span>,
+  separator_color <span class="op">=</span> <span class="st">"white"</span>,
+  shape <span class="op">=</span> <span class="cn">TRUE</span>,
+  <span class="fu"><a href="../reference/argonColumn.html">argonColumn</a></span><span class="op">(</span>
+    <span class="fu"><a href="../reference/argonRow.html">argonRow</a></span><span class="op">(</span>
+      <span class="fu"><a href="../reference/argonColumn.html">argonColumn</a></span><span class="op">(</span>
+        width <span class="op">=</span> <span class="fl">6</span>,
+        <span class="fu"><a href="../reference/argonH1.html">argonH1</a></span><span class="op">(</span>
+          display <span class="op">=</span> <span class="fl">3</span>, 
+          <span class="st">"ArgonR, HTML static template for R"</span>, 
+          <span class="fu">htmltools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">span</a></span><span class="op">(</span><span class="st">"completed with examples"</span><span class="op">)</span>
+        <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="../reference/argonTextColor.html">argonTextColor</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span>,
+        <span class="fu"><a href="../reference/argonLead.html">argonLead</a></span><span class="op">(</span>
           <span class="st">"Argon is a great free UI package based on Bootstrap 
           4 that includes the most important components and features"</span>
-        ) <span class="kw">%&gt;%</span> <span class="fu"><a href="../reference/argonTextColor.html">argonTextColor</a></span>(<span class="kw">color</span> <span class="kw">=</span> <span class="st">"white"</span>)
-        ),
-      <span class="fu"><a href="../reference/argonColumn.html">argonColumn</a></span>(
-        <span class="kw">width</span> <span class="kw">=</span> <span class="fl">6</span>,
-        <span class="fu"><a href="../reference/argonImage.html">argonImage</a></span>(
-          <span class="kw">src</span> <span class="kw">=</span> <span class="st">"inst/images/imac.svg"</span>,
-          <span class="kw">floating</span> <span class="kw">=</span> <span class="fl">TRUE</span>
-        ) <span class="kw">%&gt;%</span> <span class="fu"><a href="../reference/argonPersp.html">argonPersp</a></span>(<span class="kw">side</span> <span class="kw">=</span> <span class="st">"right"</span>)
-        <span class="kw">%&gt;%</span> <span class="fu"><a href="../reference/argonBlur.html">argonBlur</a></span>()
-      )
-    )
-  )
-)</pre></body></html></div>
+        <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="../reference/argonTextColor.html">argonTextColor</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span>
+        <span class="op">)</span>,
+      <span class="fu"><a href="../reference/argonColumn.html">argonColumn</a></span><span class="op">(</span>
+        width <span class="op">=</span> <span class="fl">6</span>,
+        <span class="fu"><a href="../reference/argonImage.html">argonImage</a></span><span class="op">(</span>
+          src <span class="op">=</span> <span class="st">"inst/images/imac.svg"</span>,
+          floating <span class="op">=</span> <span class="cn">TRUE</span>
+        <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="../reference/argonPersp.html">argonPersp</a></span><span class="op">(</span>side <span class="op">=</span> <span class="st">"right"</span><span class="op">)</span>
+        <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="../reference/argonBlur.html">argonBlur</a></span><span class="op">(</span><span class="op">)</span>
+      <span class="op">)</span>
+    <span class="op">)</span>
+  <span class="op">)</span>
+<span class="op">)</span></code></pre></div>
 </div>
 <div id="create-the-template" class="section level4">
 <h4 class="hasAnchor">
 <a href="#create-the-template" class="anchor"></a>Create the template</h4>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="co"># generate the page</span>
- <span class="no">example</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/argonPage.html">argonPage</a></span>(
-  <span class="kw">title</span> <span class="kw">=</span> <span class="st">"ArgonR Static Template"</span>,
-  <span class="kw">author</span> <span class="kw">=</span>  <span class="st">"Somebody"</span>,
-  <span class="kw">description</span> <span class="kw">=</span> <span class="st">"HTML Static Template"</span>,
-  <span class="kw">navbar</span> <span class="kw">=</span> <span class="no">navbar</span>,
-  <span class="kw">footer</span> <span class="kw">=</span> <span class="no">footer</span>,
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># generate the page</span>
+ <span class="va">example</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/argonPage.html">argonPage</a></span><span class="op">(</span>
+  title <span class="op">=</span> <span class="st">"ArgonR Static Template"</span>,
+  author <span class="op">=</span>  <span class="st">"Somebody"</span>,
+  description <span class="op">=</span> <span class="st">"HTML Static Template"</span>,
+  navbar <span class="op">=</span> <span class="va">navbar</span>,
+  footer <span class="op">=</span> <span class="va">footer</span>,
   <span class="co"># main content</span>
-  <span class="no">body</span>
- )
+  <span class="va">body</span>
+ <span class="op">)</span>
 
  <span class="co"># create the path</span>
- <span class="no">path</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span>()
+ <span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span>
 
  <span class="co"># generate the static page</span>
- <span class="fu"><a href="../reference/argonPageTemplate.html">argonPageTemplate</a></span>(<span class="kw">filename</span> <span class="kw">=</span> <span class="st">"example"</span>, <span class="kw">path</span> <span class="kw">=</span> <span class="no">path</span>, <span class="kw">argonPage</span> <span class="kw">=</span> <span class="no">example</span>)</pre></body></html></div>
+ <span class="fu"><a href="../reference/argonPageTemplate.html">argonPageTemplate</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="st">"example"</span>, path <span class="op">=</span> <span class="va">path</span>, argonPage <span class="op">=</span> <span class="va">example</span><span class="op">)</span></code></pre></div>
 <p>While the first part is responsible for creating the page skeleton, the <code><a href="../reference/argonPageTemplate.html">argonPageTemplate()</a></code> function provides additional treatments to make it run without shiny. The view argument enable whether to preview the page or not.</p>
 </div>
 </div>
@@ -322,532 +342,533 @@
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Below is a fully working example:</p>
-<details><p><summary>Code</summary></p>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"># This examples show how to create a simple static html page using argonR
-library(argonR)
-library(htmltools)
-library(magrittr)
-
-tabText1 &lt;- "Raw denim you probably haven't heard of them jean shorts Austin. 
-            Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache 
-cliche tempor, williamsburg carles vegan helvetica. Reprehenderit 
-butcher retro keffiyeh dreamcatcher synth. Raw denim you probably 
-haven't heard of them jean shorts Austin. Nesciunt tofu stumptown 
-aliqua, retro synth master cleanse"
-
-tabText2 &lt;- "Cosby sweater eu banh mi, qui irure terry richardson ex squid. 
-Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan 
-american apparel, butcher voluptate nisi qui."
-
-tabText3 &lt;- "Raw denim you probably haven't heard of them jean shorts Austin. 
-Nesciunt tofu stumptown aliqua, retro synth master cleanse. 
-Mustache cliche tempor, williamsburg carles vegan helvetica. 
-Reprehenderit butcher retro keffiyeh dreamcatcher synth"
-
-example &lt;- argonPage(
-  title = "ArgonR Static Template",
-  author =  "Divad Nojnarg",
-  description = "HTML Static Template",
-  navbar = argonNavbar(
-    id = "main-navbar",
-    src = "https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png",
-    # left menu
-    argonNavMenu(
-      argonDropdown(
-        name = "Components",
-        size = "lg",
-        argonDropdownItem(
-          name = "Getting Started",
-          description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
-          src = "test.html",
-          icon = argonIcon(name = "spaceship" color = "primary")
-        ),
-        argonDropdownItem(
-          name = "Foundation",
-          description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
-          src = "",
-          icon = argonIcon(name = "palette" color = "warning")
-        ),
-        argonDropdownItem(
-          name = "Components",
-          description = "BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla",
-          src = "",
-          icon = argonIcon(name = "ui-04" color = "success")
-        )
-      )
-    ),
-    # right menu
-    argonNavMenu(
-      side = "right",
-      argonNavItem(
-        name = "facebook",
-        src = "https://www.facebook.com",
-        icon = icon("facebook-square"),
-        tooltip = "Like us on Facebook"
-      ),
-      argonNavItem(
-        name = "instagram",
-        src = "https://www.instagram.com",
-        icon = icon("instagram"),
-        tooltip = "Follow us on Instagram"
-      ),
-      argonNavItem(
-        name = "twitter",
-        src = "https://www.twitter.com",
-        icon = icon("twitter-square"),
-        tooltip = "Follow us on Twitter"
-      ),
-      argonNavItem(
-        name = "github",
-        src = "https://www.github.com",
-        icon = icon("github"),
-        tooltip = "Star us on Github"
-      )
-    )
-  ),
-  footer = argonFooter(
-    has_card = FALSE,
-    #status = "info",
-    #gradient = TRUE,
-    argonContainer(
-      size = "lg",
-      argonRow(
-        argonColumn(
-          width = 6,
-          argonIconWrapper(
-            iconTag = argonIcon("atom"),
-            size = "lg",
-            status = "success",
-            shadow = TRUE,
-            hover_shadow = TRUE
-          ),
-          argonH1(
-            display = 3,
-            "Insert anything in the footer"
-          ),
-          argonLead(
-            "The Arctic Ocean freezes every winter and much of 
-            the sea-ice then thaws every summer, and that process 
-            will continue whatever"
-          )
-        ),
-        argonColumn(
-          width = 6,
-          argonCarousel(
-            width = 12,
-            id = "carousel2",
-            argonCarouselItem(
-              src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-1-1200x1000.jpg",
-              active = TRUE
-            ),
-            argonCarouselItem(
-              src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-2-1200x1000.jpg",
-              active = FALSE
-            )
-          ) %&gt;% argonPersp(side = "right")
-        )
-      )
-    )
-  ) %&gt;% argonMargin(orientation = "t", value = 20),
-  # main content
-  argonSection(
-    size = "lg",
-    status = "default",
-    gradient = TRUE,
-    separator = TRUE,
-    separator_color = "white",
-    shape = TRUE,
-    argonColumn(
-      argonRow(
-        argonColumn(
-          width = 6,
-          argonH1(
-            display = 3, 
-            "ArgonR, HTML static template for R", 
-            htmltools::span("completed with examples")
-          ) %&gt;% argonTextColor(color = "white"),
-          argonLead(
-            "Argon is a great free UI package based on Bootstrap 
-            4 that includes the most important components and features"
-          ) %&gt;% argonTextColor(color = "white")
-        ),
-        argonColumn(
-          width = 6,
-          argonImage(
-            src = "inst/images/imac.svg",
-            floating = TRUE
-          ) %&gt;% argonPersp(side = "right")
-          %&gt;% argonBlur()
-        )
-      )
-    ) %&gt;% argonPadding(orientation = "x", value = 0)
-  ),
-  argonSection(
-    size = "lg",
-    status = NULL,
-    gradient = FALSE,
-    separator = FALSE,
-    separator_color = NULL,
-    shape = FALSE,
-    argonRow(
-      argonColumn(
-        width = 4,
-        argonCard(
-          status = "primary",
-          width = 12,
-          title = "Card 1",
-          hover_lift = TRUE,
-          shadow = TRUE,
-          icon = argonIcon("check-bold"),
-          src = "#",
-          "Argon is a great free UI package based on Bootstrap 4 
-          that includes the most important components and features."
-        ) %&gt;% argonTooltip(position = "left", title = "I am a nice card")
-      ),
-      argonColumn(
-        width = 4,
-        argonCard(
-          status = "success",
-          width = 12,
-          title = "Card 2",
-          hover_lift = TRUE,
-          shadow = TRUE,
-          icon = argonIcon("istanbul"),
-          src = "#",
-          "Argon is a great free UI package based on Bootstrap 4 
-          that includes the most important components and features"
-        ) %&gt;% argonTooltip(position = "top", title = "I am a nice card")
-      ),
-      argonColumn(
-        width = 4,
-        argonCard(
-          status = "warning",
-          width = 12,
-          title = "Card 3",
-          hover_lift = TRUE,
-          shadow = TRUE,
-          icon = argonIcon("planet"),
-          src = "#",
-          "Argon is a great free UI package based on Bootstrap 4 
-          that includes the most important components and features"
-        ) %&gt;% argonTooltip(position = "bottom", title = "I am a nice card")
-      )
-    ),
-    
-    # badges
-    argonH1(display = 3, "ArgonR elements") %&gt;% argonPadding(orientation = "t", value = 5),
-    argonLead("Badges") %&gt;% argonMuted(),
-    argonRow(
-      argonColumn(
-        width = 3,
-        argonBadge(
-          text = "My badge",
-          src = "https://www.google.com",
-          pill = TRUE,
-          status = "danger"
-        )
-      ),
-      argonColumn(
-        width = 3,
-        argonBadge(
-          text = "My badge",
-          src = "https://www.google.com",
-          pill = TRUE,
-          status = "primary"
-        )
-      ),
-      argonColumn(
-        width = 3,
-        argonBadge(
-          text = "My badge",
-          pill = TRUE,
-          status = "warning"
-        )
-      ),
-      argonColumn(
-        width = 3,
-        argonBadge(
-          text = "My badge",
-          src = "https://www.google.com",
-          pill = FALSE,
-          status = "success"
-        )
-      )
-    ),
-    
-    # progress
-    argonLead("Progress") %&gt;% argonMuted(),
-    argonRow(
-      argonColumn(
-        width = 4,
-        argonProgress(value = 10, status = "danger", text = "Custom Text")
-      ),
-      argonColumn(
-        width = 4,
-        argonProgress(value = 40, status = "info", text = NULL)
-      ),
-      argonColumn(
-        width = 4,
-        argonProgress(value = 90, status = "warning", text = argonIcon("atom"))
-      )
-    ),
-    
-    # alerts
-    argonLead("Alerts") %&gt;% argonMuted(),
-    argonRow(
-      argonColumn(
-        width = 4,
-        argonAlert(
-          icon = argonIcon("basket"),
-          status = "danger",
-          "This is an alert",
-          closable = TRUE
-        )
-      ),
-      argonColumn(
-        width = 4,
-        argonAlert(
-          icon = argonIcon("ui-02"),
-          status = "success",
-          "This is an alert",
-          closable = TRUE
-        )
-      ),
-      argonColumn(
-        width = 4,
-        argonAlert(
-          icon = argonIcon("ui-03"),
-          status = "info",
-          "This is an alert",
-          closable = TRUE
-        )
-      )
-    ),
-    
-    # tabs
-    argonLead("Tabs") %&gt;% argonMuted(),
-    argonRow(
-      argonTabSet(
-        id = "tab-1",
-        card_wrapper = TRUE,
-        horizontal = TRUE,
-        circle = FALSE,
-        size = "sm",
-        width = 6,
-        iconList = list(
-         argonIcon("cloud-upload-96"), 
-         argonIcon("bell-55"), 
-         argonicon("calendar-grid-58")
-        ),
-        argonTab(
-          tabName = "Tab 1",
-          active = FALSE,
-          tabText1
-        ),
-        argonTab(
-          tabName = "Tab 2",
-          active = TRUE,
-          tabText2
-        ),
-        argonTab(
-          tabName = "Tab 3",
-          active = FALSE,
-          tabText3
-        )
-      ),
-      argonTabSet(
-        id = "tab-2",
-        card_wrapper = TRUE,
-        horizontal = FALSE,
-        circle = TRUE,
-        size = "sm",
-        argonTab(
-          tabName = "Tab 4",
-          active = FALSE,
-          tabText1
-        ),
-        argonTab(
-          tabName = "Tab 5",
-          active = TRUE,
-          tabText2
-        ),
-        argonTab(
-          tabName = "Tab 6",
-          active = FALSE,
-          tabText3
-        )
-      )
-    )
-  ) %&gt;% argonMargin(orientation = "t", value = -200)
-  %&gt;% argonPadding(orientation = "t", value = 0),
-  argonSection(
-    size = "lg",
-    status = "warning",
-    gradient = TRUE,
-    separator = TRUE,
-    separator_color = "white",
-    shape = FALSE,
-    argonContainer(
-      size = "lg",
-      argonRow(
-        argonColumn(
-          width = 6,
-          argonH1(
-            display = 3, 
-            "Load modals", 
-            htmltools::span("by clicking on buttons")
-          ) %&gt;% argonTextColor(color = "white"),
-          argonButton(
-            name = "Click me!",
-            status = "danger",
-            icon = argonIcon("atom"),
-            size = "lg",
-            toggle_modal = TRUE,
-            modal_id = "modal1"
-          )
-        ),
-        argonColumn(
-          width = 6,
-          argonModal(
-            id = "modal1",
-            title = "This is a modal",
-            status = "danger",
-            gradient = TRUE,
-            "YOU SHOULD READ THIS!",
-            br(),
-            "A small river named Duden flows by their place and supplies it with the necessary regelialia."
-          ),
-          argonImage(
-            floating = TRUE,
-            src = "https://demos.creative-tim.com/argon-design-system/assets/img/ill/ill-2.svg",
-            hover_lift = TRUE
-          ) %&gt;% argonTooltip(position = "right", title = "I am a nice floating image") 
-          %&gt;% argonBlur(text = "Hi There!", text_color = "white")
-        )
-      ) %&gt;% argonPadding(orientation = "y", value = 5),
-      argonPagination(
-        size = "lg",
-        align = "center",
-        argonPaginationItem(
-          name = 1,
-          src = "test.html"
-        ),
-        argonPaginationItem(
-          name = 2,
-          src = "https://www.google.com"
-        )
-      )
-    )
-  ),
-  argonSection(
-    size = "lg",
-    status = "white",
-    argonRow(
-      argonIconWrapper(
-        iconTag = argonIcon("atom"),
-        size = "lg",
-        status = "danger",
-        shadow = TRUE,
-        hover_shadow = TRUE
-      ),
-      argonH1(display = 3, "ArgonR social") %&gt;% argonPadding(orientation = "l", value = 5)
-    ),
-    argonRow(
-      argonColumn(
-        width = 3,
-        argonUser(
-          title = "Ryan Tompson",
-          subtitle = "Web Developer",
-          src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-1-800x800.jpg"
-        ) %&gt;% argonBlur(text = "Ryan Tompson", text_color = "default")
-      ),
-      argonColumn(
-        width = 3,
-        argonUser(
-          title = "Romina Hadid",
-          subtitle = "Marketing Strategist",
-          src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-2-800x800.jpg"
-        ) %&gt;% argonBlur(text = "Romina Hadid", text_color = "default")
-      ),
-      argonColumn(
-        width = 3,
-        argonUser(
-          title = "Alexander Smith",
-          subtitle = "UI/UX Designer",
-          src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-3-800x800.jpg"
-        ) %&gt;% argonBlur(text = "Alexander Smith", text_color = "default")
-      ),
-      argonColumn(
-        width = 3,
-        argonUser(
-          title = "John Doe",
-          subtitle = "Founder and CEO",
-          src = "https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-4-800x800.jpg"
-        ) %&gt;% argonBlur(text = "John Doe", text_color = "default")
-      )
-    )
-    # br(), br(),
-    # argonContainer(
-    #   argonProfile(
-    #     title = "John",
-    #     subtitle = "Japan, Kagoshima",
-    #     src = "https://image.flaticon.com/icons/svg/1006/1006540.svg",
-    #     url = "https://www.google.com",
-    #     url_1 = "https://www.google.com",
-    #     url_2 = "https://www.google.com",
-    #     stats = argonProfileStats(
-    #       argonProfileStat(
-    #         value = 22,
-    #         description = "Friends"
-    #       ),
-    #       argonProfileStat(
-    #         value = 10,
-    #         description = "Photos"
-    #       ),
-    #       argonProfileStat(
-    #         value = 89,
-    #         description = "Comments"
-    #       )
-    #     ),
-    #     "An artist of considerable range, Ryan — 
-    #     the name taken by Melbourne-raised, 
-    #     Brooklyn-based Nick Murphy — writes, 
-    #     performs and records all of his own music, 
-    #     giving it a warm, intimate feel with a solid 
-    #     groove structure. An artist of considerable 
-    #     range."
-    #   )
-    # )
-  ),
-  argonSection(
-    size = "lg",
-    status = "default",
-    cascade = TRUE,
-    
-    argonH1(display = 3, "ArgonR Cascade Effect") %&gt;% 
-      argonPadding(orientation = "l", value = 5) %&gt;%
-      argonPadding(orientation = "b", value = 5) %&gt;%
-      argonTextColor(color = "white"),
-    
-    argonCascade(
-      argonCascadeItem(name = "diamond", src = "https://www.google.com"),
-      argonCascadeItem(name = "album-2", size = "sm"),
-      argonCascadeItem(name = "app", size = "sm"),
-      argonCascadeItem(name = "atom", size = "sm"),
-      argonCascadeItem(name = "bag-17", src = "https://www.google.com"),
-      argonCascadeItem(name = "bell-55"),
-      argonCascadeItem(name = "credit-card"),
-      argonCascadeItem(name = "briefcase-24", size = "sm", "https://www.google.com"),
-      argonCascadeItem(name = "building", size = "sm"),
-      argonCascadeItem(name = "button-play", size = "sm"),
-      argonCascadeItem(name = "calendar-grid-58"),
-      argonCascadeItem(name = "camera-compact"),
-      argonCascadeItem(name = "chart-bar-32")
-    )
-  )
-)
-
-argonPageTemplate(filename = "example", path = getwd(), example)</pre></body></html></div>
+<details><summary>
+Code
+</summary><div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This examples show how to create a simple static html page using argonR</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(argonR)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmltools)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>tabText1 <span class="ot">&lt;-</span> <span class="st">"Raw denim you probably haven't heard of them jean shorts Austin. </span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="st">            Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache </span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="st">cliche tempor, williamsburg carles vegan helvetica. Reprehenderit </span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="st">butcher retro keffiyeh dreamcatcher synth. Raw denim you probably </span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="st">haven't heard of them jean shorts Austin. Nesciunt tofu stumptown </span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="st">aliqua, retro synth master cleanse"</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>tabText2 <span class="ot">&lt;-</span> <span class="st">"Cosby sweater eu banh mi, qui irure terry richardson ex squid. </span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="st">Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan </span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="st">american apparel, butcher voluptate nisi qui."</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>tabText3 <span class="ot">&lt;-</span> <span class="st">"Raw denim you probably haven't heard of them jean shorts Austin. </span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="st">Nesciunt tofu stumptown aliqua, retro synth master cleanse. </span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="st">Mustache cliche tempor, williamsburg carles vegan helvetica. </span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="st">Reprehenderit butcher retro keffiyeh dreamcatcher synth"</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">argonPage</span>(</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"ArgonR Static Template"</span>,</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">author =</span>  <span class="st">"Divad Nojnarg"</span>,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">description =</span> <span class="st">"HTML Static Template"</span>,</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">navbar =</span> <span class="fu">argonNavbar</span>(</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">"main-navbar"</span>,</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">src =</span> <span class="st">"https://demos.creative-tim.com/argon-design-system/assets/img/brand/white.png"</span>,</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># left menu</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonNavMenu</span>(</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonDropdown</span>(</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">"Components"</span>,</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonDropdownItem</span>(</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>          <span class="at">name =</span> <span class="st">"Getting Started"</span>,</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>          <span class="at">description =</span> <span class="st">"BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla"</span>,</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"test.html"</span>,</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>          <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="at">name =</span> <span class="st">"spaceship"</span> <span class="at">color =</span> <span class="st">"primary"</span>)</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonDropdownItem</span>(</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>          <span class="at">name =</span> <span class="st">"Foundation"</span>,</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">description =</span> <span class="st">"BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla"</span>,</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">""</span>,</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>          <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="at">name =</span> <span class="st">"palette"</span> <span class="at">color =</span> <span class="st">"warning"</span>)</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonDropdownItem</span>(</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>          <span class="at">name =</span> <span class="st">"Components"</span>,</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>          <span class="at">description =</span> <span class="st">"BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla"</span>,</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">""</span>,</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>          <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="at">name =</span> <span class="st">"ui-04"</span> <span class="at">color =</span> <span class="st">"success"</span>)</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># right menu</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonNavMenu</span>(</span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">side =</span> <span class="st">"right"</span>,</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonNavItem</span>(</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">"facebook"</span>,</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>        <span class="at">src =</span> <span class="st">"https://www.facebook.com"</span>,</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>        <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"facebook-square"</span>),</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>        <span class="at">tooltip =</span> <span class="st">"Like us on Facebook"</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonNavItem</span>(</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">"instagram"</span>,</span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>        <span class="at">src =</span> <span class="st">"https://www.instagram.com"</span>,</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>        <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"instagram"</span>),</span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>        <span class="at">tooltip =</span> <span class="st">"Follow us on Instagram"</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonNavItem</span>(</span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">"twitter"</span>,</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>        <span class="at">src =</span> <span class="st">"https://www.twitter.com"</span>,</span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>        <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"twitter-square"</span>),</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>        <span class="at">tooltip =</span> <span class="st">"Follow us on Twitter"</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonNavItem</span>(</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">"github"</span>,</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>        <span class="at">src =</span> <span class="st">"https://www.github.com"</span>,</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>        <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"github"</span>),</span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>        <span class="at">tooltip =</span> <span class="st">"Star us on Github"</span></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">footer =</span> <span class="fu">argonFooter</span>(</span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">has_card =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>    <span class="co">#status = "info",</span></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>    <span class="co">#gradient = TRUE,</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonContainer</span>(</span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonRow</span>(</span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonColumn</span>(</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> <span class="dv">6</span>,</span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonIconWrapper</span>(</span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>            <span class="at">iconTag =</span> <span class="fu">argonIcon</span>(<span class="st">"atom"</span>),</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>            <span class="at">status =</span> <span class="st">"success"</span>,</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>            <span class="at">shadow =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>            <span class="at">hover_shadow =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>          ),</span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonH1</span>(</span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>            <span class="at">display =</span> <span class="dv">3</span>,</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Insert anything in the footer"</span></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>          ),</span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonLead</span>(</span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>            <span class="st">"The Arctic Ocean freezes every winter and much of </span></span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="st">            the sea-ice then thaws every summer, and that process </span></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="st">            will continue whatever"</span></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonColumn</span>(</span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> <span class="dv">6</span>,</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonCarousel</span>(</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>            <span class="at">width =</span> <span class="dv">12</span>,</span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a>            <span class="at">id =</span> <span class="st">"carousel2"</span>,</span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a>            <span class="fu">argonCarouselItem</span>(</span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a>              <span class="at">src =</span> <span class="st">"https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-1-1200x1000.jpg"</span>,</span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a>              <span class="at">active =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a>            <span class="fu">argonCarouselItem</span>(</span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a>              <span class="at">src =</span> <span class="st">"https://demos.creative-tim.com/argon-design-system/assets/img/theme/img-2-1200x1000.jpg"</span>,</span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a>              <span class="at">active =</span> <span class="cn">FALSE</span></span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">%&gt;%</span> <span class="fu">argonPersp</span>(<span class="at">side =</span> <span class="st">"right"</span>)</span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">argonMargin</span>(<span class="at">orientation =</span> <span class="st">"t"</span>, <span class="at">value =</span> <span class="dv">20</span>),</span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a>  <span class="co"># main content</span></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a>  <span class="fu">argonSection</span>(</span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">"default"</span>,</span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a>    <span class="at">gradient =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a>    <span class="at">separator =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a>    <span class="at">separator_color =</span> <span class="st">"white"</span>,</span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonColumn</span>(</span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonRow</span>(</span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonColumn</span>(</span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> <span class="dv">6</span>,</span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonH1</span>(</span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a>            <span class="at">display =</span> <span class="dv">3</span>, </span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>            <span class="st">"ArgonR, HTML static template for R"</span>, </span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a>            htmltools<span class="sc">::</span><span class="fu">span</span>(<span class="st">"completed with examples"</span>)</span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">%&gt;%</span> <span class="fu">argonTextColor</span>(<span class="at">color =</span> <span class="st">"white"</span>),</span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonLead</span>(</span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Argon is a great free UI package based on Bootstrap </span></span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a><span class="st">            4 that includes the most important components and features"</span></span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">%&gt;%</span> <span class="fu">argonTextColor</span>(<span class="at">color =</span> <span class="st">"white"</span>)</span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonColumn</span>(</span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> <span class="dv">6</span>,</span>
+<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonImage</span>(</span>
+<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a>            <span class="at">src =</span> <span class="st">"inst/images/imac.svg"</span>,</span>
+<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a>            <span class="at">floating =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">%&gt;%</span> <span class="fu">argonPersp</span>(<span class="at">side =</span> <span class="st">"right"</span>)</span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a>          <span class="sc">%&gt;%</span> <span class="fu">argonBlur</span>()</span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> <span class="fu">argonPadding</span>(<span class="at">orientation =</span> <span class="st">"x"</span>, <span class="at">value =</span> <span class="dv">0</span>)</span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">argonSection</span>(</span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="cn">NULL</span>,</span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a>    <span class="at">gradient =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a>    <span class="at">separator =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a>    <span class="at">separator_color =</span> <span class="cn">NULL</span>,</span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonRow</span>(</span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">4</span>,</span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonCard</span>(</span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a>          <span class="at">status =</span> <span class="st">"primary"</span>,</span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> <span class="dv">12</span>,</span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Card 1"</span>,</span>
+<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a>          <span class="at">hover_lift =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a>          <span class="at">shadow =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a>          <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="st">"check-bold"</span>),</span>
+<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"#"</span>,</span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Argon is a great free UI package based on Bootstrap 4 </span></span>
+<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a><span class="st">          that includes the most important components and features."</span></span>
+<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span> <span class="fu">argonTooltip</span>(<span class="at">position =</span> <span class="st">"left"</span>, <span class="at">title =</span> <span class="st">"I am a nice card"</span>)</span>
+<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">4</span>,</span>
+<span id="cb9-184"><a href="#cb9-184" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonCard</span>(</span>
+<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a>          <span class="at">status =</span> <span class="st">"success"</span>,</span>
+<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> <span class="dv">12</span>,</span>
+<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Card 2"</span>,</span>
+<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a>          <span class="at">hover_lift =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a>          <span class="at">shadow =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a>          <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="st">"istanbul"</span>),</span>
+<span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"#"</span>,</span>
+<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Argon is a great free UI package based on Bootstrap 4 </span></span>
+<span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a><span class="st">          that includes the most important components and features"</span></span>
+<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span> <span class="fu">argonTooltip</span>(<span class="at">position =</span> <span class="st">"top"</span>, <span class="at">title =</span> <span class="st">"I am a nice card"</span>)</span>
+<span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">4</span>,</span>
+<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonCard</span>(</span>
+<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a>          <span class="at">status =</span> <span class="st">"warning"</span>,</span>
+<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> <span class="dv">12</span>,</span>
+<span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Card 3"</span>,</span>
+<span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a>          <span class="at">hover_lift =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a>          <span class="at">shadow =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a>          <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="st">"planet"</span>),</span>
+<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"#"</span>,</span>
+<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Argon is a great free UI package based on Bootstrap 4 </span></span>
+<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a><span class="st">          that includes the most important components and features"</span></span>
+<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span> <span class="fu">argonTooltip</span>(<span class="at">position =</span> <span class="st">"bottom"</span>, <span class="at">title =</span> <span class="st">"I am a nice card"</span>)</span>
+<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a>    <span class="co"># badges</span></span>
+<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonH1</span>(<span class="at">display =</span> <span class="dv">3</span>, <span class="st">"ArgonR elements"</span>) <span class="sc">%&gt;%</span> <span class="fu">argonPadding</span>(<span class="at">orientation =</span> <span class="st">"t"</span>, <span class="at">value =</span> <span class="dv">5</span>),</span>
+<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonLead</span>(<span class="st">"Badges"</span>) <span class="sc">%&gt;%</span> <span class="fu">argonMuted</span>(),</span>
+<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonRow</span>(</span>
+<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">3</span>,</span>
+<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonBadge</span>(</span>
+<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a>          <span class="at">text =</span> <span class="st">"My badge"</span>,</span>
+<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"https://www.google.com"</span>,</span>
+<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a>          <span class="at">pill =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a>          <span class="at">status =</span> <span class="st">"danger"</span></span>
+<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">3</span>,</span>
+<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonBadge</span>(</span>
+<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a>          <span class="at">text =</span> <span class="st">"My badge"</span>,</span>
+<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"https://www.google.com"</span>,</span>
+<span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a>          <span class="at">pill =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a>          <span class="at">status =</span> <span class="st">"primary"</span></span>
+<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-233"><a href="#cb9-233" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-234"><a href="#cb9-234" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-235"><a href="#cb9-235" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">3</span>,</span>
+<span id="cb9-236"><a href="#cb9-236" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonBadge</span>(</span>
+<span id="cb9-237"><a href="#cb9-237" aria-hidden="true" tabindex="-1"></a>          <span class="at">text =</span> <span class="st">"My badge"</span>,</span>
+<span id="cb9-238"><a href="#cb9-238" aria-hidden="true" tabindex="-1"></a>          <span class="at">pill =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-239"><a href="#cb9-239" aria-hidden="true" tabindex="-1"></a>          <span class="at">status =</span> <span class="st">"warning"</span></span>
+<span id="cb9-240"><a href="#cb9-240" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-241"><a href="#cb9-241" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-242"><a href="#cb9-242" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-243"><a href="#cb9-243" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">3</span>,</span>
+<span id="cb9-244"><a href="#cb9-244" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonBadge</span>(</span>
+<span id="cb9-245"><a href="#cb9-245" aria-hidden="true" tabindex="-1"></a>          <span class="at">text =</span> <span class="st">"My badge"</span>,</span>
+<span id="cb9-246"><a href="#cb9-246" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"https://www.google.com"</span>,</span>
+<span id="cb9-247"><a href="#cb9-247" aria-hidden="true" tabindex="-1"></a>          <span class="at">pill =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-248"><a href="#cb9-248" aria-hidden="true" tabindex="-1"></a>          <span class="at">status =</span> <span class="st">"success"</span></span>
+<span id="cb9-249"><a href="#cb9-249" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-250"><a href="#cb9-250" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-251"><a href="#cb9-251" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-252"><a href="#cb9-252" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-253"><a href="#cb9-253" aria-hidden="true" tabindex="-1"></a>    <span class="co"># progress</span></span>
+<span id="cb9-254"><a href="#cb9-254" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonLead</span>(<span class="st">"Progress"</span>) <span class="sc">%&gt;%</span> <span class="fu">argonMuted</span>(),</span>
+<span id="cb9-255"><a href="#cb9-255" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonRow</span>(</span>
+<span id="cb9-256"><a href="#cb9-256" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-257"><a href="#cb9-257" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">4</span>,</span>
+<span id="cb9-258"><a href="#cb9-258" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonProgress</span>(<span class="at">value =</span> <span class="dv">10</span>, <span class="at">status =</span> <span class="st">"danger"</span>, <span class="at">text =</span> <span class="st">"Custom Text"</span>)</span>
+<span id="cb9-259"><a href="#cb9-259" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-260"><a href="#cb9-260" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-261"><a href="#cb9-261" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">4</span>,</span>
+<span id="cb9-262"><a href="#cb9-262" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonProgress</span>(<span class="at">value =</span> <span class="dv">40</span>, <span class="at">status =</span> <span class="st">"info"</span>, <span class="at">text =</span> <span class="cn">NULL</span>)</span>
+<span id="cb9-263"><a href="#cb9-263" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-264"><a href="#cb9-264" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-265"><a href="#cb9-265" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">4</span>,</span>
+<span id="cb9-266"><a href="#cb9-266" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonProgress</span>(<span class="at">value =</span> <span class="dv">90</span>, <span class="at">status =</span> <span class="st">"warning"</span>, <span class="at">text =</span> <span class="fu">argonIcon</span>(<span class="st">"atom"</span>))</span>
+<span id="cb9-267"><a href="#cb9-267" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-268"><a href="#cb9-268" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-269"><a href="#cb9-269" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-270"><a href="#cb9-270" aria-hidden="true" tabindex="-1"></a>    <span class="co"># alerts</span></span>
+<span id="cb9-271"><a href="#cb9-271" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonLead</span>(<span class="st">"Alerts"</span>) <span class="sc">%&gt;%</span> <span class="fu">argonMuted</span>(),</span>
+<span id="cb9-272"><a href="#cb9-272" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonRow</span>(</span>
+<span id="cb9-273"><a href="#cb9-273" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-274"><a href="#cb9-274" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">4</span>,</span>
+<span id="cb9-275"><a href="#cb9-275" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonAlert</span>(</span>
+<span id="cb9-276"><a href="#cb9-276" aria-hidden="true" tabindex="-1"></a>          <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="st">"basket"</span>),</span>
+<span id="cb9-277"><a href="#cb9-277" aria-hidden="true" tabindex="-1"></a>          <span class="at">status =</span> <span class="st">"danger"</span>,</span>
+<span id="cb9-278"><a href="#cb9-278" aria-hidden="true" tabindex="-1"></a>          <span class="st">"This is an alert"</span>,</span>
+<span id="cb9-279"><a href="#cb9-279" aria-hidden="true" tabindex="-1"></a>          <span class="at">closable =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-280"><a href="#cb9-280" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-281"><a href="#cb9-281" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-282"><a href="#cb9-282" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-283"><a href="#cb9-283" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">4</span>,</span>
+<span id="cb9-284"><a href="#cb9-284" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonAlert</span>(</span>
+<span id="cb9-285"><a href="#cb9-285" aria-hidden="true" tabindex="-1"></a>          <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="st">"ui-02"</span>),</span>
+<span id="cb9-286"><a href="#cb9-286" aria-hidden="true" tabindex="-1"></a>          <span class="at">status =</span> <span class="st">"success"</span>,</span>
+<span id="cb9-287"><a href="#cb9-287" aria-hidden="true" tabindex="-1"></a>          <span class="st">"This is an alert"</span>,</span>
+<span id="cb9-288"><a href="#cb9-288" aria-hidden="true" tabindex="-1"></a>          <span class="at">closable =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-289"><a href="#cb9-289" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-290"><a href="#cb9-290" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-291"><a href="#cb9-291" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-292"><a href="#cb9-292" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">4</span>,</span>
+<span id="cb9-293"><a href="#cb9-293" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonAlert</span>(</span>
+<span id="cb9-294"><a href="#cb9-294" aria-hidden="true" tabindex="-1"></a>          <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="st">"ui-03"</span>),</span>
+<span id="cb9-295"><a href="#cb9-295" aria-hidden="true" tabindex="-1"></a>          <span class="at">status =</span> <span class="st">"info"</span>,</span>
+<span id="cb9-296"><a href="#cb9-296" aria-hidden="true" tabindex="-1"></a>          <span class="st">"This is an alert"</span>,</span>
+<span id="cb9-297"><a href="#cb9-297" aria-hidden="true" tabindex="-1"></a>          <span class="at">closable =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-298"><a href="#cb9-298" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-299"><a href="#cb9-299" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-300"><a href="#cb9-300" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-301"><a href="#cb9-301" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-302"><a href="#cb9-302" aria-hidden="true" tabindex="-1"></a>    <span class="co"># tabs</span></span>
+<span id="cb9-303"><a href="#cb9-303" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonLead</span>(<span class="st">"Tabs"</span>) <span class="sc">%&gt;%</span> <span class="fu">argonMuted</span>(),</span>
+<span id="cb9-304"><a href="#cb9-304" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonRow</span>(</span>
+<span id="cb9-305"><a href="#cb9-305" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonTabSet</span>(</span>
+<span id="cb9-306"><a href="#cb9-306" aria-hidden="true" tabindex="-1"></a>        <span class="at">id =</span> <span class="st">"tab-1"</span>,</span>
+<span id="cb9-307"><a href="#cb9-307" aria-hidden="true" tabindex="-1"></a>        <span class="at">card_wrapper =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-308"><a href="#cb9-308" aria-hidden="true" tabindex="-1"></a>        <span class="at">horizontal =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-309"><a href="#cb9-309" aria-hidden="true" tabindex="-1"></a>        <span class="at">circle =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-310"><a href="#cb9-310" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="st">"sm"</span>,</span>
+<span id="cb9-311"><a href="#cb9-311" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">6</span>,</span>
+<span id="cb9-312"><a href="#cb9-312" aria-hidden="true" tabindex="-1"></a>        <span class="at">iconList =</span> <span class="fu">list</span>(</span>
+<span id="cb9-313"><a href="#cb9-313" aria-hidden="true" tabindex="-1"></a>         <span class="fu">argonIcon</span>(<span class="st">"cloud-upload-96"</span>), </span>
+<span id="cb9-314"><a href="#cb9-314" aria-hidden="true" tabindex="-1"></a>         <span class="fu">argonIcon</span>(<span class="st">"bell-55"</span>), </span>
+<span id="cb9-315"><a href="#cb9-315" aria-hidden="true" tabindex="-1"></a>         <span class="fu">argonicon</span>(<span class="st">"calendar-grid-58"</span>)</span>
+<span id="cb9-316"><a href="#cb9-316" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-317"><a href="#cb9-317" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonTab</span>(</span>
+<span id="cb9-318"><a href="#cb9-318" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">"Tab 1"</span>,</span>
+<span id="cb9-319"><a href="#cb9-319" aria-hidden="true" tabindex="-1"></a>          <span class="at">active =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-320"><a href="#cb9-320" aria-hidden="true" tabindex="-1"></a>          tabText1</span>
+<span id="cb9-321"><a href="#cb9-321" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-322"><a href="#cb9-322" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonTab</span>(</span>
+<span id="cb9-323"><a href="#cb9-323" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">"Tab 2"</span>,</span>
+<span id="cb9-324"><a href="#cb9-324" aria-hidden="true" tabindex="-1"></a>          <span class="at">active =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-325"><a href="#cb9-325" aria-hidden="true" tabindex="-1"></a>          tabText2</span>
+<span id="cb9-326"><a href="#cb9-326" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-327"><a href="#cb9-327" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonTab</span>(</span>
+<span id="cb9-328"><a href="#cb9-328" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">"Tab 3"</span>,</span>
+<span id="cb9-329"><a href="#cb9-329" aria-hidden="true" tabindex="-1"></a>          <span class="at">active =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-330"><a href="#cb9-330" aria-hidden="true" tabindex="-1"></a>          tabText3</span>
+<span id="cb9-331"><a href="#cb9-331" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-332"><a href="#cb9-332" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-333"><a href="#cb9-333" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonTabSet</span>(</span>
+<span id="cb9-334"><a href="#cb9-334" aria-hidden="true" tabindex="-1"></a>        <span class="at">id =</span> <span class="st">"tab-2"</span>,</span>
+<span id="cb9-335"><a href="#cb9-335" aria-hidden="true" tabindex="-1"></a>        <span class="at">card_wrapper =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-336"><a href="#cb9-336" aria-hidden="true" tabindex="-1"></a>        <span class="at">horizontal =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-337"><a href="#cb9-337" aria-hidden="true" tabindex="-1"></a>        <span class="at">circle =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-338"><a href="#cb9-338" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="st">"sm"</span>,</span>
+<span id="cb9-339"><a href="#cb9-339" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonTab</span>(</span>
+<span id="cb9-340"><a href="#cb9-340" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">"Tab 4"</span>,</span>
+<span id="cb9-341"><a href="#cb9-341" aria-hidden="true" tabindex="-1"></a>          <span class="at">active =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-342"><a href="#cb9-342" aria-hidden="true" tabindex="-1"></a>          tabText1</span>
+<span id="cb9-343"><a href="#cb9-343" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-344"><a href="#cb9-344" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonTab</span>(</span>
+<span id="cb9-345"><a href="#cb9-345" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">"Tab 5"</span>,</span>
+<span id="cb9-346"><a href="#cb9-346" aria-hidden="true" tabindex="-1"></a>          <span class="at">active =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-347"><a href="#cb9-347" aria-hidden="true" tabindex="-1"></a>          tabText2</span>
+<span id="cb9-348"><a href="#cb9-348" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-349"><a href="#cb9-349" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonTab</span>(</span>
+<span id="cb9-350"><a href="#cb9-350" aria-hidden="true" tabindex="-1"></a>          <span class="at">tabName =</span> <span class="st">"Tab 6"</span>,</span>
+<span id="cb9-351"><a href="#cb9-351" aria-hidden="true" tabindex="-1"></a>          <span class="at">active =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-352"><a href="#cb9-352" aria-hidden="true" tabindex="-1"></a>          tabText3</span>
+<span id="cb9-353"><a href="#cb9-353" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-354"><a href="#cb9-354" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-355"><a href="#cb9-355" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-356"><a href="#cb9-356" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">argonMargin</span>(<span class="at">orientation =</span> <span class="st">"t"</span>, <span class="at">value =</span> <span class="sc">-</span><span class="dv">200</span>)</span>
+<span id="cb9-357"><a href="#cb9-357" aria-hidden="true" tabindex="-1"></a>  <span class="sc">%&gt;%</span> <span class="fu">argonPadding</span>(<span class="at">orientation =</span> <span class="st">"t"</span>, <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb9-358"><a href="#cb9-358" aria-hidden="true" tabindex="-1"></a>  <span class="fu">argonSection</span>(</span>
+<span id="cb9-359"><a href="#cb9-359" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-360"><a href="#cb9-360" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">"warning"</span>,</span>
+<span id="cb9-361"><a href="#cb9-361" aria-hidden="true" tabindex="-1"></a>    <span class="at">gradient =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-362"><a href="#cb9-362" aria-hidden="true" tabindex="-1"></a>    <span class="at">separator =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-363"><a href="#cb9-363" aria-hidden="true" tabindex="-1"></a>    <span class="at">separator_color =</span> <span class="st">"white"</span>,</span>
+<span id="cb9-364"><a href="#cb9-364" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-365"><a href="#cb9-365" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonContainer</span>(</span>
+<span id="cb9-366"><a href="#cb9-366" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-367"><a href="#cb9-367" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonRow</span>(</span>
+<span id="cb9-368"><a href="#cb9-368" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonColumn</span>(</span>
+<span id="cb9-369"><a href="#cb9-369" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> <span class="dv">6</span>,</span>
+<span id="cb9-370"><a href="#cb9-370" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonH1</span>(</span>
+<span id="cb9-371"><a href="#cb9-371" aria-hidden="true" tabindex="-1"></a>            <span class="at">display =</span> <span class="dv">3</span>, </span>
+<span id="cb9-372"><a href="#cb9-372" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Load modals"</span>, </span>
+<span id="cb9-373"><a href="#cb9-373" aria-hidden="true" tabindex="-1"></a>            htmltools<span class="sc">::</span><span class="fu">span</span>(<span class="st">"by clicking on buttons"</span>)</span>
+<span id="cb9-374"><a href="#cb9-374" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">%&gt;%</span> <span class="fu">argonTextColor</span>(<span class="at">color =</span> <span class="st">"white"</span>),</span>
+<span id="cb9-375"><a href="#cb9-375" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonButton</span>(</span>
+<span id="cb9-376"><a href="#cb9-376" aria-hidden="true" tabindex="-1"></a>            <span class="at">name =</span> <span class="st">"Click me!"</span>,</span>
+<span id="cb9-377"><a href="#cb9-377" aria-hidden="true" tabindex="-1"></a>            <span class="at">status =</span> <span class="st">"danger"</span>,</span>
+<span id="cb9-378"><a href="#cb9-378" aria-hidden="true" tabindex="-1"></a>            <span class="at">icon =</span> <span class="fu">argonIcon</span>(<span class="st">"atom"</span>),</span>
+<span id="cb9-379"><a href="#cb9-379" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-380"><a href="#cb9-380" aria-hidden="true" tabindex="-1"></a>            <span class="at">toggle_modal =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-381"><a href="#cb9-381" aria-hidden="true" tabindex="-1"></a>            <span class="at">modal_id =</span> <span class="st">"modal1"</span></span>
+<span id="cb9-382"><a href="#cb9-382" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb9-383"><a href="#cb9-383" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-384"><a href="#cb9-384" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonColumn</span>(</span>
+<span id="cb9-385"><a href="#cb9-385" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> <span class="dv">6</span>,</span>
+<span id="cb9-386"><a href="#cb9-386" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonModal</span>(</span>
+<span id="cb9-387"><a href="#cb9-387" aria-hidden="true" tabindex="-1"></a>            <span class="at">id =</span> <span class="st">"modal1"</span>,</span>
+<span id="cb9-388"><a href="#cb9-388" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">"This is a modal"</span>,</span>
+<span id="cb9-389"><a href="#cb9-389" aria-hidden="true" tabindex="-1"></a>            <span class="at">status =</span> <span class="st">"danger"</span>,</span>
+<span id="cb9-390"><a href="#cb9-390" aria-hidden="true" tabindex="-1"></a>            <span class="at">gradient =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-391"><a href="#cb9-391" aria-hidden="true" tabindex="-1"></a>            <span class="st">"YOU SHOULD READ THIS!"</span>,</span>
+<span id="cb9-392"><a href="#cb9-392" aria-hidden="true" tabindex="-1"></a>            <span class="fu">br</span>(),</span>
+<span id="cb9-393"><a href="#cb9-393" aria-hidden="true" tabindex="-1"></a>            <span class="st">"A small river named Duden flows by their place and supplies it with the necessary regelialia."</span></span>
+<span id="cb9-394"><a href="#cb9-394" aria-hidden="true" tabindex="-1"></a>          ),</span>
+<span id="cb9-395"><a href="#cb9-395" aria-hidden="true" tabindex="-1"></a>          <span class="fu">argonImage</span>(</span>
+<span id="cb9-396"><a href="#cb9-396" aria-hidden="true" tabindex="-1"></a>            <span class="at">floating =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-397"><a href="#cb9-397" aria-hidden="true" tabindex="-1"></a>            <span class="at">src =</span> <span class="st">"https://demos.creative-tim.com/argon-design-system/assets/img/ill/ill-2.svg"</span>,</span>
+<span id="cb9-398"><a href="#cb9-398" aria-hidden="true" tabindex="-1"></a>            <span class="at">hover_lift =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-399"><a href="#cb9-399" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">%&gt;%</span> <span class="fu">argonTooltip</span>(<span class="at">position =</span> <span class="st">"right"</span>, <span class="at">title =</span> <span class="st">"I am a nice floating image"</span>) </span>
+<span id="cb9-400"><a href="#cb9-400" aria-hidden="true" tabindex="-1"></a>          <span class="sc">%&gt;%</span> <span class="fu">argonBlur</span>(<span class="at">text =</span> <span class="st">"Hi There!"</span>, <span class="at">text_color =</span> <span class="st">"white"</span>)</span>
+<span id="cb9-401"><a href="#cb9-401" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-402"><a href="#cb9-402" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span> <span class="fu">argonPadding</span>(<span class="at">orientation =</span> <span class="st">"y"</span>, <span class="at">value =</span> <span class="dv">5</span>),</span>
+<span id="cb9-403"><a href="#cb9-403" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonPagination</span>(</span>
+<span id="cb9-404"><a href="#cb9-404" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-405"><a href="#cb9-405" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"center"</span>,</span>
+<span id="cb9-406"><a href="#cb9-406" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonPaginationItem</span>(</span>
+<span id="cb9-407"><a href="#cb9-407" aria-hidden="true" tabindex="-1"></a>          <span class="at">name =</span> <span class="dv">1</span>,</span>
+<span id="cb9-408"><a href="#cb9-408" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"test.html"</span></span>
+<span id="cb9-409"><a href="#cb9-409" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-410"><a href="#cb9-410" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonPaginationItem</span>(</span>
+<span id="cb9-411"><a href="#cb9-411" aria-hidden="true" tabindex="-1"></a>          <span class="at">name =</span> <span class="dv">2</span>,</span>
+<span id="cb9-412"><a href="#cb9-412" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"https://www.google.com"</span></span>
+<span id="cb9-413"><a href="#cb9-413" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-414"><a href="#cb9-414" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-415"><a href="#cb9-415" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-416"><a href="#cb9-416" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-417"><a href="#cb9-417" aria-hidden="true" tabindex="-1"></a>  <span class="fu">argonSection</span>(</span>
+<span id="cb9-418"><a href="#cb9-418" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-419"><a href="#cb9-419" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">"white"</span>,</span>
+<span id="cb9-420"><a href="#cb9-420" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonRow</span>(</span>
+<span id="cb9-421"><a href="#cb9-421" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonIconWrapper</span>(</span>
+<span id="cb9-422"><a href="#cb9-422" aria-hidden="true" tabindex="-1"></a>        <span class="at">iconTag =</span> <span class="fu">argonIcon</span>(<span class="st">"atom"</span>),</span>
+<span id="cb9-423"><a href="#cb9-423" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-424"><a href="#cb9-424" aria-hidden="true" tabindex="-1"></a>        <span class="at">status =</span> <span class="st">"danger"</span>,</span>
+<span id="cb9-425"><a href="#cb9-425" aria-hidden="true" tabindex="-1"></a>        <span class="at">shadow =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-426"><a href="#cb9-426" aria-hidden="true" tabindex="-1"></a>        <span class="at">hover_shadow =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-427"><a href="#cb9-427" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-428"><a href="#cb9-428" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonH1</span>(<span class="at">display =</span> <span class="dv">3</span>, <span class="st">"ArgonR social"</span>) <span class="sc">%&gt;%</span> <span class="fu">argonPadding</span>(<span class="at">orientation =</span> <span class="st">"l"</span>, <span class="at">value =</span> <span class="dv">5</span>)</span>
+<span id="cb9-429"><a href="#cb9-429" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-430"><a href="#cb9-430" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonRow</span>(</span>
+<span id="cb9-431"><a href="#cb9-431" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-432"><a href="#cb9-432" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">3</span>,</span>
+<span id="cb9-433"><a href="#cb9-433" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonUser</span>(</span>
+<span id="cb9-434"><a href="#cb9-434" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Ryan Tompson"</span>,</span>
+<span id="cb9-435"><a href="#cb9-435" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">"Web Developer"</span>,</span>
+<span id="cb9-436"><a href="#cb9-436" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-1-800x800.jpg"</span></span>
+<span id="cb9-437"><a href="#cb9-437" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span> <span class="fu">argonBlur</span>(<span class="at">text =</span> <span class="st">"Ryan Tompson"</span>, <span class="at">text_color =</span> <span class="st">"default"</span>)</span>
+<span id="cb9-438"><a href="#cb9-438" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-439"><a href="#cb9-439" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-440"><a href="#cb9-440" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">3</span>,</span>
+<span id="cb9-441"><a href="#cb9-441" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonUser</span>(</span>
+<span id="cb9-442"><a href="#cb9-442" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Romina Hadid"</span>,</span>
+<span id="cb9-443"><a href="#cb9-443" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">"Marketing Strategist"</span>,</span>
+<span id="cb9-444"><a href="#cb9-444" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-2-800x800.jpg"</span></span>
+<span id="cb9-445"><a href="#cb9-445" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span> <span class="fu">argonBlur</span>(<span class="at">text =</span> <span class="st">"Romina Hadid"</span>, <span class="at">text_color =</span> <span class="st">"default"</span>)</span>
+<span id="cb9-446"><a href="#cb9-446" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-447"><a href="#cb9-447" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-448"><a href="#cb9-448" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">3</span>,</span>
+<span id="cb9-449"><a href="#cb9-449" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonUser</span>(</span>
+<span id="cb9-450"><a href="#cb9-450" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Alexander Smith"</span>,</span>
+<span id="cb9-451"><a href="#cb9-451" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">"UI/UX Designer"</span>,</span>
+<span id="cb9-452"><a href="#cb9-452" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-3-800x800.jpg"</span></span>
+<span id="cb9-453"><a href="#cb9-453" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span> <span class="fu">argonBlur</span>(<span class="at">text =</span> <span class="st">"Alexander Smith"</span>, <span class="at">text_color =</span> <span class="st">"default"</span>)</span>
+<span id="cb9-454"><a href="#cb9-454" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-455"><a href="#cb9-455" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonColumn</span>(</span>
+<span id="cb9-456"><a href="#cb9-456" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="dv">3</span>,</span>
+<span id="cb9-457"><a href="#cb9-457" aria-hidden="true" tabindex="-1"></a>        <span class="fu">argonUser</span>(</span>
+<span id="cb9-458"><a href="#cb9-458" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"John Doe"</span>,</span>
+<span id="cb9-459"><a href="#cb9-459" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">"Founder and CEO"</span>,</span>
+<span id="cb9-460"><a href="#cb9-460" aria-hidden="true" tabindex="-1"></a>          <span class="at">src =</span> <span class="st">"https://demos.creative-tim.com/argon-design-system/assets/img/theme/team-4-800x800.jpg"</span></span>
+<span id="cb9-461"><a href="#cb9-461" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span> <span class="fu">argonBlur</span>(<span class="at">text =</span> <span class="st">"John Doe"</span>, <span class="at">text_color =</span> <span class="st">"default"</span>)</span>
+<span id="cb9-462"><a href="#cb9-462" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-463"><a href="#cb9-463" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-464"><a href="#cb9-464" aria-hidden="true" tabindex="-1"></a>    <span class="co"># br(), br(),</span></span>
+<span id="cb9-465"><a href="#cb9-465" aria-hidden="true" tabindex="-1"></a>    <span class="co"># argonContainer(</span></span>
+<span id="cb9-466"><a href="#cb9-466" aria-hidden="true" tabindex="-1"></a>    <span class="co">#   argonProfile(</span></span>
+<span id="cb9-467"><a href="#cb9-467" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     title = "John",</span></span>
+<span id="cb9-468"><a href="#cb9-468" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     subtitle = "Japan, Kagoshima",</span></span>
+<span id="cb9-469"><a href="#cb9-469" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     src = "https://image.flaticon.com/icons/svg/1006/1006540.svg",</span></span>
+<span id="cb9-470"><a href="#cb9-470" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     url = "https://www.google.com",</span></span>
+<span id="cb9-471"><a href="#cb9-471" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     url_1 = "https://www.google.com",</span></span>
+<span id="cb9-472"><a href="#cb9-472" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     url_2 = "https://www.google.com",</span></span>
+<span id="cb9-473"><a href="#cb9-473" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     stats = argonProfileStats(</span></span>
+<span id="cb9-474"><a href="#cb9-474" aria-hidden="true" tabindex="-1"></a>    <span class="co">#       argonProfileStat(</span></span>
+<span id="cb9-475"><a href="#cb9-475" aria-hidden="true" tabindex="-1"></a>    <span class="co">#         value = 22,</span></span>
+<span id="cb9-476"><a href="#cb9-476" aria-hidden="true" tabindex="-1"></a>    <span class="co">#         description = "Friends"</span></span>
+<span id="cb9-477"><a href="#cb9-477" aria-hidden="true" tabindex="-1"></a>    <span class="co">#       ),</span></span>
+<span id="cb9-478"><a href="#cb9-478" aria-hidden="true" tabindex="-1"></a>    <span class="co">#       argonProfileStat(</span></span>
+<span id="cb9-479"><a href="#cb9-479" aria-hidden="true" tabindex="-1"></a>    <span class="co">#         value = 10,</span></span>
+<span id="cb9-480"><a href="#cb9-480" aria-hidden="true" tabindex="-1"></a>    <span class="co">#         description = "Photos"</span></span>
+<span id="cb9-481"><a href="#cb9-481" aria-hidden="true" tabindex="-1"></a>    <span class="co">#       ),</span></span>
+<span id="cb9-482"><a href="#cb9-482" aria-hidden="true" tabindex="-1"></a>    <span class="co">#       argonProfileStat(</span></span>
+<span id="cb9-483"><a href="#cb9-483" aria-hidden="true" tabindex="-1"></a>    <span class="co">#         value = 89,</span></span>
+<span id="cb9-484"><a href="#cb9-484" aria-hidden="true" tabindex="-1"></a>    <span class="co">#         description = "Comments"</span></span>
+<span id="cb9-485"><a href="#cb9-485" aria-hidden="true" tabindex="-1"></a>    <span class="co">#       )</span></span>
+<span id="cb9-486"><a href="#cb9-486" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     ),</span></span>
+<span id="cb9-487"><a href="#cb9-487" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     "An artist of considerable range, Ryan — </span></span>
+<span id="cb9-488"><a href="#cb9-488" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     the name taken by Melbourne-raised, </span></span>
+<span id="cb9-489"><a href="#cb9-489" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     Brooklyn-based Nick Murphy — writes, </span></span>
+<span id="cb9-490"><a href="#cb9-490" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     performs and records all of his own music, </span></span>
+<span id="cb9-491"><a href="#cb9-491" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     giving it a warm, intimate feel with a solid </span></span>
+<span id="cb9-492"><a href="#cb9-492" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     groove structure. An artist of considerable </span></span>
+<span id="cb9-493"><a href="#cb9-493" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     range."</span></span>
+<span id="cb9-494"><a href="#cb9-494" aria-hidden="true" tabindex="-1"></a>    <span class="co">#   )</span></span>
+<span id="cb9-495"><a href="#cb9-495" aria-hidden="true" tabindex="-1"></a>    <span class="co"># )</span></span>
+<span id="cb9-496"><a href="#cb9-496" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-497"><a href="#cb9-497" aria-hidden="true" tabindex="-1"></a>  <span class="fu">argonSection</span>(</span>
+<span id="cb9-498"><a href="#cb9-498" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">"lg"</span>,</span>
+<span id="cb9-499"><a href="#cb9-499" aria-hidden="true" tabindex="-1"></a>    <span class="at">status =</span> <span class="st">"default"</span>,</span>
+<span id="cb9-500"><a href="#cb9-500" aria-hidden="true" tabindex="-1"></a>    <span class="at">cascade =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-501"><a href="#cb9-501" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-502"><a href="#cb9-502" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonH1</span>(<span class="at">display =</span> <span class="dv">3</span>, <span class="st">"ArgonR Cascade Effect"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-503"><a href="#cb9-503" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonPadding</span>(<span class="at">orientation =</span> <span class="st">"l"</span>, <span class="at">value =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-504"><a href="#cb9-504" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonPadding</span>(<span class="at">orientation =</span> <span class="st">"b"</span>, <span class="at">value =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-505"><a href="#cb9-505" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonTextColor</span>(<span class="at">color =</span> <span class="st">"white"</span>),</span>
+<span id="cb9-506"><a href="#cb9-506" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-507"><a href="#cb9-507" aria-hidden="true" tabindex="-1"></a>    <span class="fu">argonCascade</span>(</span>
+<span id="cb9-508"><a href="#cb9-508" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"diamond"</span>, <span class="at">src =</span> <span class="st">"https://www.google.com"</span>),</span>
+<span id="cb9-509"><a href="#cb9-509" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"album-2"</span>, <span class="at">size =</span> <span class="st">"sm"</span>),</span>
+<span id="cb9-510"><a href="#cb9-510" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"app"</span>, <span class="at">size =</span> <span class="st">"sm"</span>),</span>
+<span id="cb9-511"><a href="#cb9-511" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"atom"</span>, <span class="at">size =</span> <span class="st">"sm"</span>),</span>
+<span id="cb9-512"><a href="#cb9-512" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"bag-17"</span>, <span class="at">src =</span> <span class="st">"https://www.google.com"</span>),</span>
+<span id="cb9-513"><a href="#cb9-513" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"bell-55"</span>),</span>
+<span id="cb9-514"><a href="#cb9-514" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"credit-card"</span>),</span>
+<span id="cb9-515"><a href="#cb9-515" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"briefcase-24"</span>, <span class="at">size =</span> <span class="st">"sm"</span>, <span class="st">"https://www.google.com"</span>),</span>
+<span id="cb9-516"><a href="#cb9-516" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"building"</span>, <span class="at">size =</span> <span class="st">"sm"</span>),</span>
+<span id="cb9-517"><a href="#cb9-517" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"button-play"</span>, <span class="at">size =</span> <span class="st">"sm"</span>),</span>
+<span id="cb9-518"><a href="#cb9-518" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"calendar-grid-58"</span>),</span>
+<span id="cb9-519"><a href="#cb9-519" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"camera-compact"</span>),</span>
+<span id="cb9-520"><a href="#cb9-520" aria-hidden="true" tabindex="-1"></a>      <span class="fu">argonCascadeItem</span>(<span class="at">name =</span> <span class="st">"chart-bar-32"</span>)</span>
+<span id="cb9-521"><a href="#cb9-521" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-522"><a href="#cb9-522" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-523"><a href="#cb9-523" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-524"><a href="#cb9-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-525"><a href="#cb9-525" aria-hidden="true" tabindex="-1"></a><span class="fu">argonPageTemplate</span>(<span class="at">filename =</span> <span class="st">"example"</span>, <span class="at">path =</span> <span class="fu">getwd</span>(), example)</span></code></pre></div>
 </details><p><br></p>
 </div>
   </div>
@@ -867,7 +888,7 @@ argonPageTemplate(filename = "example", path = getwd(), example)</pre></body></h
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

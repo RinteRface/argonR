@@ -107,8 +107,9 @@ navbar:
       href: https://github.com/RinteRface/argonR
   
 articles:
-- title: All vignettes
+- title: User guide
   desc: ~
+  navbar: User Guide
   contents:
   - '`getting_started`'
 
@@ -116,4 +117,3 @@ news:
  releases:
  - text: "argonR 0.2.0"
  - text: "argonR 0.1.0"
- 
