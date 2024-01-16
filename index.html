@@ -20,6 +20,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">argonR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
       </span>
     </div>
 
@@ -48,14 +50,15 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
 <li class="divider">
-    <li class="dropdown-header">User Guide</li>
+    </li>
+<li class="dropdown-header">User Guide</li>
     <li>
       <a href="articles/getting_started.html">Getting Started</a>
     </li>
@@ -67,7 +70,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/RinteRface/argonR">
+  <a href="https://github.com/RinteRface/argonR" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -84,116 +87,111 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="argonr-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#argonr-" class="anchor"></a>argonR <img src="http://www.rinterface.com/inst/images/argonR.svg" width="200" align="right">
+<div class="section level1">
+<div class="page-header"><h1 id="argonr-">argonR <img src="http://www.rinterface.com/inst/images/argonR.svg" width="200" align="right"><a class="anchor" aria-label="anchor" href="#argonr-"></a>
 </h1></div>
-
+<p><a href="https://github.com/RinteRface/argonR/actions" class="external-link"><img src="https://github.com/RinteRface/argonR/workflows/R-CMD-check/badge.svg" alt="R build status"></a> <a href="https://cran.r-project.org/package=argonR" class="external-link"><img src="https://www.r-pkg.org/badges/version/argonR" alt="CRAN status"></a> <a href="https://www.tidyverse.org/lifecycle/#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg" alt="lifecycle"></a> <a href="https://cran.r-project.org/package=argonR" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/argonR" alt="cranlogs"></a> <a href="https://www.rpackages.io/package/argonR" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/argonR" alt="total"></a></p>
 <blockquote>
 <p>R interface to argon HTML Bootstrap 4 template</p>
 </blockquote>
-<div id="argonr-philosophy" class="section level2">
-<h2 class="hasAnchor">
-<a href="#argonr-philosophy" class="anchor"></a>ArgonR philosophy</h2>
-<p><a href="https://github.com/RinteRface/argonR">argonR</a> primarily aims at building static webpages from R, without the need of shiny or server part. However, it can be also used within shiny packages such as <a href="https://github.com/RinteRface/argonDash">argonDash</a>, a bootstrap4 shiny dashboard. See <a href="https://github.com/RinteRface/argonDash">here</a> for more details.</p>
+<div class="section level2">
+<h2 id="argonr-philosophy">ArgonR philosophy<a class="anchor" aria-label="anchor" href="#argonr-philosophy"></a>
+</h2>
+<p><a href="https://github.com/RinteRface/argonR" class="external-link">argonR</a> primarily aims at building static webpages from R, without the need of shiny or server part. However, it can be also used within shiny packages such as <a href="https://github.com/RinteRface/argonDash" class="external-link">argonDash</a>, a bootstrap4 shiny dashboard. See <a href="https://github.com/RinteRface/argonDash" class="external-link">here</a> for more details.</p>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># from CRAN</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"argonR"</span><span class="op">)</span>
-<span class="co"># Latest version</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"RinteRface/argonR"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># from CRAN</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"argonR"</span><span class="op">)</span></span>
+<span><span class="co"># Latest version</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"RinteRface/argonR"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="demo" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demo" class="anchor"></a>Demo</h2>
-<p>See a demonstration <a href="https://rinterface.com">here</a>.</p>
-<p><br><a href="http://rinterface.com/shiny/argonR/" target="_blank"><img src="reference/figures/argonRDemo.png"></a></p>
+<div class="section level2">
+<h2 id="demo">Demo<a class="anchor" aria-label="anchor" href="#demo"></a>
+</h2>
+<p>See a demonstration <a href="https://rinterface.com" class="external-link">here</a>.</p>
+<p><br><a href="http://rinterface.com/shiny/argonR/" target="_blank" class="external-link"><img src="reference/figures/argonRDemo.png"></a></p>
 </div>
-<div id="how-to-host-it" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-host-it" class="anchor"></a>How to host it?</h2>
-<p>This is pretty simple:</p>
+<div class="section level2">
+<h2 id="how-to-host-it">How to host it?<a class="anchor" aria-label="anchor" href="#how-to-host-it"></a>
+</h2>
+<p>This is pretty simple: * Test it locally: after having generated your HTML page as described previously, open it with any web browser * On apache or nginx server: copy example.html and the inst folder to the root of your web server. Enter the web server adress in the web browser. * On shiny-server: copy example.html and the inst folder to the root of your shiny-server (usually /srv/shiny-server). Enter the web server adress in the web browser</p>
+</div>
+<div class="section level2">
+<h2 id="use-with-shiny">Use with shiny<a class="anchor" aria-label="anchor" href="#use-with-shiny"></a>
+</h2>
+<p>See <a href="https://github.com/RinteRface/argonDash" class="external-link">{argonDash}</a>.</p>
+</div>
+<div class="section level2">
+<h2 id="acknowledgement">Acknowledgement<a class="anchor" aria-label="anchor" href="#acknowledgement"></a>
+</h2>
 <ul>
-<li>Test it locally: after having generated your HTML page as described previously, open it with any web browser</li>
-<li>On apache or nginx server: copy example.html and the inst folder to the root of your web server. Enter the web server adress in the web browser.</li>
-<li>On shiny-server: copy example.html and the inst folder to the root of your shiny-server (usually /srv/shiny-server). Enter the web server adress in the web browser</li>
+<li>Many thanks to <a href="https://www.creative-tim.com/" class="external-link">Creative Tim</a> for creating argon HTML.</li>
 </ul>
 </div>
-<div id="use-with-shiny" class="section level2">
-<h2 class="hasAnchor">
-<a href="#use-with-shiny" class="anchor"></a>Use with shiny</h2>
-<p>See <a href="https://github.com/RinteRface/argonDash">{argonDash}</a>.</p>
-</div>
-<div id="acknowledgement" class="section level2">
-<h2 class="hasAnchor">
-<a href="#acknowledgement" class="anchor"></a>Acknowledgement</h2>
-<ul>
-<li>Many thanks to <a href="https://www.creative-tim.com/">Creative Tim</a> for creating argon HTML.</li>
-</ul>
-</div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the argonR project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
+<p>Please note that the argonR project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=argonR">https://​cloud.r-project.org/​package=argonR</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/RinteRface/argonR/">https://​github.com/​RinteRface/​argonR/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/RinteRface/argonR/issues">https://​github.com/​RinteRface/​argonR/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=argonR" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/RinteRface/argonR/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/RinteRface/argonR/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-2">GPL-2</a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-2" class="external-link">GPL-2</a></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>David Granjon <br><small class="roles"> Author, maintainer </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html#citation">Citing argonR</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/RinteRface/argonR/actions"><img src="https://github.com/RinteRface/argonR/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://cran.r-project.org/package=argonR"><img src="https://www.r-pkg.org/badges/version/argonR" alt="CRAN status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg" alt="lifecycle"></a></li>
-<li><a href="https://cran.r-project.org/package=argonR"><img src="https://cranlogs.r-pkg.org/badges/argonR" alt="cranlogs"></a></li>
-<li><a href="https://www.rpackages.io/package/argonR"><img src="https://cranlogs.r-pkg.org/badges/grand-total/argonR" alt="total"></a></li>
+<li>David Granjon <br><small class="roles"> Author, maintainer </small>  </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
-</div>
+
+
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by David Granjon.</p>
+  <p></p>
+<p>Developed by David Granjon.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -201,6 +199,8 @@
 
   
 
+
+  
 
   </body>
 </html>
