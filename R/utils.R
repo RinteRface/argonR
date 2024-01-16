@@ -176,6 +176,7 @@ tags <- lapply(known_tags, function(tagname) {
 #' length 2 will be interpreted as multiple namespaces, in increasing 
 #' order of specificity (i.e. starting with the top-level namespace).
 #' @param id The id string to be namespaced (optional).
+#' @keywords internal
 NS <- function (namespace, id = NULL) {
   if (length(namespace) == 0) 
     ns_prefix <- character(0)
