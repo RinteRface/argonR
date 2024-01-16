@@ -5,7 +5,9 @@
 \alias{NS}
 \alias{ns.sep}
 \title{Namespaced IDs for inputs/outputs}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \usage{
 NS(namespace, id = NULL)
 
@@ -24,3 +26,4 @@ order of specificity (i.e. starting with the top-level namespace).}
 Namespaced IDs for inputs/outputs
 }
 \keyword{datasets}
+\keyword{internal}
