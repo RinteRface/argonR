@@ -10,7 +10,7 @@ Authors@R: c(
 Maintainer: David Granjon <dgranjon@ymail.com>
 Description: R wrapper around the argon HTML library.
     More at <https://demos.creative-tim.com/argon-design-system/>.
-URL: https://github.com/RinteRface/argonR
+URL: https://github.com/RinteRface/argonR, https://rinterface.github.io/argonR/
 BugReports: https://github.com/RinteRface/argonR/issues
 Imports: htmltools, utils, rstudioapi
 Suggests: 
